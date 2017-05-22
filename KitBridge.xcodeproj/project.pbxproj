@@ -17,8 +17,8 @@
 
 /* Begin PBXFileReference section */
 		75DCBEE21ED2C81E00538D87 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75DCBEE51ED2C81E00538D87 /* KitBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KitBridge.h; sourceTree = "<group>"; };
-		75DCBEE61ED2C81E00538D87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75DCBEE51ED2C81E00538D87 /* KitBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KitBridge.h; sourceTree = SOURCE_ROOT; };
+		75DCBEE61ED2C81E00538D87 /* KitBridge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KitBridge-Info.plist"; sourceTree = SOURCE_ROOT; };
 		75DCBEF21ED2C84B00538D87 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DCBEFB1ED2C99A00538D87 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		75DCBEFD1ED2C9A200538D87 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -51,7 +51,8 @@
 		75DCBED81ED2C81E00538D87 = {
 			isa = PBXGroup;
 			children = (
-				75DCBEE41ED2C81E00538D87 /* KitBridge */,
+				75DCBEE61ED2C81E00538D87 /* KitBridge-Info.plist */,
+				75DCBEE51ED2C81E00538D87 /* KitBridge.h */,
 				75DCBEE31ED2C81E00538D87 /* Products */,
 				75DCBEFA1ED2C99A00538D87 /* Frameworks */,
 			);
@@ -64,15 +65,6 @@
 				75DCBEF21ED2C84B00538D87 /* KitBridge.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		75DCBEE41ED2C81E00538D87 /* KitBridge */ = {
-			isa = PBXGroup;
-			children = (
-				75DCBEE61ED2C81E00538D87 /* Info.plist */,
-				75DCBEE51ED2C81E00538D87 /* KitBridge.h */,
-			);
-			path = KitBridge;
 			sourceTree = "<group>";
 		};
 		75DCBEFA1ED2C99A00538D87 /* Frameworks */ = {
@@ -324,7 +316,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = KitBridge/Info.plist;
+				INFOPLIST_FILE = "KitBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
@@ -344,7 +336,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = KitBridge/Info.plist;
+				INFOPLIST_FILE = "KitBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
@@ -363,7 +355,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KitBridge/Info.plist;
+				INFOPLIST_FILE = "KitBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -385,7 +377,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = KitBridge/Info.plist;
+				INFOPLIST_FILE = "KitBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -417,6 +409,7 @@
 				75DCBEEC1ED2C81E00538D87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		75DCBEF71ED2C84B00538D87 /* Build configuration list for PBXNativeTarget "KitBridge (iOS)" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +418,7 @@
 				75DCBEF91ED2C84B00538D87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
