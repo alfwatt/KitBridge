@@ -1,10 +1,3 @@
-
-//! Project version number for KitBridge.
-FOUNDATION_EXPORT double KitBridgeVersionNumber;
-
-//! Project version string for KitBridge.
-FOUNDATION_EXPORT const unsigned char KitBridgeVersionString[];
-
 /*
 
     iStumbler Labs UIKit & AppKit Bridging Header
