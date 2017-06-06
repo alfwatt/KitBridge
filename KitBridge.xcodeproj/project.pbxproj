@@ -76,9 +76,9 @@
 				75B3E6561ED5F77600E7798F /* KitBridgeDefines.h */,
 				75B3E6531ED5F73F00E7798F /* KitBridgeFunctions.h */,
 				75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */,
-				75B3E6591ED6116600E7798F /* ILViews.h */,
 				756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */,
 				756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */,
+				75B3E6591ED6116600E7798F /* ILViews.h */,
 				75DCBEE31ED2C81E00538D87 /* Products */,
 				75DCBEFA1ED2C99A00538D87 /* Frameworks */,
 			);
@@ -387,7 +387,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -409,7 +409,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
 				DYLIB_COMPATIBILITY_VERSION = 1;

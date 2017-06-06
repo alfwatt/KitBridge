@@ -1,7 +1,7 @@
 #import "ILBezierPath+KitBridge.h"
 #import "KitBridgeFunctions.h"
 
-NSString* CGPathElementDescription(const CGPathElement *element)
+NSString* ILCGPathElementDescription(const CGPathElement *element)
 {
     NSString* description = nil;
     
@@ -38,10 +38,10 @@ NSString* CGPathElementDescription(const CGPathElement *element)
     return description;
 }
 
-void CGPathEnumerationCallback(void *info, const CGPathElement *element)
+void ILCGPathDescriptionCallback(void *info, const CGPathElement *element)
 {
     NSMutableString* pathDescription = (__bridge NSMutableString*) info;
-    [pathDescription appendString:CGPathElementDescription(element)];
+    [pathDescription appendString:ILCGPathElementDescription(element)];
 
 }
 
@@ -51,8 +51,27 @@ NSString* ILCGPathDescription(CGPathRef path)
     [pathDescription appendFormat:@"<CGPathRef: %p\n", path];
     [pathDescription appendFormat:@"  Bounds: %@\n", ILStringFromCGRect(CGPathGetPathBoundingBox(path))];
     [pathDescription appendFormat:@"  Control Point Bounds: %@\n", ILStringFromCGRect(CGPathGetBoundingBox(path))];
-    CGPathApply(path, (__bridge void * _Nullable)(pathDescription), CGPathEnumerationCallback);
+    CGPathApply(path, (__bridge void * _Nullable)(pathDescription), ILCGPathDescriptionCallback);
     return pathDescription;
+}
+
+void ILCGPathElementCountCallback(void *info, const CGPathElement *element)
+{
+    NSInteger elementCount = *(NSInteger*)info;
+    elementCount++;
+}
+
+NSInteger ILCGPathElementCount(CGPathRef path)
+{
+    NSInteger elementCount = 0;
+    CGPathApply(path, &elementCount, ILCGPathElementCountCallback);
+    return elementCount;
+}
+
+void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
+{
+    ILBezierPathEnumerator block = (__bridge ILBezierPathEnumerator) info;
+    block(element);
 }
 
 #pragma mark -
@@ -60,22 +79,36 @@ NSString* ILCGPathDescription(CGPathRef path)
 @implementation ILBezierPath (KitBridge)
 
 #ifdef IL_APP_KIT
-#pragma mark - UIBezierPath methods
+#pragma mark - UIBezierPath
+#pragma mark - Factory Methods
 
-- (void) addLineToPoint:(CGPoint)point
++ (instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius
 {
-    [self lineToPoint:point];
+    return [NSBezierPath bezierPathWithRoundedRect:(NSRect)rect xRadius:cornerRadius yRadius:cornerRadius];
 }
 
-- (void) addArcWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
++ (instancetype)bezierPathWithRoundedRect:(CGRect)rect byRoundingCorners:(ILRectCorner)corners cornerRadii:(CGSize)cornerRadii
 {
-    [self appendBezierPathWithArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:clockwise];
+    // XXX Assumes ILRectCornerAllCorners
+    return [NSBezierPath bezierPathWithRoundedRect:(NSRect)rect xRadius:cornerRadii.width yRadius:cornerRadii.height];
 }
+
++ (instancetype)bezierPathWithArcCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
+{
+    return nil;
+}
+
++ (instancetype)bezierPathWithCGPath:(CGPathRef)CGPath
+{
+    return nil;
+}
+
+#pragma mark - Properties
 
 /*
  https://stackoverflow.com/a/1956021
  https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CocoaDrawingGuide/Paths/Paths.html#//apple_ref/doc/uid/TP40003290-CH206-SW2
-*/
+ */
 - (CGPathRef) CGPath
 {
     CGPathRef immutablePath = NULL;
@@ -87,9 +120,13 @@ NSString* ILCGPathDescription(CGPathRef path)
         
         for (NSUInteger index = 0; index < numElements; index++) {
             NSPoint points[3] = {0, 0, 0, 0, 0, 0};
+            NSBezierPathElement pathElement = [self elementAtIndex:index associatedPoints:points];
             
-            switch ([self elementAtIndex:index associatedPoints:points]) {
+            switch (pathElement) {
                 case NSMoveToBezierPathElement:
+                    if (!ILIsNormalPoint(points[0])) {
+                        NSLog(@"Abnormal point: %@", NSStringFromPoint(points[0]));
+                    }
                     CGPathMoveToPoint(path, NULL, points[0].x, points[0].y);
                     break;
                     
@@ -124,6 +161,52 @@ NSString* ILCGPathDescription(CGPathRef path)
     return immutablePath;
 }
 
+#pragma mark - Path Construction
+
+- (void) addLineToPoint:(CGPoint)point
+{
+    [self lineToPoint:point];
+}
+
+- (void)addCurveToPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1 controlPoint2:(CGPoint)controlPoint2
+{
+    [self curveToPoint:endPoint controlPoint1:controlPoint1 controlPoint2:controlPoint2];
+}
+
+- (void)addQuadCurveToPoint:(CGPoint)endPoint controlPoint:(CGPoint)controlPoint
+{
+    // TODO
+}
+
+- (void) addArcWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
+{
+    [self appendBezierPathWithArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:clockwise];
+}
+
+#pragma mark - Appending Paths
+
+- (void)appendPath:(ILBezierPath *)bezierPath
+{
+    // TODO
+}
+
+#else // IL_UI_KIT
+#pragma mark - NSBezierPath
+#pragma mark - Properties
+
+- (NSInteger) elementCount
+{
+    return ILCGPathElementCount(self.CGPath);
+}
+
 #endif
+#pragma mark - ILBezierPath Additions
+
+#pragma mark - Enumerating Paths
+
+- (void)enumeratePathWithBlock:(ILBezierPathEnumerator) enumerator
+{
+    CGPathApply(self.CGPath, (__bridge void * _Nullable)(enumerator), ILCGPathElementBlockCallback);
+}
 
 @end

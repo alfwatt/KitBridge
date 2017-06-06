@@ -1,6 +1,9 @@
 #import <Foundation/Foundation.h>
 
-/*! @brief adds common init and update methods to all views in the SparkKit */
+/*!
+ @protocol ILViews
+ @brief adds common init and update methods to all views in the SparkKit
+*/
 @protocol ILViews <NSObject>
 
 /*! @brief run from initWithFrame: or initWithCoder: to initilzize the view */

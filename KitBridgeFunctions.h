@@ -25,4 +25,7 @@ CGPoint ILPointOnLineToPointAtDistance(CGPoint from, CGPoint to, CGFloat distanc
 /*! @brief NSString from rect in the style of NSStringFromCGRect in UIKit */
 NSString* ILStringFromCGRect(CGRect rect);
 
+/*! @brief check to see if a point is 'normal' and neither value is NaN or Infinite */
+BOOL ILIsNormalPoint(CGPoint point);
+
 #endif /* KitBridgeFunctions_h */
