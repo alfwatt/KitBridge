@@ -1,15 +1,15 @@
 
-= KitBridge
+# KitBridge
 
 KitBridge: Bringing UIKit and AppKit Closer Together
 
 
-== Goals
+## Goals
 
 KitBridge allows you to create views which can be used in both iOS and macOS applications.
 
 
-== Bridged Classes
+## Bridged Classes
 
 Bridged classes are `#define` directives which allow you to write a kit class name, e.g.: `ILColor`
 and when your app is complied, the appropriate `NS` or `UI` class from the `AppKit` or `UIKit` will
@@ -39,17 +39,17 @@ e.g. ILApplicationDelegates might use them to initialize the app for each platfo
     }
 
 
-== Bridged Functions
+## Bridged Functions
 
 A number of geometry and printing functions are included for conveniences, see `KitBridgeFunctions.h` for details.
 
 
-== ILViews Interface
+## ILViews Interface
 
 The ILViews interfaces defines the `initView` and `updateView` methods or ILView subclasses.
 
 
-== Categories
+## Categories
 
 Categories are defined on AppKit classes to provide adaption to various UIKit methods.
 
@@ -57,7 +57,7 @@ Applications can then use the UIKit interface throughout, with only a small perf
 penalty on macOS for the bridge code.
 
 
-= License
+## License
 
     The MIT License (MIT)
 
