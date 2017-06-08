@@ -28,13 +28,12 @@ The `IL_UI_KIT` and `IL_APP_KIT` `#defines` can be used to segregate implementat
 e.g. ILApplicationDelegates might use them to initialize the app for each platform in it's 
 `main(...)` function:
 
-    int main(int argc, const char * argv[])
-    {
+    int main(int argc, char* _Nonnull argv[]) {
     #ifdef IL_APP_KIT
-        return NSApplicationMain(argc, argv);
+        return NSApplicationMain(argc, (const char* _Nonnull*) argv);
     #elif IL_UI_KIT
         @autoreleasepool {
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([MyAppDelegateDelegate class]));
+            return UIApplicationMain(argc, argv, nil, NSStringFromClass([SparkyDelegate class]));
         }
     #endif
     }
