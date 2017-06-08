@@ -28,4 +28,10 @@ NSString* ILStringFromCGRect(CGRect rect);
 /*! @brief check to see if a point is 'normal' and neither value is NaN or Infinite */
 BOOL ILIsNormalPoint(CGPoint point);
 
+/*! @brief check to see if a size is 'normal' and neither value is NaN or Infinite */
+BOOL ILIsNormalSize(CGSize size);
+
+/*! @brief check to see if a rect has a 'normal' origin and size and neither value is NaN or Infinite */
+BOOL ILIsNormalRect(CGRect rect);
+
 #endif /* KitBridgeFunctions_h */

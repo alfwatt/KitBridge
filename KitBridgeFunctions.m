@@ -55,3 +55,14 @@ BOOL ILIsNormalPoint(CGPoint point)
     return ((point.x == 0 || (fpclassify(point.x) == FP_NORMAL))
          || (point.y == 0 || (fpclassify(point.y) == FP_NORMAL)));
 }
+
+BOOL ILIsNormalSize(CGSize size)
+{
+    return ((size.width == 0  || (fpclassify(size.width) == FP_NORMAL))
+         || (size.height == 0 || (fpclassify(size.height) == FP_NORMAL)));
+}
+
+BOOL ILIsNormalRect(CGRect rect)
+{
+    return ILIsNormalPoint(rect.origin) && ILIsNormalSize(rect.size);
+}
