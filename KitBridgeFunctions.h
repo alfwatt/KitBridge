@@ -10,7 +10,7 @@ CGRect ILRectSquareInRect(CGRect rect);
 /*! @return the points in vector form */
 CGVector ILVectorFromPointToPoint(CGPoint from, CGPoint to);
 
-/*! @return the length of the vector using the pythagorian therom */
+/*! @return the length of the vector using the Pythagorean theorem */
 CGFloat ILVectorLength(CGVector delta);
 
 /*! @return the angle of the vector in radians */

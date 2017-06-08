@@ -11,8 +11,8 @@ KitBridge allows you to create views which can be used in both iOS and macOS app
 
 == Bridged Classes
 
-Bridged classes are `#define` derectives which allow you to write a kit class name, e.g.: `ILColor`
-and when your app is complied, the appropraite `NS` or `UI` class from the `AppKit` or `UIKit` will
+Bridged classes are `#define` directives which allow you to write a kit class name, e.g.: `ILColor`
+and when your app is complied, the appropriate `NS` or `UI` class from the `AppKit` or `UIKit` will
 be substituted.
 
     - ILApplicationDelegate
@@ -25,7 +25,7 @@ be substituted.
     - ILWindow
 
 The `IL_UI_KIT` and `IL_APP_KIT` `#defines` can be used to segregate implementations when needed,
-e.g. ILApplicationDelegates might use them to initilize the app for each platform in it's 
+e.g. ILApplicationDelegates might use them to initialize the app for each platform in it's 
 `main(...)` function:
 
     int main(int argc, const char * argv[])
@@ -42,7 +42,7 @@ e.g. ILApplicationDelegates might use them to initilize the app for each platfor
 
 == Bridged Functions
 
-A number of geometry and printing functions are included for convenienaces, see `KitBridgeFunctions.h` for details.
+A number of geometry and printing functions are included for conveniences, see `KitBridgeFunctions.h` for details.
 
 
 == ILViews Interface
@@ -52,9 +52,9 @@ The ILViews interfaces defines the `initView` and `updateView` methods or ILView
 
 == Categories
 
-Categories are defined on AppKit classes to provide adaption to varoius UIKit methods.
+Categories are defined on AppKit classes to provide adaption to various UIKit methods.
 
-Aplications can then use the UIKit interface throughout, with only a small performance
+Applications can then use the UIKit interface throughout, with only a small performance
 penalty on macOS for the bridge code.
 
 

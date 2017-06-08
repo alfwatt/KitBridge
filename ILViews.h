@@ -6,7 +6,7 @@
 */
 @protocol ILViews <NSObject>
 
-/*! @brief run from initWithFrame: or initWithCoder: to initilzize the view */
+/*! @brief run from initWithFrame: or initWithCoder: to initialize the view */
 - (void) initView;
 
 /*! @brief have the view query it's data source and redraw itself */

@@ -106,9 +106,12 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
 #pragma mark - Properties
 
 /*
+ 
  https://stackoverflow.com/a/1956021
+ 
  https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CocoaDrawingGuide/Paths/Paths.html#//apple_ref/doc/uid/TP40003290-CH206-SW2
- */
+
+*/
 - (CGPathRef) CGPath
 {
     CGPathRef immutablePath = NULL;
@@ -124,9 +127,6 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
             
             switch (pathElement) {
                 case NSMoveToBezierPathElement:
-                    if (!ILIsNormalPoint(points[0])) {
-                        NSLog(@"Abnormal point: %@", NSStringFromPoint(points[0]));
-                    }
                     CGPathMoveToPoint(path, NULL, points[0].x, points[0].y);
                     break;
                     

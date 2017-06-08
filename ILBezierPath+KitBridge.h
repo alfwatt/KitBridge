@@ -1,30 +1,21 @@
 #import <KitBridge/KitBridgeDefines.h>
 
+/*! @header bridging header for UIBezierPath and NSBezierPath */
+
 /*! @brief text description of a CGPathRef */
 NSString* ILCGPathDescription(CGPathRef path);
-
 
 /*! @brief count the number of elements in a CGPathRef */
 NSInteger ILCGPathElementCount(CGPathRef path);
 
-// Briding header for UIBezierPath and NSBezierPath
-
 #ifdef IL_APP_KIT
 // From UIBezierPath.h
 typedef NS_OPTIONS(NSUInteger, ILRectCorner) {
-    ILRectCornerTopLeft     = 1 << 0,
-    ILRectCornerTopRight    = 1 << 1,
-    ILRectCornerBottomLeft  = 1 << 2,
-    ILRectCornerBottomRight = 1 << 3,
-    ILRectCornerAllCorners  = ~0UL
-};
-#else
-typedef NS_OPTIONS(NSUInteger, ILRectCorner) {
-    ILRectCornerTopLeft     = UIRectCornerTopLeft,
-    ILRectCornerTopRight    = UIRectCornerTopRight,
-    ILRectCornerBottomLeft  = UIRectCornerBottomLeft,
-    ILRectCornerBottomRight = UIRectCornerBottomRight,
-    ILRectCornerAllCorners  = UIRectCornerAllCorners
+    UIRectCornerTopLeft     = 1 << 0,
+    UIRectCornerTopRight    = 1 << 1,
+    UIRectCornerBottomLeft  = 1 << 2,
+    UIRectCornerBottomRight = 1 << 3,
+    UIRectCornerAllCorners  = ~0UL
 };
 #endif
 
