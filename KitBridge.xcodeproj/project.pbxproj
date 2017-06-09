@@ -34,7 +34,7 @@
 		75B3E6531ED5F73F00E7798F /* KitBridgeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeFunctions.h; sourceTree = "<group>"; };
 		75B3E6561ED5F77600E7798F /* KitBridgeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeDefines.h; sourceTree = "<group>"; };
 		75B3E6591ED6116600E7798F /* ILViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILViews.h; sourceTree = "<group>"; };
-		75B3E6601ED62ECC00E7798F /* KitBridge.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = KitBridge.md; sourceTree = "<group>"; };
+		75B3E6601ED62ECC00E7798F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75DCBEE21ED2C81E00538D87 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DCBEE51ED2C81E00538D87 /* KitBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KitBridge.h; sourceTree = SOURCE_ROOT; };
 		75DCBEE61ED2C81E00538D87 /* KitBridge-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KitBridge-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -70,7 +70,7 @@
 		75DCBED81ED2C81E00538D87 = {
 			isa = PBXGroup;
 			children = (
-				75B3E6601ED62ECC00E7798F /* KitBridge.md */,
+				75B3E6601ED62ECC00E7798F /* README.md */,
 				75DCBEE61ED2C81E00538D87 /* KitBridge-Info.plist */,
 				75DCBEE51ED2C81E00538D87 /* KitBridge.h */,
 				75B3E6561ED5F77600E7798F /* KitBridgeDefines.h */,
