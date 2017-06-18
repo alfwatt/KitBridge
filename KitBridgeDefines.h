@@ -12,7 +12,6 @@
 #define ILImage UIImage
 #define ILView UIView
 #define ILWindow UIWindow
-#define ILViewController UIViewController
 #define ILApplicationDelegate UIApplicationDelegate
 #define ILBezierPath UIBezierPath
 #define IL_UI_KIT 1
@@ -26,7 +25,6 @@
 #define ILImage NSImage
 #define ILView NSView
 #define ILWindow NSWindow
-#define ILViewController NSViewController
 #define ILApplicationDelegate NSApplicationDelegate
 #define ILGradient NSGradient
 #define ILBezierPath NSBezierPath
