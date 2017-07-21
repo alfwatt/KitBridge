@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75543AEA1F2296E60050BAF2 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */; };
+		75543AEB1F2297A70050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756DB2281ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */; };
 		75B3E6541ED5F73F00E7798F /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */; };
@@ -28,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILScreen+KitBridge.h"; sourceTree = "<group>"; };
+		75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILScreen+KitBridge.m"; sourceTree = "<group>"; };
 		756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILBezierPath+KitBridge.h"; sourceTree = "<group>"; };
 		756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILBezierPath+KitBridge.m"; sourceTree = "<group>"; };
 		75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KitBridgeFunctions.m; sourceTree = "<group>"; };
@@ -76,9 +81,11 @@
 				75B3E6561ED5F77600E7798F /* KitBridgeDefines.h */,
 				75B3E6531ED5F73F00E7798F /* KitBridgeFunctions.h */,
 				75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */,
+				75B3E6591ED6116600E7798F /* ILViews.h */,
+				75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */,
+				75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */,
 				756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */,
 				756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */,
-				75B3E6591ED6116600E7798F /* ILViews.h */,
 				75DCBEE31ED2C81E00538D87 /* Products */,
 				75DCBEFA1ED2C99A00538D87 /* Frameworks */,
 			);
@@ -115,6 +122,7 @@
 				75B3E6571ED5F77600E7798F /* KitBridgeDefines.h in Headers */,
 				75B3E6551ED5F73F00E7798F /* KitBridgeFunctions.h in Headers */,
 				75B3E65A1ED6116600E7798F /* ILViews.h in Headers */,
+				75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */,
 				756DB2281ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +135,7 @@
 				75B3E6581ED5F77600E7798F /* KitBridgeDefines.h in Headers */,
 				75B3E65D1ED6196600E7798F /* KitBridgeFunctions.h in Headers */,
 				75B3E65B1ED6116600E7798F /* ILViews.h in Headers */,
+				75543AEB1F2297A70050BAF2 /* ILScreen+KitBridge.h in Headers */,
 				75B3E65C1ED6195F00E7798F /* ILBezierPath+KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,6 +240,7 @@
 			files = (
 				756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */,
 				75B3E6541ED5F73F00E7798F /* KitBridgeFunctions.m in Sources */,
+				75543AEA1F2296E60050BAF2 /* ILScreen+KitBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

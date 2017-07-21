@@ -3,10 +3,12 @@
 
 CGRect ILRectSquareInRect(CGRect rect)
 {
-    CGFloat sideLength = fminf(rect.size.width,rect.size.height);
-    CGFloat xOffset = (rect.size.width-sideLength)/2;
-    CGFloat yOffset = (rect.size.height-sideLength)/2;
-    return CGRectIntegral(CGRectMake(xOffset,yOffset,sideLength,sideLength));
+    CGFloat sideLength = fminf(rect.size.width, rect.size.height);
+    CGFloat xOffset = rect.origin.x + ((rect.size.width - sideLength) * 2);
+    CGFloat yOffset = rect.origin.y + ((rect.size.height - sideLength) * 2);
+    CGRect square = CGRectIntegral(CGRectMake(xOffset, yOffset, sideLength, sideLength));
+    
+    return square;
 }
 
 CGVector ILVectorFromPointToPoint(CGPoint from, CGPoint to)

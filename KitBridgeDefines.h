@@ -6,6 +6,7 @@
 /* UIKit */
 #if TARGET_OS_IPHONE || TARGET_OS_TV
 #import <UIKit/UIKit.h>
+#define ILScreen UIScreen
 #define ILColor UIColor
 #define ILGradient NSObject // TODO Implement ILGradient on top of CGGradient
 #define ILFont UIFont
@@ -19,6 +20,7 @@
 /* AppKit */
 #elif TARGET_OS_MAC
 #import <AppKit/AppKit.h>
+#define ILScreen NSScreen
 #define ILColor NSColor
 #define ILGradient NSGradient
 #define ILFont NSFont
