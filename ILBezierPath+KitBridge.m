@@ -178,9 +178,14 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
     // TODO
 }
 
+// everyting is backwards!
 - (void) addArcWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
 {
-    [self appendBezierPathWithArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:clockwise];
+    [self appendBezierPathWithArcWithCenter:center
+                                     radius:radius
+                                 startAngle:ILRadiansToDegrees(startAngle)
+                                   endAngle:ILRadiansToDegrees(endAngle)
+                                  clockwise:!clockwise];
 }
 
 #pragma mark - Appending Paths

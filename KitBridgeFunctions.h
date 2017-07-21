@@ -5,33 +5,39 @@
 #import <CoreGraphics/CoreGraphics.h>
 
 /*! @return the largest square centered in the provided rectangle */
-CGRect ILRectSquareInRect(CGRect rect);
+inline CGRect ILRectSquareInRect(CGRect rect);
 
 /*! @return the points in vector form */
-CGVector ILVectorFromPointToPoint(CGPoint from, CGPoint to);
+inline CGVector ILVectorFromPointToPoint(CGPoint from, CGPoint to);
 
 /*! @return the length of the vector using the Pythagorean theorem */
-CGFloat ILVectorLength(CGVector delta);
+inline CGFloat ILVectorLength(CGVector delta);
 
 /*! @return the angle of the vector in radians */
-CGFloat ILVectorRadians(CGVector delta);
+inline CGFloat ILVectorRadians(CGVector delta);
 
 /*! @return the center point of the rect */
-CGPoint ILPointCenteredInRect(CGRect rect);
+inline CGPoint ILPointCenteredInRect(CGRect rect);
 
 /*! @brief project a point the provided distance along the vector provided */
-CGPoint ILPointOnLineToPointAtDistance(CGPoint from, CGPoint to, CGFloat distance);
+inline CGPoint ILPointOnLineToPointAtDistance(CGPoint from, CGPoint to, CGFloat distance);
 
 /*! @brief NSString from rect in the style of NSStringFromCGRect in UIKit */
-NSString* ILStringFromCGRect(CGRect rect);
+inline NSString* ILStringFromCGRect(CGRect rect);
 
 /*! @brief check to see if a point is 'normal' and neither value is NaN or Infinite */
-BOOL ILIsNormalPoint(CGPoint point);
+inline BOOL ILIsNormalPoint(CGPoint point);
 
 /*! @brief check to see if a size is 'normal' and neither value is NaN or Infinite */
-BOOL ILIsNormalSize(CGSize size);
+inline BOOL ILIsNormalSize(CGSize size);
 
 /*! @brief check to see if a rect has a 'normal' origin and size and neither value is NaN or Infinite */
-BOOL ILIsNormalRect(CGRect rect);
+inline BOOL ILIsNormalRect(CGRect rect);
+
+/*! @brief Converts degrees to radians. */
+inline CGFloat ILDegreesToRadians(CGFloat angleDegrees); // (angleDegrees * M_PI / 180.0)
+
+/*! @brief Converts radians to degrees. */
+inline CGFloat ILRadiansToDegrees(CGFloat angleRadians); // (angleRadians * 180.0 / M_PI)
 
 #endif /* KitBridgeFunctions_h */

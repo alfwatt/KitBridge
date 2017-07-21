@@ -68,3 +68,13 @@ BOOL ILIsNormalRect(CGRect rect)
 {
     return ILIsNormalPoint(rect.origin) && ILIsNormalSize(rect.size);
 }
+
+CGFloat ILDegreesToRadians(CGFloat angleDegrees)
+{
+    return (angleDegrees * M_PI / 180.0);
+}
+
+CGFloat ILRadiansToDegrees(CGFloat angleRadians)
+{
+    return (angleRadians * 180.0 / M_PI);
+}
