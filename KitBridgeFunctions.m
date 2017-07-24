@@ -3,12 +3,12 @@
 
 #pragma mark - Math
 
-inline CGFloat ILDegreesToRadians(CGFloat angleDegrees)
+CGFloat ILDegreesToRadians(CGFloat angleDegrees)
 {
     return (angleDegrees * M_PI / 180.0);
 }
 
-inline CGFloat ILRadiansToDegrees(CGFloat angleRadians)
+CGFloat ILRadiansToDegrees(CGFloat angleRadians)
 {
     return (angleRadians * 180.0 / M_PI);
 }
@@ -63,13 +63,13 @@ BOOL ILIsNormalPoint(CGPoint point)
          || (point.y == 0 || (fpclassify(point.y) == FP_NORMAL)));
 }
 
-inline BOOL ILIsNormalSize(CGSize size)
+BOOL ILIsNormalSize(CGSize size)
 {
     return ((size.width == 0  || (fpclassify(size.width) == FP_NORMAL))
          || (size.height == 0 || (fpclassify(size.height) == FP_NORMAL)));
 }
 
-inline BOOL ILIsNormalRect(CGRect rect)
+BOOL ILIsNormalRect(CGRect rect)
 {
     return ILIsNormalPoint(rect.origin) && ILIsNormalSize(rect.size);
 }

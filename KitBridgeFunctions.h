@@ -7,10 +7,10 @@
 #pragma mark - Math
 
 /*! @brief Converts degrees to radians. */
-inline CGFloat ILDegreesToRadians(CGFloat angleDegrees); // (angleDegrees * M_PI / 180.0)
+CGFloat ILDegreesToRadians(CGFloat angleDegrees); // (angleDegrees * M_PI / 180.0)
 
 /*! @brief Converts radians to degrees. */
-inline CGFloat ILRadiansToDegrees(CGFloat angleRadians); // (angleRadians * 180.0 / M_PI)
+CGFloat ILRadiansToDegrees(CGFloat angleRadians); // (angleRadians * 180.0 / M_PI)
 
 #pragma mark - Geometry
 
