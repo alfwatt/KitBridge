@@ -10,6 +10,7 @@
 		75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75543AEA1F2296E60050BAF2 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */; };
 		75543AEB1F2297A70050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		756C2D961F2698CA0060F718 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */; };
 		756DB2281ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */; };
 		75B3E6541ED5F73F00E7798F /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */; };
@@ -194,6 +195,7 @@
 					};
 					75DCBEF11ED2C84B00538D87 = {
 						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = E8G8ARB44Z;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -238,9 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */,
 				75B3E6541ED5F73F00E7798F /* KitBridgeFunctions.m in Sources */,
 				75543AEA1F2296E60050BAF2 /* ILScreen+KitBridge.m in Sources */,
+				756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B3E65E1ED6196D00E7798F /* KitBridgeFunctions.m in Sources */,
+				756C2D961F2698CA0060F718 /* ILScreen+KitBridge.m in Sources */,
 				75B3E65F1ED6197100E7798F /* ILBezierPath+KitBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,7 +305,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -347,7 +349,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = macosx;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -397,18 +398,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E8G8ARB44Z;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "KitBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.istumbler.labs.KitBridge--iOS-";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
 				PRODUCT_NAME = KitBridge;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
@@ -420,18 +422,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = E8G8ARB44Z;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "KitBridge-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "net.istumbler.labs.KitBridge--iOS-";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
 				PRODUCT_NAME = KitBridge;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
