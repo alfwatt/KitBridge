@@ -6,3 +6,4 @@
 #import <KitBridge/ILViews.h>
 #import <KitBridge/ILScreen+KitBridge.h>
 #import <KitBridge/ILBezierPath+KitBridge.h>
+#import <KitBridge/ILColor+KitBridge.h>

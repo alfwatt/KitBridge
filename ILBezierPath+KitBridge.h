@@ -25,7 +25,7 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 
 #ifdef IL_APP_KIT
 #pragma mark - UIBezierPath methods
-@property(nonatomic, readonly) CGPathRef CGPath;
+@property(nonatomic, readonly) CGPathRef CGPath CF_RETURNS_RETAINED;
 
 + (instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius;
 

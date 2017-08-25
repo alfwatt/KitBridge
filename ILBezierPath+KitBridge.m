@@ -38,12 +38,41 @@ NSString* ILCGPathElementDescription(const CGPathElement *element)
     return description;
 }
 
-void ILCGPathDescriptionCallback(void *info, const CGPathElement *element)
+void ILCGPathDescriptionCallback(void* info, const CGPathElement* element)
 {
     NSMutableString* pathDescription = (__bridge NSMutableString*) info;
     [pathDescription appendString:ILCGPathElementDescription(element)];
 
 }
+
+void ILCGPathCopyCallback(void* info, const CGPathElement* element)
+{
+    ILBezierPath* path = (__bridge ILBezierPath*) info;
+    switch (element->type) {
+
+        case kCGPathElementMoveToPoint: {
+            [path moveToPoint:element->points[0]];
+            break;
+        }
+        case kCGPathElementAddLineToPoint: {
+            [path lineToPoint:element->points[0]];
+            break;
+        }
+        case kCGPathElementAddQuadCurveToPoint: {
+            [path addQuadCurveToPoint:element->points[0] controlPoint:element->points[1]];
+            break;
+        }
+        case kCGPathElementAddCurveToPoint: {
+            [path addCurveToPoint:element->points[0] controlPoint1:element->points[1] controlPoint2:element->points[2]];
+            break;
+        }
+        case kCGPathElementCloseSubpath: {
+            [path closePath];
+            break;
+        }
+    }
+}
+
 
 NSString* ILCGPathDescription(CGPathRef path)
 {
@@ -51,7 +80,7 @@ NSString* ILCGPathDescription(CGPathRef path)
     [pathDescription appendFormat:@"<CGPathRef: %p\n", path];
     [pathDescription appendFormat:@"  Bounds: %@\n", ILStringFromCGRect(CGPathGetPathBoundingBox(path))];
     [pathDescription appendFormat:@"  Control Point Bounds: %@\n", ILStringFromCGRect(CGPathGetBoundingBox(path))];
-    CGPathApply(path, (__bridge void * _Nullable)(pathDescription), ILCGPathDescriptionCallback);
+    CGPathApply(path, (__bridge void * _Nullable)pathDescription, ILCGPathDescriptionCallback);
     return pathDescription;
 }
 
@@ -95,12 +124,16 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
 
 + (instancetype)bezierPathWithArcCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
 {
-    return nil;
+    NSBezierPath* path = [NSBezierPath new];
+    [path addArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:clockwise];
+    return path;
 }
 
 + (instancetype)bezierPathWithCGPath:(CGPathRef)CGPath
 {
-    return nil;
+    NSBezierPath* path = [NSBezierPath new];
+    CGPathApply(CGPath, (__bridge void * _Nullable)path, ILCGPathCopyCallback);
+    return path;
 }
 
 #pragma mark - Properties
@@ -122,7 +155,7 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
         BOOL didClosePath = YES;
         
         for (NSUInteger index = 0; index < numElements; index++) {
-            NSPoint points[3] = {0, 0, 0, 0, 0, 0};
+            NSPoint points[3] = {NSZeroPoint, NSZeroPoint, NSZeroPoint};
             NSBezierPathElement pathElement = [self elementAtIndex:index associatedPoints:points];
             
             switch (pathElement) {
@@ -158,6 +191,10 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
         CGPathRelease(path);
     }
     
+    if (immutablePath) {
+        CFAutorelease(immutablePath);
+    }
+    
     return immutablePath;
 }
 
@@ -175,7 +212,7 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
 
 - (void)addQuadCurveToPoint:(CGPoint)endPoint controlPoint:(CGPoint)controlPoint
 {
-    // TODO
+    [self curveToPoint:endPoint controlPoint1:controlPoint controlPoint2:controlPoint];
 }
 
 // everyting is backwards!
