@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7506D6BD1F4CE245003392E3 /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7506D6BB1F4CE245003392E3 /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7506D6BE1F4CE245003392E3 /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7506D6BC1F4CE245003392E3 /* ILColor+KitBridge.m */; };
+		7506D6BF1F500506003392E3 /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7506D6BC1F4CE245003392E3 /* ILColor+KitBridge.m */; };
 		75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75543AEA1F2296E60050BAF2 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */; };
 		75543AEB1F2297A70050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -261,6 +262,7 @@
 				75B3E65E1ED6196D00E7798F /* KitBridgeFunctions.m in Sources */,
 				756C2D961F2698CA0060F718 /* ILScreen+KitBridge.m in Sources */,
 				75B3E65F1ED6197100E7798F /* ILBezierPath+KitBridge.m in Sources */,
+				7506D6BF1F500506003392E3 /* ILColor+KitBridge.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
