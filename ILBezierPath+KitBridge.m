@@ -55,7 +55,7 @@ void ILCGPathCopyCallback(void* info, const CGPathElement* element)
             break;
         }
         case kCGPathElementAddLineToPoint: {
-            [path lineToPoint:element->points[0]];
+            [path addLineToPoint:element->points[0]];
             break;
         }
         case kCGPathElementAddQuadCurveToPoint: {

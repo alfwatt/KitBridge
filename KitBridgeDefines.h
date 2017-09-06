@@ -17,6 +17,7 @@
 #define ILApplicationDelegate UIApplicationDelegate
 #define ILBezierPath UIBezierPath
 #define ILTextView UITextView
+#define ILPasteboard UIPasteboard
 #define IL_UI_KIT 1
 
 /* AppKit */
@@ -34,6 +35,8 @@
 #define ILGradient NSGradient
 #define ILBezierPath NSBezierPath
 #define ILTextView NSTextView
+#define ILPasteboard NSPasteboard
+#define ILPasteboardItem NSPasteboardItem
 #define IL_APP_KIT 1
 #endif
 
