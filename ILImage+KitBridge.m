@@ -6,13 +6,6 @@
 - (ILImage*) inverted
 {
     CIImage* ciImage = [[CIImage alloc] initWithData:[self TIFFRepresentation]];
-    if ([self isFlipped]) {
-        CGRect cgRect = [ciImage extent];
-        CGAffineTransform transform;
-        transform = CGAffineTransformMakeTranslation(0.0,cgRect.size.height);
-        transform = CGAffineTransformScale(transform, 1.0, -1.0);
-        ciImage = [ciImage imageByApplyingTransform:transform];
-    }
     CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
     [filter setDefaults];
     [filter setValue:ciImage forKey:@"inputImage"];

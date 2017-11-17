@@ -17,7 +17,7 @@
 		756DB2281ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */; };
 		75A31E021FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A31E001FB1106A00DFE22C /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		75A31E031FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A31E001FB1106A00DFE22C /* ILImage+KitBridge.h */; };
+		75A31E031FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A31E001FB1106A00DFE22C /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75A31E041FB1106A00DFE22C /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A31E011FB1106A00DFE22C /* ILImage+KitBridge.m */; };
 		75A31E051FB1106A00DFE22C /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A31E011FB1106A00DFE22C /* ILImage+KitBridge.m */; };
 		75B3E6541ED5F73F00E7798F /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */; };
@@ -458,7 +458,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
 				PRODUCT_NAME = KitBridge;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -481,7 +480,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
 				PRODUCT_NAME = KitBridge;
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
 				TARGETED_DEVICE_FAMILY = "1,2";
