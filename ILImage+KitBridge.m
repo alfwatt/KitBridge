@@ -5,6 +5,7 @@
 
 - (ILImage*) inverted
 {
+#ifdef IL_APP_KIT
     CIImage* ciImage = [[CIImage alloc] initWithData:[self TIFFRepresentation]];
     CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
     [filter setDefaults];
@@ -12,32 +13,37 @@
     CIImage* output = [filter valueForKey:@"outputImage"];
     [output drawAtPoint:NSZeroPoint fromRect:NSRectFromCGRect([output extent]) operation:NSCompositeSourceOver fraction:1.0];
 
-#ifdef IL_APP_KIT
     return [[NSImage alloc] initWithCGImage:output.CGImage size:self.size];
 #else
-    return [UIImage imageWithCGImage:output];
+    return nil;
 #endif
 }
 
 - (ILImage*) templateTintedWithColor:(ILColor*) tint
 {
+    CGSize size = [self size];
+    CGRect imageBounds = CGRectMake(0, 0, size.width, size.height);
+    ILImage *tintedImage = nil;
+
 #ifdef IL_APP_KIT
-    NSSize size = [self size];
-    NSRect imageBounds = NSMakeRect(0, 0, size.width, size.height);
-    NSImage *copiedImage = [self copy];
-    
-    [copiedImage lockFocus];
+    tintedImage = [self copy];
     [tint set];
+    [tintedImage lockFocus];
     NSRectFillUsingOperation(imageBounds, NSCompositeSourceAtop);
-    [copiedImage unlockFocus];
-    
-    return copiedImage;
+    [tintedImage unlockFocus];
 #else
-    UIImage* tinted = [self copy];
-    tinted.tintColor = tint;
-    tinted.renderingMode = UIImageRenderingModeAlwaysTemplate;
-    return tinted;
+    UIGraphicsBeginImageContext(size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextDrawImage(context, imageBounds, self.CGImage);
+    CGContextSetFillColor(context, CGColorGetComponents(tint.CGColor));
+    CGContextSetBlendMode(context, kCGBlendModeSourceAtop);
+    CGContextFillRect(context, imageBounds);
+
+    tintedImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
 #endif
+    
+    return tintedImage;
 }
 
 @end
