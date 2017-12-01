@@ -6,11 +6,16 @@
 
 #pragma mark - Math
 
+extern CGFloat const ILZeroAngleRadians; // 12 O'Clock position
+
 /*! @brief Converts degrees to radians. */
 CGFloat ILDegreesToRadians(CGFloat angleDegrees); // (angleDegrees * M_PI / 180.0)
 
 /*! @brief Converts radians to degrees. */
 CGFloat ILRadiansToDegrees(CGFloat angleRadians); // (angleRadians * 180.0 / M_PI)
+
+/*! @brief Convertes percentage to radians. */
+CGFloat ILPercentToRadians(CGFloat percent); // (percent * M_PI * 2)
 
 #pragma mark - Geometry
 

@@ -3,14 +3,21 @@
 
 #pragma mark - Math
 
+CGFloat const ILZeroAngleRadians = - (M_PI / 2);
+
 CGFloat ILDegreesToRadians(CGFloat angleDegrees)
 {
-    return (angleDegrees * M_PI / 180.0);
+    return (angleDegrees * (M_PI / 180));
 }
 
 CGFloat ILRadiansToDegrees(CGFloat angleRadians)
 {
-    return (angleRadians * 180.0 / M_PI);
+    return (angleRadians * (180 / M_PI));
+}
+
+CGFloat ILPercentToRadians(CGFloat percent)
+{
+    return (2 * M_PI * percent);
 }
 
 #pragma mark - Geometry
