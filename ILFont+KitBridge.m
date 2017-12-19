@@ -7,7 +7,7 @@
 #if !TARGET_OS_TV
     return [ILFont systemFontSize];
 #else
-    return 24;
+    return 36;
 #endif
 }
 
