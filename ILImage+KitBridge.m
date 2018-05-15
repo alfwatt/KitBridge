@@ -27,8 +27,8 @@
 
 #ifdef IL_APP_KIT
     tintedImage = [self copy];
-    [tint set];
     [tintedImage lockFocus];
+    [tint setFill];
     NSRectFillUsingOperation(imageBounds, NSCompositeSourceAtop);
     [tintedImage unlockFocus];
 #else
