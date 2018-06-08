@@ -11,8 +11,8 @@ KitBridge allows you to create views which can be used in both iOS and macOS app
 
 <img src="./kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
 
-KitBridge supports CardView and SparkKit, which offer a nice looking text view subclass, and a
-simple fast graphing toolkit.
+KitBridge supports <a href="/alfwatt/CardView">CardView</> and <a href="/alfwatt/SparkKit">SparkKit</a>,
+which offer a nice looking text view subclass, and a simple fast graphing toolkit.
 
 <img src="./kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
 
