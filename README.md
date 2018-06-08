@@ -18,7 +18,11 @@ which offer a nice looking text view subclass, and a simple fast graphing toolki
 <img src="./kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
 
 Overall the goal of KitBridge is to provide *just enough* support to make writing apps which target
-multiple platforms and UI modes easy.
+multiple platforms and UI modes easier, but withouth trying to emulate the iOS/tvOS app runtime on
+macOS or vice versa.
+
+Apps will have a single set of source files and one plist for each platform they want to target, along with 
+storboards, xibs, xcassets and other platform specific resources. 
 
 
 ## Bridged Classes
@@ -76,7 +80,9 @@ penalty on macOS for the bridge code.
 - semantic colors from AppKit for ILColor on UIKit
 - cocoapods & c. package definitions
 - swift bridging header
-
+- open source example app (besides the CardView and SparkKit)
+- Implement ILGradient on top of CGGradient on UIKit
+- ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
 
 ## License
 
