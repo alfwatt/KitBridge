@@ -3,17 +3,28 @@
 
 KitBridge: Bringing UIKit and AppKit Closer Together
 
+<small>From <a href="https://istumbler.net/labs/">iStumbler Labs</a></small>
 
 ## Goals
 
 KitBridge allows you to create views which can be used in both iOS and macOS applications.
+
+<img src="./kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
+
+KitBridge supports CardView and SparkKit, which offer a nice looking text view subclass, and a
+simple fast graphing toolkit.
+
+<img src="./kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
+
+Overall the goal of KitBridge is to provide *just enough* support to make writing apps which target
+multiple platforms and UI modes easy.
 
 
 ## Bridged Classes
 
 Bridged classes are `#define` directives which allow you to write a kit class name, e.g.: `ILColor`
 and when your app is complied, the appropriate `NS` or `UI` class from the `AppKit` or `UIKit` will
-be substituted.
+be substituted at compile time with no performance penalty.
 
     - ILApplicationDelegate
     - ILBezierPath
@@ -24,9 +35,11 @@ be substituted.
     - ILViewController
     - ILWindow
 
-The `IL_UI_KIT` and `IL_APP_KIT` `#defines` can be used to segregate implementations when needed,
-e.g. ILApplicationDelegates might use them to initialize the app for each platform in it's 
+The `#defines`  `IL_UI_KIT` and `IL_APP_KIT` can be used to segregate implementations when
+needed, e.g. ILApplicationDelegates might use them to initialize the app for each platform in their 
 `main(...)` function:
+
+    #include <KitBridge/KitBridge.h>
 
     int main(int argc, char* _Nonnull argv[]) {
     #ifdef IL_APP_KIT
@@ -57,11 +70,18 @@ Applications can then use the UIKit interface throughout, with only a small perf
 penalty on macOS for the bridge code.
 
 
+## TODO Items
+
+- semantic colors from AppKit for ILColor on UIKit
+- cocoapods & c. package definitions
+- swift bridging header
+
+
 ## License
 
     The MIT License (MIT)
 
-    Copyright (c) 2017 Alf Watt
+    Copyright (c) 2017-2018 Alf Watt
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
