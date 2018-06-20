@@ -16,6 +16,8 @@
 		756C2D961F2698CA0060F718 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */; };
 		756DB2281ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		756DB22A1ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */; };
+		75A0CEE320D997330091D26A /* colorist.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A0CEE220D997330091D26A /* colorist.m */; };
+		75A0CEE720D99A5D0091D26A /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DCBEE21ED2C81E00538D87 /* KitBridge.framework */; };
 		75A31E021FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A31E001FB1106A00DFE22C /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75A31E031FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75A31E001FB1106A00DFE22C /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75A31E041FB1106A00DFE22C /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75A31E011FB1106A00DFE22C /* ILImage+KitBridge.m */; };
@@ -43,6 +45,28 @@
 		75DCBF031ED2C9F000538D87 /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75DCBEE51ED2C81E00538D87 /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		75A0CEE820D99A660091D26A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
+			remoteInfo = "KitBridge (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		75A0CEDE20D997330091D26A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		7506D6BB1F4CE245003392E3 /* ILColor+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILColor+KitBridge.h"; sourceTree = "<group>"; };
 		7506D6BC1F4CE245003392E3 /* ILColor+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILColor+KitBridge.m"; sourceTree = "<group>"; };
@@ -50,6 +74,8 @@
 		75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILScreen+KitBridge.m"; sourceTree = "<group>"; };
 		756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILBezierPath+KitBridge.h"; sourceTree = "<group>"; };
 		756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILBezierPath+KitBridge.m"; sourceTree = "<group>"; };
+		75A0CEE020D997330091D26A /* colorist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = colorist; sourceTree = BUILT_PRODUCTS_DIR; };
+		75A0CEE220D997330091D26A /* colorist.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = colorist.m; sourceTree = "<group>"; };
 		75A31E001FB1106A00DFE22C /* ILImage+KitBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ILImage+KitBridge.h"; sourceTree = "<group>"; };
 		75A31E011FB1106A00DFE22C /* ILImage+KitBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ILImage+KitBridge.m"; sourceTree = "<group>"; };
 		75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KitBridgeFunctions.m; sourceTree = "<group>"; };
@@ -70,6 +96,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		75A0CEDD20D997330091D26A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75A0CEE720D99A5D0091D26A /* KitBridge.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75DCBEDE1ED2C81E00538D87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -91,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		75A0CEE120D997330091D26A /* colorist */ = {
+			isa = PBXGroup;
+			children = (
+				75A0CEE220D997330091D26A /* colorist.m */,
+			);
+			path = colorist;
+			sourceTree = "<group>";
+		};
 		75DCBED81ED2C81E00538D87 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +153,7 @@
 				75A31E011FB1106A00DFE22C /* ILImage+KitBridge.m */,
 				75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */,
 				75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */,
+				75A0CEE120D997330091D26A /* colorist */,
 				75DCBEE31ED2C81E00538D87 /* Products */,
 				75DCBEFA1ED2C99A00538D87 /* Frameworks */,
 			);
@@ -121,6 +164,7 @@
 			children = (
 				75DCBEE21ED2C81E00538D87 /* KitBridge.framework */,
 				75DCBEF21ED2C84B00538D87 /* KitBridge.framework */,
+				75A0CEE020D997330091D26A /* colorist */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -174,6 +218,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		75A0CEDF20D997330091D26A /* colorist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75A0CEE620D997330091D26A /* Build configuration list for PBXNativeTarget "colorist" */;
+			buildPhases = (
+				75A0CEDC20D997330091D26A /* Sources */,
+				75A0CEDD20D997330091D26A /* Frameworks */,
+				75A0CEDE20D997330091D26A /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				75A0CEE920D99A660091D26A /* PBXTargetDependency */,
+			);
+			name = colorist;
+			productName = semantics;
+			productReference = 75A0CEE020D997330091D26A /* colorist */;
+			productType = "com.apple.product-type.tool";
+		};
 		75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75DCBEEA1ED2C81E00538D87 /* Build configuration list for PBXNativeTarget "KitBridge (macOS)" */;
@@ -216,9 +278,14 @@
 		75DCBED91ED2C81E00538D87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "iStumbler Labs";
 				TargetAttributes = {
+					75A0CEDF20D997330091D26A = {
+						CreatedOnToolsVersion = 10.0;
+						DevelopmentTeam = E8G8ARB44Z;
+						ProvisioningStyle = Automatic;
+					};
 					75DCBEE11ED2C81E00538D87 = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
@@ -244,6 +311,7 @@
 			targets = (
 				75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */,
 				75DCBEF11ED2C84B00538D87 /* KitBridge (iOS) */,
+				75A0CEDF20D997330091D26A /* colorist */,
 			);
 		};
 /* End PBXProject section */
@@ -266,6 +334,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		75A0CEDC20D997330091D26A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75A0CEE320D997330091D26A /* colorist.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75DCBEDD1ED2C81E00538D87 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,7 +370,52 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		75A0CEE920D99A660091D26A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */;
+			targetProxy = 75A0CEE820D99A660091D26A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		75A0CEE420D997330091D26A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8G8ARB44Z;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		75A0CEE520D997330091D26A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E8G8ARB44Z;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 		75DCBEE81ED2C81E00538D87 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -309,6 +430,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -316,6 +438,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -366,6 +489,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -373,6 +497,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -490,6 +615,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		75A0CEE620D997330091D26A /* Build configuration list for PBXNativeTarget "colorist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75A0CEE420D997330091D26A /* Debug */,
+				75A0CEE520D997330091D26A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		75DCBEDC1ED2C81E00538D87 /* Build configuration list for PBXProject "KitBridge" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

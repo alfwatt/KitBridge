@@ -1,9 +1,9 @@
-
 # KitBridge
 
 KitBridge: Bringing UIKit and AppKit Closer Together
 
 <small>From <a href="https://istumbler.net/labs/">iStumbler Labs</a></small>
+
 
 ## Goals
 
@@ -75,14 +75,23 @@ Applications can then use the UIKit interface throughout, with only a small perf
 penalty on macOS for the bridge code.
 
 
+### ILColor+KitBridge
+
+- Adds CSS color string properties
+- Adds complementary and contrasting color properties
+- Adds CIColor property to AppKit
+- Adds semantic colors from AppKit to UIKit
+
+
 ## TODO Items
 
-- semantic colors from AppKit for ILColor on UIKit
 - cocoapods & c. package definitions
 - swift bridging header
 - open source example app (besides the CardView and SparkKit)
 - Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
+- colorist: Add command line optoions to parse and convert colors
+
 
 ## License
 
