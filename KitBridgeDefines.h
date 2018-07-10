@@ -14,6 +14,7 @@
 #define ILImage UIImage
 #define ILView UIView
 #define ILWindow UIWindow
+#define ILApplication UIApplication
 #define ILApplicationDelegate UIApplicationDelegate
 #define ILBezierPath UIBezierPath
 #define ILTextView UITextView
@@ -31,6 +32,7 @@
 #define ILImage NSImage
 #define ILView NSView
 #define ILWindow NSWindow
+#define ILApplication NSApplication
 #define ILApplicationDelegate NSApplicationDelegate
 #define ILGradient NSGradient
 #define ILBezierPath NSBezierPath

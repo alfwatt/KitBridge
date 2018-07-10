@@ -79,7 +79,8 @@ int main(int argc, const char * argv[])
         ]) {
             NSLog(@"%@  %-28@ %-28@ %@", color.hexColor, color.rgbaColor, color.hslaColor, color.colorName);
         }
-        
+
+        // colorWithCSSColor tests
         NSLog(@"# %@", [ILColor colorWithCSSColor:@"#F14"]);
         NSLog(@"## %@", [ILColor colorWithCSSColor:@"#FB194C"]);
         NSLog(@"rgb %@", [ILColor colorWithCSSColor:@"rgb(128, 60, 14)"]);
