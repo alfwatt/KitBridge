@@ -583,6 +583,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
 				PRODUCT_NAME = KitBridge;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -605,6 +606,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
 				PRODUCT_NAME = KitBridge;
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
 				TARGETED_DEVICE_FAMILY = "1,2";
