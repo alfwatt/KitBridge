@@ -6,39 +6,46 @@
 /* UIKit */
 #if TARGET_OS_IPHONE || TARGET_OS_TV
 #import <UIKit/UIKit.h>
-#define ILScreen UIScreen
-#define ILResponder UIResponder
-#define ILColor UIColor
-#define ILGradient NSObject // TODO Implement ILGradient on top of CGGradient
-#define ILFont UIFont
-#define ILImage UIImage
-#define ILView UIView
-#define ILWindow UIWindow
 #define ILApplication UIApplication
 #define ILApplicationDelegate UIApplicationDelegate
 #define ILBezierPath UIBezierPath
-#define ILTextView UITextView
+#define ILButton UIButton
+#define ILColor UIColor
+#define ILFont UIFont
+#define ILGradient NSObject // TODO Implement ILGradient on top of CGGradient
+#define ILImage UIImage
+#define ILLabel UILabel
 #define ILPasteboard UIPasteboard
+#define ILProgressView UIActivityIndicatorView
+#define ILResponder UIResponder
+#define ILScreen UIScreen
+#define ILTextView UITextView
+#define ILTextField UITextField
+#define ILView UIView
+#define ILWindow UIWindow
 #define IL_UI_KIT 1
 
 /* AppKit */
 #elif TARGET_OS_MAC
 #import <AppKit/AppKit.h>
-#define ILScreen NSScreen
-#define ILResponder NSResponder
-#define ILColor NSColor
-#define ILGradient NSGradient
-#define ILFont NSFont
-#define ILImage NSImage
-#define ILView NSView
-#define ILWindow NSWindow
 #define ILApplication NSApplication
 #define ILApplicationDelegate NSApplicationDelegate
-#define ILGradient NSGradient
 #define ILBezierPath NSBezierPath
-#define ILTextView NSTextView
+#define ILButton NSButton
+#define ILColor NSColor
+#define ILFont NSFont
+#define ILGradient NSGradient
+#define ILImage ILImage
+#define ILLabel NSTextView
 #define ILPasteboard NSPasteboard
 #define ILPasteboardItem NSPasteboardItem
+#define ILProgressView NSProgressIndicator
+#define ILResponder NSResponder
+#define ILScreen NSScreen
+#define ILTextView NSTextView
+#define ILTextField NSTextField
+#define ILView NSView
+#define ILWindow NSWindow
 #define IL_APP_KIT 1
 #endif
 

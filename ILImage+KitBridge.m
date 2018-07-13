@@ -1,4 +1,4 @@
-#import <KitBridge/KitBridge.h>
+#import "KitBridgeDefines.h"
 #import "ILImage+KitBridge.h"
 
 @implementation ILImage (KitBridge)
@@ -13,7 +13,7 @@
     CIImage* output = [filter valueForKey:@"outputImage"];
     [output drawAtPoint:NSZeroPoint fromRect:NSRectFromCGRect([output extent]) operation:NSCompositeSourceOver fraction:1.0];
 
-    return [[NSImage alloc] initWithCGImage:output.CGImage size:self.size];
+    return [[ILImage alloc] initWithCGImage:output.CGImage size:self.size];
 #else
     return nil;
 #endif
