@@ -6,6 +6,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 
 
 ## Goals
+<a id="goals"></a>
 
 KitBridge allows you to create views which can be used in both iOS and macOS applications.
 
@@ -27,6 +28,7 @@ Apps will have a single set of source files and one plist for each platform they
 storboards, xibs, xcassets and other platform specific resources. 
 
 ## Bridged Classes
+<a id="classes"></a>
 
 Bridged classes are `#define` directives which allow you to write a kit class name, e.g.: `ILColor`
 and when your app is complied, the appropriate `NS` or `UI` class from the `AppKit` or `UIKit` will
@@ -68,16 +70,19 @@ needed, e.g. ILApplicationDelegates might use them to initialize the app for eac
 
 
 ## Bridged Functions
+<a id="functions"></a>
 
 A number of geometry and printing functions are included for conveniences, see `KitBridgeFunctions.h` for details.
 
 
 ## ILViews Interface
+<a id="interface"></a>
 
 The ILViews interfaces defines the `initView` and `updateView` methods or ILView subclasses.
 
 
 ## Categories
+<a id="categories"></a>
 
 Categories are defined on AppKit classes to provide adaption to various UIKit methods.
 
@@ -93,6 +98,7 @@ penalty on macOS for the bridge code.
 - Adds semantic colors from AppKit to UIKit
 
 ## Model Controller Multiple Views (MCMV)
+<a id="mcmv"></a>
 
 Porting either an existing iOS or macOS app using KitBridge will be easier or harder depending
 on how well the original code complies to the Model View Controller (MVC) design pattern.
@@ -164,6 +170,7 @@ In the implementation file the various protocols are defined inside of `#if` blo
 
 
 ## TODO Items
+<a id="todo"></a>
 
 - cocoapods & c. package definitions
 - swift bridging header
@@ -174,6 +181,7 @@ In the implementation file the various protocols are defined inside of `#if` blo
 
 
 ## License
+<a id="license"></a>
 
     The MIT License (MIT)
 
