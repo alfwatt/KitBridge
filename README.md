@@ -11,8 +11,10 @@ KitBridge allows you to create views which can be used in both iOS and macOS app
 
 <img src="./kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
 
-KitBridge supports <a href="https://gitlab.com/alfwatt/cardview">CardView</a> <a href="https://github.com/alfwatt/CardView">[Github]</a>
-and <a href="https://gitlab.com/alfwatt/SparkKit">SparkKit</a> <a href="https://github.com/alfwatt/SparkKit">[Github]</a>,
+KitBridge supports <a href="https://gitlab.com/alfwatt/cardview">CardView</a> 
+<a href="https://github.com/alfwatt/CardView">[Github]</a> and 
+<a href="https://gitlab.com/alfwatt/SparkKit">SparkKit</a> 
+<a href="https://github.com/alfwatt/SparkKit">[Github]</a>,
 which offer a nice looking text view subclass, and a simple fast graphing toolkit.
 
 <img src="./kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
@@ -24,21 +26,29 @@ macOS or vice versa.
 Apps will have a single set of source files and one plist for each platform they want to target, along with 
 storboards, xibs, xcassets and other platform specific resources. 
 
-
 ## Bridged Classes
 
 Bridged classes are `#define` directives which allow you to write a kit class name, e.g.: `ILColor`
 and when your app is complied, the appropriate `NS` or `UI` class from the `AppKit` or `UIKit` will
 be substituted at compile time with no performance penalty.
 
-    - ILApplicationDelegate
-    - ILBezierPath
-    - ILColor
-    - ILFont
-    - ILGradient
-    - ILImage
-    - ILViewController
-    - ILWindow
+    #define ILApplication UIApplication / NSApplication
+    #define ILApplicationDelegate UIApplicationDelegate / NSApplicationDelegate
+    #define ILBezierPath UIBezierPath / NSBezierPath
+    #define ILButton UIButton / NSButton
+    #define ILColor UIColor / NSColor
+    #define ILFont UIFont / NSFont
+    #define ILGradient NSObject / NSGradient
+    #define ILImage UIImage / NSImage
+    #define ILLabel UILabel / NSTextView
+    #define ILPasteboard UIPasteboard / NSPasteboard
+    #define ILProgressView UIActivityIndicatorView / NSProgressIndicator
+    #define ILResponder UIResponder / NSResponder
+    #define ILScreen UIScreen / NSScreen
+    #define ILTextView UITextView / NSTextView
+    #define ILTextField UITextField / NSTextField
+    #define ILView UIView / NSView
+    #define ILWindow UIWindow / NSWindow
 
 The `#defines`  `IL_UI_KIT` and `IL_APP_KIT` can be used to segregate implementations when
 needed, e.g. ILApplicationDelegates might use them to initialize the app for each platform in their 
@@ -81,6 +91,76 @@ penalty on macOS for the bridge code.
 - Adds complementary and contrasting color properties
 - Adds CIColor property to AppKit
 - Adds semantic colors from AppKit to UIKit
+
+## Model Controller Multiple Views (MCMV)
+
+Porting either an existing iOS or macOS app using KitBridge will be easier or harder depending
+on how well the original code complies to the Model View Controller (MVC) design pattern.
+
+In an MVC app with clean seperation adding supoprt for a new platform means adapting the
+existing contoroller to the UI Idiom in use. This requres more code than a straight across port 
+but allows for customization of the model to each environment. Here is the outline of an example
+project using KitBridge:
+
+- Example.xcodeproj
+    - ExampleDelegate.h
+    - ExampleDelegate.m
+    - ExampleViewController.h
+    - ExampleViewController.m
+    - Resources
+        - Localizable.strings
+    - macOS
+        - Info.plist
+        - MainMenu.xib
+        - ExampleView.xib
+        - Example.xcassets
+    - iOS
+        - Info.plist
+        - ExampleView.xib
+        - Main.storyboard
+        - LaunchScreen.storyboard
+        - Example.xcassets
+    - tvOS
+        - Info.plist
+        - ExampleView.xib
+        - Main.storyboard
+        - LaunchScreen.storyboards
+        - Example.xcassets
+
+Bridging NSViewController/UIViewController is desireable but Xcode will not recognize the subclasses in Interface Builder.
+Instead the `ExampleController.h` needs to define the controller inside of `#if` blocks:
+
+    #import <KitBridge/KitBridge.h>
+
+    #if IL_APP_KIT
+    @interface ExampleController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
+    @property(nonatomic,retain) NSTableView* tableView;
+    #elif IL_UI_KIT
+    @interface ExampleController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+    @property(nonatomic,retain) UITableView* tableView;
+    #endif
+    
+    . . .
+    
+    @end
+
+In the implementation file the various protocols are defined inside of `#if` blocks for each platform (you could also have seperate `.m` files for each platform):
+
+    #import "ExampleController.h"
+
+    @implementation ExampleController
+    
+    #if IL_APP_KIT
+    #pragma mark - NSViewController Overrides . . .
+    #pragma mark - NSTableViewDataSource . . .
+    #pragma mark - NSTableViewDelegate . . .
+    #elif IL_UI_KIT
+    #pragma mark - UIViewController Overrides . . .
+    #pragma mark - UITableViewDataSource . . .
+    #pragma mark - UITableViewDelegate . . .    
+    #endif
+    
+    @end
 
 
 ## TODO Items
