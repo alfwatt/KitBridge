@@ -106,13 +106,26 @@ Categories are defined on AppKit classes to provide adaption to various UIKit me
 Applications can then use the UIKit interface throughout, with only a small performance
 penalty on macOS for the bridge code.
 
+### <a id="ILBezierPath+KitBridge" href="./ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
 
-### ILColor+KitBridge
+### <a id="ILButton+KitBridge" href="./ILButton+KitBridge.h">`ILBezierPath+KitBridge`</a>
+
+### <a id="ILColor+KitBridge" href="./ILColor+KitBridge.h">`ILColor+KitBridge`</a>
 
 - Adds CSS color string properties
 - Adds complementary and contrasting color properties
 - Adds CIColor property to AppKit
 - Adds semantic colors from AppKit to UIKit
+
+### <a id="ILFont+KitBridge" href="./ILFont+KitBridge.h">`ILFont+KitBridge`</a>
+
+### <a id="ILImage+KitBridge" href="./ILImage+KitBridge.h">`ILImage+KitBridge`</a>
+
+### <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILImage+KitBridge`</a>
+
+### <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILImage+KitBridge`</a>
+
+### <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILImage+KitBridge`</a>
 
 
 <a id="mcmv"></a>
@@ -122,53 +135,58 @@ Porting either an existing iOS or macOS app using KitBridge will be easier or ha
 on how well the original code complies to the Model View Controller (MVC) design pattern.
 
 In an MVC app with clean seperation adding supoprt for a new platform means adapting the
-existing contoroller to the UI Idiom in use. This requres more code than a straight across port 
-but allows for customization of the model to each environment. Here is the outline of an example
-project using KitBridge:
+existing contoroller to the UI Idiom in use by creating Multiple Views, hence MCMV. This requres 
+more code and UI design time than an emulation enviroment but allows for customization of the
+model to each UI idiom as closely as possible.
 
-- Example.xcodeproj
-    - ExampleDelegate.h
-    - ExampleDelegate.m
-    - ExampleViewController.h
-    - ExampleViewController.m
-    - Resources
-        - Localizable.strings
-    - macOS
-        - Info.plist
-        - MainMenu.xib
-        - ExampleView.xib
-        - Example.xcassets
-    - iOS
-        - Info.plist
-        - ExampleView.xib
-        - Main.storyboard
-        - LaunchScreen.storyboard
-        - Example.xcassets
-    - tvOS
-        - Info.plist
-        - ExampleView.xib
-        - Main.storyboard
-        - LaunchScreen.storyboards
-        - Example.xcassets
+Here is the outline of an example project using KitBridge:
 
-Bridging NSViewController/UIViewController is desireable but Xcode will not recognize the subclasses in Interface Builder.
-Instead the `ExampleController.h` needs to define the controller inside of `#if` blocks:
+    - Example.xcodeproj
+        - ExampleDelegate.h
+        - ExampleDelegate.m
+        - ExampleViewController.h
+        - ExampleViewController.m
+        - Resources
+            - Localizable.strings
+        - macOS
+            - Info.plist
+            - MainMenu.xib
+            - ExampleView.xib
+            - Example.xcassets
+        - iOS
+            - Info.plist
+            - ExampleView.xib
+            - Main.storyboard
+            - LaunchScreen.storyboard
+            - Example.xcassets
+        - tvOS
+            - Info.plist
+            - ExampleView.xib
+            - Main.storyboard
+            - LaunchScreen.storyboards
+            - Example.xcassets
+
+Bridging NSViewController/UIViewController is desireable but unfortunatly Xcode will not recognize the
+subclasses in the Interface Builder. Instead the `ExampleController.h` needs to define the controller
+inside of `#if` blocks:
 
     #import <KitBridge/KitBridge.h>
 
     #if IL_APP_KIT
     @interface ExampleController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
-    @property(nonatomic,retain) NSTableView* tableView;
+    @property(nonatomic,retain) IBOutlet NSTableView* tableView;
     #elif IL_UI_KIT
     @interface ExampleController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-    @property(nonatomic,retain) UITableView* tableView;
+    @property(nonatomic,retain) IBOutlet UITableView* tableView;
     #endif
     
     . . .
     
     @end
 
-In the implementation file the various protocols are defined inside of `#if` blocks for each platform (you could also have seperate `.m` files for each platform):
+In the implementation file the various protocols are defined inside of `#if` blocks for each platform
+ (alternatly, you could also have seperate `.m` files for each platform, or even use a base class with
+ platform specific subclasses):
 
     #import "ExampleController.h"
 
