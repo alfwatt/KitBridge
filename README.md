@@ -11,7 +11,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 - <a href="#goals">Goals</a>
 - <a href="#classes">Classes</a>
 - <a href="#functions">Functions</a>
-- <a href="#interfaces">Interfaces</a>
+- <a href="#protocols">Protocols</a>
 - <a href="#categories">Categories</a>
 - <a href="#mcmv">Model Controller Multiple Views</a>
 - <a href="#todo">To Do Items</a>
@@ -89,12 +89,12 @@ needed, e.g. ILApplicationDelegates might use them to initialize the app for eac
 A number of geometry and printing functions are included for conveniences, see <a href="./KitBridgeFunctions.h">`KitBridgeFunctions.h`</a> for details.
 
 
-<a id="interfaces"></a>
-## Interfaces
+<a id="protocols"></a>
+## Protocols
 
 ### ILViews
 
-The <a href="./ILViews.h">`ILViews`</a> interfaces defines the `initView` and `updateView` methods or ILView subclasses.
+The <a href="./ILViews.h">`ILViews`</a> protocol defines the `initView` and `updateView` methods or ILView subclasses.
 
 
 <a id="categories"></a>
