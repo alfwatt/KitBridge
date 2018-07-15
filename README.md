@@ -187,7 +187,7 @@ In the implementation file the various protocols are defined inside of `#if` blo
 
 
 <a id="todo"></a>
-## TODO Items
+## To Do Items
 
 - cocoapods & c. package definitions
 - swift bridging header
