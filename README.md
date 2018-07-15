@@ -3,7 +3,7 @@
 
 KitBridge: Bringing UIKit and AppKit Closer Together
 
-<small>From <a href="https://istumbler.net/labs/">iStumbler Labs</a></small>
+<p style="font-size: 0.8em; color:dark-gray;">From <a href="https://istumbler.net/labs/">iStumbler Labs</a>.</p>
 
 <a id="contents"></a>
 ## Contents
@@ -15,7 +15,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 - <a href="#categories">Categories</a>
 - <a href="#mcmv">Model Controller Multiple Views</a>
 - <a href="#todo">To Do Items</a>
-- <a href="#license">License</a>
+- <a href="#license">MIT License</a>
 
 
 <a id="goals"></a>
@@ -26,10 +26,11 @@ KitBridge allows you to create views which can be used in both iOS and macOS app
 <img src="./kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
 
 KitBridge supports <a href="https://gitlab.com/alfwatt/cardview">CardView</a> 
-<a href="https://github.com/alfwatt/CardView">[Github]</a> and 
+<a href="https://github.com/alfwatt/CardView">[Github]</a>, 
 <a href="https://gitlab.com/alfwatt/SparkKit">SparkKit</a> 
 <a href="https://github.com/alfwatt/SparkKit">[Github]</a>,
-which offer a nice looking text view subclass, and a simple fast graphing toolkit.
+which offer a nice looking text view subclass, and a simple fast graphing toolkit as well as
+other iStumbler Labs frameworks.
 
 <img src="./kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
 
@@ -202,7 +203,7 @@ In the implementation file the various protocols are defined inside of `#if` blo
 
     The MIT License (MIT)
 
-    Copyright (c) 2017-2018 Alf Watt
+    Copyright (c) 2017-2018 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
