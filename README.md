@@ -107,7 +107,7 @@ Applications can then use the UIKit interface throughout, with only a small perf
 penalty on macOS for the bridge code.
 
 - <a id="ILBezierPath+KitBridge" href="./ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
-- <a id="ILButton+KitBridge" href="./ILButton+KitBridge.h">`ILBezierPath+KitBridge`</a>
+- <a id="ILButton+KitBridge" href="./ILButton+KitBridge.h">`ILButton+KitBridge`</a>
 - <a id="ILColor+KitBridge" href="./ILColor+KitBridge.h">`ILColor+KitBridge`</a>
     - Adds CSS color string properties
     - Adds complementary and contrasting color properties
@@ -115,9 +115,9 @@ penalty on macOS for the bridge code.
     - Adds semantic colors from AppKit to UIKit
 - <a id="ILFont+KitBridge" href="./ILFont+KitBridge.h">`ILFont+KitBridge`</a>
 - <a id="ILImage+KitBridge" href="./ILImage+KitBridge.h">`ILImage+KitBridge`</a>
- - <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILImage+KitBridge`</a>
-- <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILImage+KitBridge`</a>
-- <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILImage+KitBridge`</a>
+ - <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
+- <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
+- <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
 
 
 <a id="mcmv"></a>
