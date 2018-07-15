@@ -10,7 +10,7 @@
 @property(nonatomic, readonly) NSString* hslaColor;
 @property(nonatomic, readonly) ILColor* complementaryColor;
 @property(nonatomic, readonly) ILColor* contrastingColor;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 @property(nonatomic, readonly) CIColor* CIColor;
 #endif
 
@@ -19,7 +19,7 @@
 /*! @brief color in CSS  format: e.g. #FFF, #FFFFFF, rgb(255,255,255), rgba(255,255,255,1.0), hsv(360,100%,100%), hsva(360,100%,100%,1.0) */
 + (ILColor*) colorWithCSSColor:(NSString*) cssColor;
 
-#ifdef IL_UI_KIT
+#if IL_UI_KIT
 #pragma mark - Semantic Colors
 
 @property (class, strong, readonly) ILColor* labelColor;
@@ -76,7 +76,6 @@
 @property (class, strong, readonly) ILColor* systemPinkColor;
 @property (class, strong, readonly) ILColor* systemPurpleColor;
 @property (class, strong, readonly) ILColor* systemGrayColor;
-
 #endif
 
 @end

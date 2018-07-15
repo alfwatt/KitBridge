@@ -39,7 +39,7 @@ CGVector ILVectorFromPointToPoint(CGPoint from, CGPoint to)
 
 CGFloat ILVectorLength(CGVector delta)
 {
-    return sqrt(fabs(delta.dx*delta.dx) + fabs(delta.dy*delta.dy));
+    return sqrt(fabs(delta.dx * delta.dx) + fabs(delta.dy * delta.dy));
 }
 
 CGFloat ILVectorRadians(CGVector delta)
@@ -56,12 +56,12 @@ CGPoint ILPointOnLineToPointAtDistance(CGPoint from, CGPoint to, CGFloat distanc
 {
     CGVector lineVector = ILVectorFromPointToPoint(from, to);
     CGFloat lineDistance = ILVectorLength(lineVector);
-    CGVector scaledVector = CGVectorMake(lineVector.dx / lineDistance, lineVector.dy / lineDistance);
-    CGVector segmentVector = CGVectorMake( scaledVector.dx * distance, scaledVector.dy * distance);
+    CGVector scaledVector = CGVectorMake((lineVector.dx / lineDistance), (lineVector.dy / lineDistance));
+    CGVector segmentVector = CGVectorMake((scaledVector.dx * distance), (scaledVector.dy * distance));
     //  NSLog(@"ILPointOnLineToPointAtDistance: %@ -> %@ vector: %@ scaled: %@ segment: %@",
     //  NSStringFromCGPoint(from), NSStringFromCGPoint(to), NSStringFromCGVector(lineVector),
     //  NSStringFromCGVector(scaledVector), NSStringFromCGVector(segmentVector));
-    return CGPointMake(from.x-segmentVector.dx, from.y-segmentVector.dy);
+    return CGPointMake((from.x - segmentVector.dx), (from.y - segmentVector.dy));
 }
 
 BOOL ILIsNormalPoint(CGPoint point)
@@ -85,7 +85,7 @@ BOOL ILIsNormalRect(CGRect rect)
 
 NSString* ILStringFromCGRect(CGRect rect)
 {
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     return NSStringFromRect(rect);
 #elif IL_UI_KIT
     return NSStringFromCGRect(rect);

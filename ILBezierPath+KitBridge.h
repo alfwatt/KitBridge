@@ -8,7 +8,7 @@ NSString* ILCGPathDescription(CGPathRef path);
 /*! @brief count the number of elements in a CGPathRef */
 NSInteger ILCGPathElementCount(CGPathRef path);
 
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 // From UIBezierPath.h
 typedef NS_OPTIONS(NSUInteger, ILRectCorner) {
     UIRectCornerTopLeft     = 1 << 0,
@@ -23,7 +23,7 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 
 @interface ILBezierPath (KitBridge)
 
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 #pragma mark - UIBezierPath methods
 @property(nonatomic, readonly) CGPathRef CGPath CF_RETURNS_RETAINED;
 
@@ -50,7 +50,7 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 /*! @brief append a path to this one */
 - (void)appendPath:(ILBezierPath*)bezierPath;
 
-#else // IL_UI_KIT
+#elif IL_UI_KIT
 @property (readonly) NSInteger elementCount;
 
 #endif

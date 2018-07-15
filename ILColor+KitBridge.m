@@ -101,7 +101,7 @@
 - (NSString*) colorName
 {
     NSString* nameString = nil;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     ILColor* namedColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
     if (namedColor) {
         nameString = namedColor.localizedColorNameComponent;
@@ -118,7 +118,7 @@
 - (NSString*) hexColor
 {
     NSString* hexString = nil;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     ILColor* rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 #else
     ILColor* rgbColor = self;
@@ -137,11 +137,12 @@
 - (NSString*) rgbColor
 {
     NSString* rgbaString = nil;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     ILColor* rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 #else
     ILColor* rgbColor = self;
 #endif
+
     if (rgbColor) {
         CGFloat red, green, blue;
         [rgbColor getRed:&red green:&green blue:&blue alpha:nil];
@@ -157,11 +158,12 @@
 - (NSString*) rgbaColor
 {
     NSString* rgbaString = nil;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     ILColor* rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 #else
     ILColor* rgbColor = self;
 #endif
+
     if (rgbColor) {
         CGFloat red, green, blue, alpha;
         [rgbColor getRed:&red green:&green blue:&blue alpha:&alpha];
@@ -178,11 +180,12 @@
 - (NSString*) hslColor
 {
     NSString* hslaString = nil;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     ILColor* rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 #else
     ILColor* rgbColor = self;
 #endif
+
     if (rgbColor) {
         CGFloat hue, sat, brt;
         [rgbColor getHue:&hue saturation:&sat brightness:&brt alpha:nil];
@@ -198,11 +201,12 @@
 - (NSString*) hslaColor
 {
     NSString* hslaString = nil;
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     ILColor* rgbColor = [self colorUsingColorSpaceName:NSCalibratedRGBColorSpace];
 #else
     ILColor* rgbColor = self;
 #endif
+
     if (rgbColor) {
         CGFloat hue, sat, brt, alpha;
         [rgbColor getHue:&hue saturation:&sat brightness:&brt alpha:&alpha];
@@ -267,18 +271,17 @@
     return contrasting;
 }
 
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 - (CIColor*) CIColor
 {
     return [CIColor colorWithCGColor:self.CGColor];
 }
 #endif
 
-#pragma mark -
 
 #pragma mark - Semantic Colors
 
-#ifdef IL_UI_KIT
+#if IL_UI_KIT
 + (ILColor*) labelColor
 {
     static ILColor* color = nil;
@@ -671,7 +674,6 @@
     }
     return color;
 }
-
 #endif
 
 @end

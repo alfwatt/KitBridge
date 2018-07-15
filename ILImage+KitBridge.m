@@ -5,7 +5,7 @@
 
 - (ILImage*) inverted
 {
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     CIImage* ciImage = [[CIImage alloc] initWithData:[self TIFFRepresentation]];
     CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
     [filter setDefaults];
@@ -25,14 +25,14 @@
     CGRect imageBounds = CGRectMake(0, 0, size.width, size.height);
     ILImage *tintedImage = nil;
 
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
     tintedImage = [self copy];
     [tintedImage setTemplate:NO];
     [tintedImage lockFocus];
     [tint setFill];
     NSRectFillUsingOperation(imageBounds, NSCompositeSourceAtop);
     [tintedImage unlockFocus];
-#else
+#elif IL_UI_KIT
     UIGraphicsBeginImageContext(size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextDrawImage(context, imageBounds, self.CGImage);

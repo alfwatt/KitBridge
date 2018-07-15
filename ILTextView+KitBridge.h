@@ -3,7 +3,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ILTextView (KitBridge)
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 @property(nonatomic, copy) NSString *text;
 #endif
 

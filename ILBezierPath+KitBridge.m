@@ -1,6 +1,8 @@
 #import "ILBezierPath+KitBridge.h"
 #import "KitBridgeFunctions.h"
 
+#pragma mark Functions
+
 NSString* ILCGPathElementDescription(const CGPathElement *element)
 {
     NSString* description = nil;
@@ -107,7 +109,7 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
 
 @implementation ILBezierPath (KitBridge)
 
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 #pragma mark - UIBezierPath
 #pragma mark - Factory Methods
 

@@ -3,7 +3,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ILButton (KitBridge)
-#ifdef IL_UI_KIT
+#if IL_UI_KIT
 @property(nonatomic, copy) NSString *title;
 #endif
 

@@ -2,7 +2,7 @@
 
 @implementation ILButton (KitBridge)
 
-#ifdef IL_UI_KIT
+#if IL_UI_KIT
 - (NSString*) title
 {
     return self.titleLabel.text;

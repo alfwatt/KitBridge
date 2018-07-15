@@ -2,7 +2,7 @@
 
 @implementation ILTextView (KitBridge)
 
-#ifdef IL_APP_KIT
+#if IL_APP_KIT
 - (NSString*) text
 {
     return self.stringValue;

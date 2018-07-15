@@ -4,7 +4,7 @@
 
 + (CGFloat) defaultFontSize;
 
-#ifdef IL_UI_KIT
+#if IL_UI_KIT
 + (ILFont*) userFixedPitchFontOfSize:(CGFloat) fontSize;
 #endif
 

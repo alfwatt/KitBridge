@@ -2,13 +2,11 @@
 
 @implementation ILScreen (KitBridge)
 
-#ifdef IL_APP_KIT
-
+#if IL_APP_KIT
 - (CGFloat) scale
 {
     return self.backingScaleFactor;
 }
-
 #endif
 
 @end
