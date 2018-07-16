@@ -95,7 +95,7 @@ A number of geometry and printing functions are included for conveniences, see <
 
 ### ILViews
 
-The <a href="./ILViews.h">`ILViews`</a> protocol defines the `initView` and `updateView` methods or ILView subclasses.
+The <a href="./ILViews.h">`ILViews`</a> protocol defines the `-initView` and `-updateView` methods for ILView subclasses.
 
 
 <a id="categories"></a>

@@ -16,7 +16,9 @@
 
 #pragma mark - CSS Color Constructors
 
-/*! @brief color in CSS  format: e.g. #FFF, #FFFFFF, rgb(255,255,255), rgba(255,255,255,1.0), hsv(360,100%,100%), hsva(360,100%,100%,1.0) */
+/*! @brief color in CSS  format: e.g. #FFF, #FFFFFF, rgb(255,255,255), rgba(255,255,255,1.0), hsv(360,100%,100%), hsva(360,100%,100%,1.0)
+    To Do: implement lab(), lch(), gray(), device-cymk() & c. from: https://www.w3.org/TR/css-color-4/
+*/
 + (ILColor*) colorWithCSSColor:(NSString*) cssColor;
 
 #if IL_UI_KIT
