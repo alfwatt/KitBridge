@@ -10,7 +10,7 @@
 
 - (void)stopAnimating
 {
-    [self stopAnimatin:self];
+    [self stopAnimation:self];
 }
 #endif
 

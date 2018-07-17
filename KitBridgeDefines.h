@@ -35,7 +35,7 @@
 #define ILColor NSColor
 #define ILFont NSFont
 #define ILGradient NSGradient
-#define ILImage ILImage
+#define ILImage NSImage
 #define ILLabel NSTextView
 #define ILPasteboard NSPasteboard
 #define ILPasteboardItem NSPasteboardItem

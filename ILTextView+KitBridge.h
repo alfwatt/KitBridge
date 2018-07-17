@@ -9,4 +9,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
+#pragma mark -
+
+#if IL_APP_KIT
+@interface NSTextField (KitBridge)
+@property(nonatomic, copy) NSString* text;
+
+@end
+#endif
+
 NS_ASSUME_NONNULL_END
