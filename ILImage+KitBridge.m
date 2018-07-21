@@ -48,4 +48,11 @@
     return tintedImage;
 }
 
+#if IL_APP_KIT
++ (ILImage *)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle compatibleWithTraitCollection:(NSObject*)traitCollection
+{
+    return [bundle imageForResource:name];
+}
+#endif
+
 @end

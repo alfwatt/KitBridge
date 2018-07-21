@@ -17,3 +17,4 @@
 #import <KitBridge/ILProgressView+KitBridge.h>
 #import <KitBridge/ILScreen+KitBridge.h>
 #import <KitBridge/ILTextView+KitBridge.h>
+#import <KitBridge/NSBundle+KitBridge.h>
