@@ -229,8 +229,8 @@
 				75A31E021FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */,
 				7565732F20F9359F00CAA0A4 /* ILProgressView+KitBridge.h in Headers */,
 				75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */,
-				7564F4332103E1F8002A5318 /* NSBundle+KitBridge.h in Headers */,
 				7565732020F916C400CAA0A4 /* ILTextView+KitBridge.h in Headers */,
+				7564F4332103E1F8002A5318 /* NSBundle+KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,8 +249,8 @@
 				75A31E031FB1106A00DFE22C /* ILImage+KitBridge.h in Headers */,
 				7565733020F9359F00CAA0A4 /* ILProgressView+KitBridge.h in Headers */,
 				75543AEB1F2297A70050BAF2 /* ILScreen+KitBridge.h in Headers */,
-				7564F4342103E1F8002A5318 /* NSBundle+KitBridge.h in Headers */,
 				7565732620F92FE900CAA0A4 /* ILTextView+KitBridge.h in Headers */,
+				7564F4342103E1F8002A5318 /* NSBundle+KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
