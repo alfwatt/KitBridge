@@ -22,6 +22,7 @@
 #define ILTextView UITextView
 #define ILTextField UITextField
 #define ILView UIView
+#define ILViewController ILViewController
 #define ILWindow UIWindow
 #define IL_UI_KIT 1
 
@@ -45,6 +46,7 @@
 #define ILTextView NSTextView
 #define ILTextField NSTextField
 #define ILView NSView
+#define ILViewController NSViewController
 #define ILWindow NSWindow
 #define IL_APP_KIT 1
 #endif
