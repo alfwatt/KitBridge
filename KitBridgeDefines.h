@@ -22,7 +22,7 @@
 #define ILTextView UITextView
 #define ILTextField UITextField
 #define ILView UIView
-#define ILViewController ILViewController
+#define ILViewController UIViewController
 #define ILWindow UIWindow
 #define IL_UI_KIT 1
 
