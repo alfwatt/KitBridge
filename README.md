@@ -118,6 +118,7 @@ penalty on macOS for the bridge code.
  - <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
 - <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
 - <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
+- <a id="NSBundle+KitBridge" href="./NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
 
 
 <a id="mcmv"></a>
@@ -167,7 +168,10 @@ inside of `#if` blocks:
     #if IL_APP_KIT
     @interface ExampleController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
     @property(nonatomic,retain) IBOutlet NSTableView* tableView;
-    #elif IL_UI_KIT
+    #endif
+    /* Note the seperate #if blocks, #elif confuses the Interface Builder in Xcode
+       You may also have to swap the order of the blocks at design time, when setting up the xibs */
+    #if IL_UI_KIT
     @interface ExampleController : UIViewController <UITableViewDataSource, UITableViewDelegate>
     @property(nonatomic,retain) IBOutlet UITableView* tableView;
     #endif
@@ -196,6 +200,13 @@ In the implementation file the various protocols are defined inside of `#if` blo
     
     @end
 
+<a id="gotchas"></a>
+## Gotchas
+
+In no specific order these are things to keep an eye out for as you write and deploy your app.
+
+- KitBridge will support apps which go at least as far back as macOS 10.10
+    - xcasset catalogs are not well supported on macOS 10.10 and 10.11
 
 <a id="todo"></a>
 ## To Do Items
