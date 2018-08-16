@@ -24,8 +24,8 @@
 #define ILSwitch UISwitch
 #define ILTextView UITextView
 #define ILTextField UITextField
-#defile ILTableView UITableView
-#defile ILTableViewCell UITableViewCell
+#define ILTableView UITableView
+#define ILTableViewCell UITableViewCell
 #define ILTableViewController UITableViewController
 #define ILView UIView
 #define ILViewController UIViewController
