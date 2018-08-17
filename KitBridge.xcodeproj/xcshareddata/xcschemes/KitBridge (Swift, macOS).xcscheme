@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1000"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75A0CEDF20D997330091D26A"
-               BuildableName = "colorist"
-               BlueprintName = "colorist"
+               BlueprintIdentifier = "75C6A34D21268C5300367C24"
+               BuildableName = "KitBridge.framework"
+               BlueprintName = "KitBridge (Swift, macOS)"
                ReferencedContainer = "container:KitBridge.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75A0CEDF20D997330091D26A"
-            BuildableName = "colorist"
-            BlueprintName = "colorist"
-            ReferencedContainer = "container:KitBridge.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75A0CEDF20D997330091D26A"
-            BuildableName = "colorist"
-            BlueprintName = "colorist"
+            BlueprintIdentifier = "75C6A34D21268C5300367C24"
+            BuildableName = "KitBridge.framework"
+            BlueprintName = "KitBridge (Swift, macOS)"
             ReferencedContainer = "container:KitBridge.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75A0CEDF20D997330091D26A"
-            BuildableName = "colorist"
-            BlueprintName = "colorist"
+            BlueprintIdentifier = "75C6A34D21268C5300367C24"
+            BuildableName = "KitBridge.framework"
+            BlueprintName = "KitBridge (Swift, macOS)"
             ReferencedContainer = "container:KitBridge.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

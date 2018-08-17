@@ -10,6 +10,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 
 - <a href="#goals">Goals</a>
 - <a href="#classes">Classes</a>
+- <a href="#aliases">Aliases</a>
 - <a href="#functions">Functions</a>
 - <a href="#protocols">Protocols</a>
 - <a href="#categories">Categories</a>
@@ -83,11 +84,21 @@ needed, e.g. ILApplicationDelegates might use them to initialize the app for eac
     #endif
     }
 
+<a id="aliases"></a>
+## Swift Type Alises
+
+For applications that use Swift `KitBridgeAliases.swift` is provided along with the approrprate `module.map` 
+files in the Swift enabled products.
+
+Swift applications can't see the `#defines` used to bridge clases for OBjective-C code, so Swift `typealias` directeives 
+are used to allow the usage of the varoius `IL` type names.   
+
 
 <a id="functions"></a>
 ## Bridged Functions
 
-A number of geometry and printing functions are included for conveniences, see <a href="./KitBridgeFunctions.h">`KitBridgeFunctions.h`</a> for details.
+A number of geometry and printing functions are included for conveniences, see 
+<a href="./KitBridgeFunctions.h">`KitBridgeFunctions.h`</a> for details.
 
 
 <a id="protocols"></a>
