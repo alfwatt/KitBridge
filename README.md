@@ -10,10 +10,10 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 
 - <a href="#goals">Goals</a>
 - <a href="#classes">Classes</a>
-- <a href="#aliases">Aliases</a>
 - <a href="#functions">Functions</a>
 - <a href="#protocols">Protocols</a>
 - <a href="#categories">Categories</a>
+- <a href="#swift">Swift</a>
 - <a href="#mcmv">Model Controller Multiple Views</a>
 - <a href="#todo">To Do Items</a>
 - <a href="#license">MIT License</a>
@@ -84,15 +84,6 @@ needed, e.g. ILApplicationDelegates might use them to initialize the app for eac
     #endif
     }
 
-<a id="aliases"></a>
-## Swift Type Alises
-
-For applications that use Swift `KitBridgeAliases.swift` is provided along with the approrprate `module.map` 
-files in the Swift enabled products.
-
-Swift applications can't see the `#defines` used to bridge clases for OBjective-C code, so Swift `typealias` directeives 
-are used to allow the usage of the varoius `IL` type names.   
-
 
 <a id="functions"></a>
 ## Bridged Functions
@@ -130,6 +121,27 @@ penalty on macOS for the bridge code.
 - <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
 - <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
 - <a id="NSBundle+KitBridge" href="./NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
+
+<a id="swift"></a>
+## Swift Support
+
+For applications that use Swift `KitBridgeAliases.swift` is provided along with a generated `module.map` 
+files in the Swift enabled products.
+
+Swift applications can't see the `#defines` used to bridge clases for OBjective-C code, so Swift `typealias` directeives 
+are used to allow the usage of the varoius `IL` type names. 
+
+Swift annotations like `@UIApplicationMain` can't be aliases so you'll need to include a `main.swift` file:
+
+    import Foundation
+    import KitBridge
+
+    #if os(macOS)
+    NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
+    #elseif os(iOS)
+    let args = UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
+    UIApplicationMain(CommandLine.argc, args, nil, "SwiftSettingsDelegate")
+    #endif
 
 
 <a id="mcmv"></a>

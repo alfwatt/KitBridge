@@ -298,7 +298,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C6A35D21268C5300367C24 /* KitBridge.h in Headers */,
 				75C6A35E21268C5300367C24 /* KitBridgeDefines.h in Headers */,
 				75C6A35F21268C5300367C24 /* KitBridgeFunctions.h in Headers */,
 				75C6A36021268C5300367C24 /* ILViews.h in Headers */,
@@ -311,6 +310,7 @@
 				75C6A36721268C5300367C24 /* ILScreen+KitBridge.h in Headers */,
 				75C6A36821268C5300367C24 /* ILTextView+KitBridge.h in Headers */,
 				75C6A36921268C5300367C24 /* NSBundle+KitBridge.h in Headers */,
+				75C6A35D21268C5300367C24 /* KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +318,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75C6A40A21274CFA00367C24 /* KitBridge.h in Headers */,
 				75C6A40B21274CFA00367C24 /* KitBridgeDefines.h in Headers */,
 				75C6A40C21274CFA00367C24 /* KitBridgeFunctions.h in Headers */,
 				75C6A40D21274CFA00367C24 /* ILViews.h in Headers */,
@@ -331,6 +330,7 @@
 				75C6A41421274CFA00367C24 /* ILScreen+KitBridge.h in Headers */,
 				75C6A41521274CFA00367C24 /* ILTextView+KitBridge.h in Headers */,
 				75C6A41621274CFA00367C24 /* NSBundle+KitBridge.h in Headers */,
+				75C6A40A21274CFA00367C24 /* KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,38 +395,38 @@
 			productReference = 75A0CEE020D997330091D26A /* colorist */;
 			productType = "com.apple.product-type.tool";
 		};
-		75C6A34D21268C5300367C24 /* KitBridge (Swift, macOS) */ = {
+		75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (Swift, macOS)" */;
+			buildConfigurationList = 75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (macOS, Swift)" */;
 			buildPhases = (
+				75C6A35C21268C5300367C24 /* Headers */,
 				75C6A34E21268C5300367C24 /* Sources */,
 				75C6A35921268C5300367C24 /* Frameworks */,
-				75C6A35C21268C5300367C24 /* Headers */,
 				75C6A36A21268C5300367C24 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "KitBridge (Swift, macOS)";
+			name = "KitBridge (macOS, Swift)";
 			productName = KitBridge;
 			productReference = 75C6A36E21268C5300367C24 /* KitBridge.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		75C6A3F921274CFA00367C24 /* KitBridge (Swift, iOS) */ = {
+		75C6A3F921274CFA00367C24 /* KitBridge (iOS, Swift) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (Swift, iOS)" */;
+			buildConfigurationList = 75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (iOS, Swift)" */;
 			buildPhases = (
+				75C6A40921274CFA00367C24 /* Headers */,
 				75C6A3FA21274CFA00367C24 /* Sources */,
 				75C6A40621274CFA00367C24 /* Frameworks */,
-				75C6A40921274CFA00367C24 /* Headers */,
 				75C6A41721274CFA00367C24 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "KitBridge (Swift, iOS)";
+			name = "KitBridge (iOS, Swift)";
 			productName = KitBridge;
 			productReference = 75C6A41B21274CFA00367C24 /* KitBridge.framework */;
 			productType = "com.apple.product-type.framework";
@@ -505,9 +505,9 @@
 			projectRoot = "";
 			targets = (
 				75DCBEF11ED2C84B00538D87 /* KitBridge (iOS) */,
+				75C6A3F921274CFA00367C24 /* KitBridge (iOS, Swift) */,
 				75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */,
-				75C6A3F921274CFA00367C24 /* KitBridge (Swift, iOS) */,
-				75C6A34D21268C5300367C24 /* KitBridge (Swift, macOS) */,
+				75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */,
 				75A0CEDF20D997330091D26A /* colorist */,
 			);
 		};
@@ -970,7 +970,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (Swift, macOS)" */ = {
+		75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (macOS, Swift)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C6A36C21268C5300367C24 /* Debug */,
@@ -979,7 +979,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (Swift, iOS)" */ = {
+		75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (iOS, Swift)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C6A41921274CFA00367C24 /* Debug */,
