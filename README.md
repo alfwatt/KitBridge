@@ -131,7 +131,8 @@ files in the Swift enabled products.
 Swift applications can't see the `#defines` used to bridge clases for OBjective-C code, so Swift `typealias` directeives 
 are used to allow the usage of the varoius `IL` type names. 
 
-Swift annotations like `@UIApplicationMain` can't be aliases so you'll need to include a `main.swift` file:
+Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be aliases so you'll need to include a
+`main.swift` file for the project:
 
     import Foundation
     import KitBridge
@@ -139,8 +140,9 @@ Swift annotations like `@UIApplicationMain` can't be aliases so you'll need to i
     #if os(macOS)
     NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
     #elseif os(iOS)
-    let args = UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
-    UIApplicationMain(CommandLine.argc, args, nil, "SwiftSettingsDelegate")
+    let argv = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
+        .bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
+    UIApplicationMain(CommandLine.argc, argv, nil, "SwiftSettingsDelegate")
     #endif
 
 
