@@ -6,6 +6,7 @@ import UIKit
 public typealias ILApplication = UIApplication
 public typealias ILApplicationDelegate = UIApplicationDelegate
 public typealias ILBezierPath = UIBezierPath
+public typealias ILBox = UIView
 public typealias ILButton = UIButton
 public typealias ILColor = UIColor
 public typealias ILFont = UIFont
@@ -28,6 +29,7 @@ public typealias ILView = UIView
 public typealias ILViewController = UIViewController
 public typealias ILWebView = UIWebView
 public typealias ILWindow = UIWindow
+public typealias ILWindowController = NSObject
 
 /* AppKit */
 #elseif os(macOS)
@@ -36,6 +38,7 @@ import WebKit
 public typealias ILApplication = NSApplication
 public typealias ILApplicationDelegate = NSApplicationDelegate
 public typealias ILBezierPath = NSBezierPath
+public typealias ILBox = NSBox
 public typealias ILButton = NSButton
 public typealias ILColor = NSColor
 public typealias ILFont = NSFont
@@ -59,4 +62,5 @@ public typealias ILView = NSView
 public typealias ILViewController = NSViewController
 public typealias ILWebView = WebView
 public typealias ILWindow = NSWindow
+public typealias ILWindowController = NSWindowController
 #endif

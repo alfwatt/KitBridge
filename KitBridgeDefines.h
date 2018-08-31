@@ -9,6 +9,7 @@
 #define ILApplication UIApplication
 #define ILApplicationDelegate UIApplicationDelegate
 #define ILBezierPath UIBezierPath
+#define ILBox UIView
 #define ILButton UIButton
 #define ILColor UIColor
 #define ILFont UIFont
@@ -31,6 +32,7 @@
 #define ILViewController UIViewController
 #define ILWebView UIWebView
 #define ILWindow UIWindow
+#define ILWindowController NSObject // TODO implement ILWindowController for UIWindows
 #define IL_UI_KIT 1
 
 /* AppKit */
@@ -40,6 +42,7 @@
 #define ILApplication NSApplication
 #define ILApplicationDelegate NSApplicationDelegate
 #define ILBezierPath NSBezierPath
+#define ILBox NSBox
 #define ILButton NSButton
 #define ILColor NSColor
 #define ILFont NSFont
@@ -63,6 +66,7 @@
 #define ILViewController NSViewController
 #define ILWebView WebView
 #define ILWindow NSWindow
+#define ILWindowController NSWindowController
 #define IL_APP_KIT 1
 #endif
 

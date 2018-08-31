@@ -109,6 +109,8 @@ Applications can then use the UIKit interface throughout, with only a small perf
 penalty on macOS for the bridge code.
 
 - <a id="ILBezierPath+KitBridge" href="./ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
+    - Adds Path Description and Count functions and methods
+    - Adds `enumeratePathWithBlock:` method
 - <a id="ILButton+KitBridge" href="./ILButton+KitBridge.h">`ILButton+KitBridge`</a>
 - <a id="ILColor+KitBridge" href="./ILColor+KitBridge.h">`ILColor+KitBridge`</a>
     - Adds CSS color string properties
@@ -117,7 +119,7 @@ penalty on macOS for the bridge code.
     - Adds semantic colors from AppKit to UIKit
 - <a id="ILFont+KitBridge" href="./ILFont+KitBridge.h">`ILFont+KitBridge`</a>
 - <a id="ILImage+KitBridge" href="./ILImage+KitBridge.h">`ILImage+KitBridge`</a>
- - <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
+- <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
 - <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
 - <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
 - <a id="NSBundle+KitBridge" href="./NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
