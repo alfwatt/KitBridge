@@ -1,4 +1,5 @@
 #import "KitBridgeDefines.h"
+#import "ILPDFImage.h"
 #import "ILImage+KitBridge.h"
 #import "ILScreen+KitBridge.h"
 #import <CoreImage/CoreImage.h>
@@ -85,6 +86,20 @@
     CGAffineTransform transform = [self transformForOrientation:newSize];
     
     return [self resizedImage:newSize transform:transform drawTransposed:drawTransposed interpolationQuality:quality];
+}
+
+- (ILImage*) resizedImage:(CGSize)newSize
+{
+    ILImage* resized = nil;
+    
+    if ([self respondsToSelector:@selector(resizedImage:withScale:)]) {
+        resized = [(id<ILImageResizing>)self resizedImage:newSize withScale:ILScreen.mainScreen.scale];
+    }
+    else {
+        resized = [self resizedImage:newSize interpolationQuality:kCGInterpolationHigh];
+    }
+
+    return resized;
 }
 
 #if IL_APP_KIT

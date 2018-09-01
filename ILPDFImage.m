@@ -1,8 +1,11 @@
 #import "ILPDFImage.h"
+#import "ILImage+KitBridge.h"
 #import "ILScreen+KitBridge.h"
+
+#if IL_UI_KIT
 #import <PDFKit/PDFKit.h>
 
-@interface ILPDFImage ()
+@interface ILPDFImage()
 @property(nonatomic,retain) id imageDocument;
 
 @end
@@ -23,13 +26,14 @@
     
     UIImage *pdfImage = nil;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-    CGContextRef ctx = CGBitmapContextCreate(NULL, size.width * screenScale, size.height * screenScale, 8, 0, colorSpace, kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedFirst);
-    CGContextScaleCTM(ctx, screenScale, screenScale);
-
+    CGRect contextRect = CGRectMake(0, 0, (size.width * screenScale), (size.height * screenScale));
+    CGContextRef ctx = CGBitmapContextCreate(NULL, contextRect.size.width, contextRect.size.height, 8, 0, colorSpace, kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedFirst);
     CGPDFPageRef renderPage = CGPDFDocumentGetPage(document, page);
+    CGAffineTransform renderTransform = CGPDFPageGetDrawingTransform(renderPage, kCGPDFCropBox, contextRect, 0, preserveAspectRatio);
+    CGContextConcatCTM(ctx, renderTransform);
     CGContextDrawPDFPage(ctx, renderPage);
     CGImageRef image = CGBitmapContextCreateImage(ctx);
-    pdfImage = [[UIImage alloc] initWithCGImage:image scale:screenScale orientation:UIImageOrientationUp];
+    pdfImage = [UIImage imageWithCGImage:image scale:screenScale orientation:UIImageOrientationUp];
     
     CGImageRelease(image);
     CGContextRelease(ctx);
@@ -55,6 +59,10 @@
 
 - (instancetype)initWithContentsOfFile:(NSString *)path
 {
+    if (!path) {
+        return nil;
+    }
+    
     CGPDFDocumentRef fileDocument = CGPDFDocumentCreateWithURL((__bridge CFURLRef)[NSURL fileURLWithPath:path]);
     return [self initWithPDFDocument:fileDocument pageIndex:1 scale:UIScreen.mainScreen.scale];
 }
@@ -71,4 +79,12 @@
     return [self initWithData:data scale:UIScreen.mainScreen.scale];
 }
 
+#pragma mark - ILImage Overrides
+
+- (ILImage*) resizedImage:(CGSize)newSize withScale:(CGFloat) scale
+{
+    return [ILPDFImage imageWithPDFDocument:(__bridge CGPDFDocumentRef)(self.imageDocument) atPage:1 atSize:newSize atScale:scale preserveAspectRatio:YES];
+}
 @end
+#endif
+

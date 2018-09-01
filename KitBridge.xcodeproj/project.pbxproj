@@ -14,6 +14,10 @@
 		7518BBA32139E9C1005F4519 /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7518BBA02139E9C1005F4519 /* ILPDFImage.h */; };
 		7518BBA42139E9C1005F4519 /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7518BBA12139E9C1005F4519 /* ILPDFImage.m */; };
 		7518BBA52139E9C1005F4519 /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7518BBA12139E9C1005F4519 /* ILPDFImage.m */; };
+		7518BBCC213B28FC005F4519 /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7518BBA02139E9C1005F4519 /* ILPDFImage.h */; };
+		7518BBCD213B2909005F4519 /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7518BBA02139E9C1005F4519 /* ILPDFImage.h */; };
+		7518BBD1213B2AA8005F4519 /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7518BBA12139E9C1005F4519 /* ILPDFImage.m */; };
+		7518BBD2213B2AB2005F4519 /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7518BBA12139E9C1005F4519 /* ILPDFImage.m */; };
 		75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75543AEA1F2296E60050BAF2 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */; };
 		75543AEB1F2297A70050BAF2 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -248,6 +252,8 @@
 				75B3E6531ED5F73F00E7798F /* KitBridgeFunctions.h */,
 				75B3E6521ED5F73F00E7798F /* KitBridgeFunctions.m */,
 				75B3E6591ED6116600E7798F /* ILViews.h */,
+				7518BBA02139E9C1005F4519 /* ILPDFImage.h */,
+				7518BBA12139E9C1005F4519 /* ILPDFImage.m */,
 				756DB2261ED4FCF800B84AE7 /* ILBezierPath+KitBridge.h */,
 				756DB2271ED4FCF800B84AE7 /* ILBezierPath+KitBridge.m */,
 				7565732720F9303100CAA0A4 /* ILButton+KitBridge.h */,
@@ -264,8 +270,6 @@
 				75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */,
 				7565731E20F916C400CAA0A4 /* ILTextView+KitBridge.h */,
 				7565731F20F916C400CAA0A4 /* ILTextView+KitBridge.m */,
-				7518BBA02139E9C1005F4519 /* ILPDFImage.h */,
-				7518BBA12139E9C1005F4519 /* ILPDFImage.m */,
 				7564F4312103E1F8002A5318 /* NSBundle+KitBridge.h */,
 				7564F4322103E1F8002A5318 /* NSBundle+KitBridge.m */,
 				75A0CEE120D997330091D26A /* colorist */,
@@ -319,6 +323,7 @@
 				75C6A36821268C5300367C24 /* ILTextView+KitBridge.h in Headers */,
 				75C6A36921268C5300367C24 /* NSBundle+KitBridge.h in Headers */,
 				75C6A35D21268C5300367C24 /* KitBridge.h in Headers */,
+				7518BBCD213B2909005F4519 /* ILPDFImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +365,7 @@
 				75543AE91F2296E60050BAF2 /* ILScreen+KitBridge.h in Headers */,
 				7565732020F916C400CAA0A4 /* ILTextView+KitBridge.h in Headers */,
 				7564F4332103E1F8002A5318 /* NSBundle+KitBridge.h in Headers */,
+				7518BBCC213B28FC005F4519 /* ILPDFImage.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7518BBD1213B2AA8005F4519 /* ILPDFImage.m in Sources */,
 				75C6A34F21268C5300367C24 /* ILButton+KitBridge.m in Sources */,
 				75C6A35021268C5300367C24 /* KitBridgeFunctions.m in Sources */,
 				75C6A35121268C5300367C24 /* ILProgressView+KitBridge.m in Sources */,
@@ -604,6 +611,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7518BBD2213B2AB2005F4519 /* ILPDFImage.m in Sources */,
 				7565732B20F9303100CAA0A4 /* ILButton+KitBridge.m in Sources */,
 				75B3E6541ED5F73F00E7798F /* KitBridgeFunctions.m in Sources */,
 				7565733120F9359F00CAA0A4 /* ILProgressView+KitBridge.m in Sources */,
