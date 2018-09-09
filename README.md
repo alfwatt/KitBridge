@@ -118,11 +118,14 @@ penalty on macOS for the bridge code.
     - Adds CIColor property to AppKit
     - Adds semantic colors from AppKit to UIKit
 - <a id="ILFont+KitBridge" href="./ILFont+KitBridge.h">`ILFont+KitBridge`</a>
+    - Adds `-applicationFontFace:` along with `info.plist` keys to define font faces for your application
+    - Adds `-replaceSystemFonts` on `ILView` which replaces standard system fonts with the application font faces
 - <a id="ILImage+KitBridge" href="./ILImage+KitBridge.h">`ILImage+KitBridge`</a>
 - <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
 - <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
 - <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
 - <a id="NSBundle+KitBridge" href="./NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
+
 
 <a id="swift"></a>
 ## Swift Support
