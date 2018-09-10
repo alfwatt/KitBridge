@@ -1,11 +1,5 @@
 #import "ILFont+KitBridge.h"
 
-NSString* const ILFontLightFace = @"ILFontLightFace";
-NSString* const ILFontRegularFace = @"ILFontRegularFace";
-NSString* const ILFontBoldFace = @"ILFontBoldFace";
-NSString* const ILFontSerifFace = @"ILFontSerifFace";
-NSString* const ILFontFixedFace = @"ILFontFixedFace";
-
 #if IL_APP_KIT
 #define ILFontDescriptorClassMask NSFontDescriptorClassMask
 #define ILFontDescriptorTraitBold NSFontDescriptorTraitBold
@@ -15,7 +9,7 @@ NSString* const ILFontFixedFace = @"ILFontFixedFace";
 #define ILFontWeightTrait NSFontWeightTrait
 #define ILFontWeightThin NSFontWeightThin
 #define ILFontWeightLight NSFontWeightLight
-
+/* TODO aliases for all the Desriptors, Traits, etc */
 #else
 #define ILFontDescriptorClassMask UIFontDescriptorClassMask
 #define ILFontDescriptorTraitBold UIFontDescriptorTraitBold
@@ -25,20 +19,28 @@ NSString* const ILFontFixedFace = @"ILFontFixedFace";
 #define ILFontWeightTrait UIFontWeightTrait
 #define ILFontWeightThin UIFontWeightThin
 #define ILFontWeightLight UIFontWeightLight
-
+/* TODO move these to KitBridgeDefines and replicate in KitBridgeAliases.swift */
 #endif
+
+NSString* const ILFontBoldFace = @"ILFontBoldFace";
+NSString* const ILFontLightFace = @"ILFontLightFace";
+NSString* const ILFontFixedFace = @"ILFontFixedFace";
+NSString* const ILFontRegularFace = @"ILFontRegularFace";
+NSString* const ILFontSerifFace = @"ILFontSerifFace";
+
+NSString* const ILFontSize = @"ILFontSize";
 
 @implementation ILFont (KitBridge)
 
 + (ILFont*)applicationFontFace:(NSString*)fontFace
 {
     NSString* fontName = NSBundle.mainBundle.infoDictionary[fontFace];
-    return [ILFont fontWithName:fontName size:[ILFont systemFontSize]];
+    return [ILFont fontWithName:fontName size:ILFont.applicationFontSize];
 }
 
 + (ILFont*)applicationFontForSystemFont:(ILFont*)systemFont
 {
-    NSString* fontName = [systemFont fontName];
+    NSString* fontName = systemFont.fontName;
     CGFloat fontWeight = [systemFont.fontDescriptor.fontAttributes[ILFontWeightTrait] doubleValue];
     
     if (systemFont.fontDescriptor.symbolicTraits & ILFontDescriptorTraitBold) {
@@ -57,7 +59,7 @@ NSString* const ILFontFixedFace = @"ILFontFixedFace";
         fontName = NSBundle.mainBundle.infoDictionary[ILFontSerifFace];
     }
     
-    ILFont* replacmentFont = [ILFont fontWithName:fontName size:[systemFont pointSize]];
+    ILFont* replacmentFont = [ILFont fontWithName:fontName size:systemFont.pointSize];
     if (!replacmentFont) {
         NSLog(@"WARNING no replacment for system font: %@ -> %@", systemFont, fontName);
         replacmentFont = systemFont;
@@ -69,10 +71,24 @@ NSString* const ILFontFixedFace = @"ILFontFixedFace";
 + (CGFloat) defaultFontSize
 {
 #if !TARGET_OS_TV
-    return [ILFont systemFontSize];
+    return ILFont.applicationFontSize;
 #else
     return 36;
 #endif
+}
+
++ (CGFloat) applicationFontSize
+{
+    CGFloat applicationFontSize = self.defaultFontSize;
+    
+    if (NSUserDefaults.standardUserDefaults.dictionaryRepresentation[ILFontSize]) {
+        applicationFontSize = [NSUserDefaults.standardUserDefaults.dictionaryRepresentation[ILFontSize] doubleValue];
+    }
+    else if (NSBundle.mainBundle.infoDictionary[ILFontSize]) {
+        applicationFontSize = [NSBundle.mainBundle.infoDictionary[ILFontSize] doubleValue];
+    }
+    
+    return applicationFontSize;
 }
 
 #if IL_UI_KIT
@@ -90,13 +106,13 @@ NSString* const ILFontFixedFace = @"ILFontFixedFace";
 
 - (void)replaceSystemFonts
 {
-    if ([self isKindOfClass:[ILTextView class]]) {
+    if ([self isKindOfClass:ILTextView.class]) {
         ILTextView* text = (ILTextView*)self;
-        text.font = [ILFont appFontForSystemFont:text.font];
+        text.font = [ILFont applicationFontForSystemFont:text.font];
     }
     else if ([self isKindOfClass:[ILLabel class]]) {
         ILLabel* label = (ILLabel*)self;
-        label.font = [ILFont appFontForSystemFont:label.font];
+        label.font = [ILFont applicationFontForSystemFont:label.font];
     }
     
     for (ILView* subview in self.subviews) {
