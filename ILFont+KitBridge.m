@@ -70,17 +70,17 @@ NSString* const ILFontSize = @"ILFontSize";
 
 + (CGFloat) defaultFontSize
 {
-#if !TARGET_OS_TV
     return ILFont.applicationFontSize;
-#else
-    return 36;
-#endif
 }
 
 + (CGFloat) applicationFontSize
 {
-    CGFloat applicationFontSize = self.defaultFontSize;
-    
+#if !TARGET_OS_TV
+    CGFloat applicationFontSize = ILFont.systemFontSize;
+#else
+    CGFloat applicationFontSize = 36;
+#endif
+
     if (NSUserDefaults.standardUserDefaults.dictionaryRepresentation[ILFontSize]) {
         applicationFontSize = [NSUserDefaults.standardUserDefaults.dictionaryRepresentation[ILFontSize] doubleValue];
     }
