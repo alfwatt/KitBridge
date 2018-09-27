@@ -1,7 +1,7 @@
 #import <KitBridge/KitBridgeDefines.h>
 
 #if IL_UI_KIT
-@protocol ILImageResizing;
+#import <KitBridge/ILImage+KitBridge.h>
 
 /*!
 
