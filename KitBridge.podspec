@@ -1,6 +1,6 @@
 #!pod
 
-# KitBridge.podspec
+# KitBridge.podspec - Requires `sudo gem install cocoapods -v 1.6.0.beta.1`
 
 Pod::Spec.new do |s|
   s.name             = 'KitBridge'
