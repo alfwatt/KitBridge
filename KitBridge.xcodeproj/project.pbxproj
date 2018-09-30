@@ -147,6 +147,7 @@
 		7506D6BC1F4CE245003392E3 /* ILColor+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILColor+KitBridge.m"; sourceTree = "<group>"; };
 		7518BBA02139E9C1005F4519 /* ILPDFImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ILPDFImage.h; sourceTree = "<group>"; };
 		7518BBA12139E9C1005F4519 /* ILPDFImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ILPDFImage.m; sourceTree = "<group>"; };
+		7552D93D21617E3A004FF8C8 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = config.yml; path = .circleci/config.yml; sourceTree = "<group>"; };
 		75543AE71F2296E60050BAF2 /* ILScreen+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILScreen+KitBridge.h"; sourceTree = "<group>"; };
 		75543AE81F2296E60050BAF2 /* ILScreen+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILScreen+KitBridge.m"; sourceTree = "<group>"; };
 		7564F4312103E1F8002A5318 /* NSBundle+KitBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KitBridge.h"; sourceTree = "<group>"; };
@@ -246,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				75C2F3FD215C5E4200169C8F /* KitBridge.podspec */,
+				7552D93D21617E3A004FF8C8 /* config.yml */,
 			);
 			name = Packaging;
 			sourceTree = "<group>";

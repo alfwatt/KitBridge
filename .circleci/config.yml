@@ -1,0 +1,28 @@
+# iOS CircleCI 2.0 configuration file
+#
+version: 2
+jobs:
+  build:
+
+    # Specify the Xcode version to use
+    macos:
+      xcode: "10.0.0"
+
+    steps:
+      - checkout
+
+      - run:
+          name: Build KitBridge (macOS)
+          command: xcodebuild -scheme "KitBridge (macOS)"
+
+      - run:
+          name: Build KitBridge (macOS, Swift)
+          command: xcodebuild -scheme "KitBridge (macOS, Swift)"
+
+      - run:
+          name: Build KitBridge (iOS)
+          command: xcodebuild -scheme "KitBridge (iOS)"
+
+      - run:
+          name: Build KitBridge (iOS, Swift)
+          command: xcodebuild -scheme "KitBridge (iOS, Swift)"
