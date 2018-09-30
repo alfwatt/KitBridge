@@ -2,7 +2,7 @@
 #import "ILImage+KitBridge.h"
 #import "ILScreen+KitBridge.h"
 
-#if IL_UI_KIT
+#if IL_UI_KIT && !TARGET_OS_TV
 #import <PDFKit/PDFKit.h>
 
 @interface ILPDFImage()

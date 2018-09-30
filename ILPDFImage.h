@@ -1,6 +1,6 @@
 #import <KitBridge/KitBridgeDefines.h>
 
-#if IL_UI_KIT
+#if IL_UI_KIT && !TARGET_OS_TVOS
 #import <KitBridge/ILImage+KitBridge.h>
 
 /*!
