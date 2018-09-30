@@ -26,3 +26,7 @@ jobs:
       - run:
           name: Build KitBridge (iOS, Swift)
           command: xcodebuild -scheme "KitBridge (iOS, Swift)"
+
+      - run:
+          name: Build colorist
+          command: xcodebuild -scheme "colorist"
