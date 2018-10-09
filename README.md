@@ -9,6 +9,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 ## Contents
 
 - <a href="#goals">Goals</a>
+- <a href="#support">Support</a>
 - <a href="#classes">Classes</a>
 - <a href="#functions">Functions</a>
 - <a href="#protocols">Protocols</a>
@@ -42,6 +43,12 @@ macOS or vice versa.
 Apps will have a single set of source files and one plist for each platform they want to target, along with 
 storboards, xibs, xcassets and other platform specific resources. 
 
+<a id="support"></a>
+## Support KitBridge!
+
+Are you using KitBridge in your apps? Would you like to help support the project and get a sponsor credit?
+
+Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us in exchange for great rewards!
 
 <a id="classes"></a>
 ## Bridged Classes
