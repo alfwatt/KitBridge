@@ -6,6 +6,33 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		D32DE41021E68C7B005E5FE1 /* KitBridge */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D32DE41121E68C7B005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge" */;
+			buildPhases = (
+			);
+			dependencies = (
+				D32DE41521E68C87005E5FE1 /* PBXTargetDependency */,
+				D32DE41921E68C87005E5FE1 /* PBXTargetDependency */,
+			);
+			name = KitBridge;
+			productName = KitBridge;
+		};
+		D32DE42B21E68CDD005E5FE1 /* KitBridge (Swift) */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = D32DE43621E68CDD005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge (Swift)" */;
+			buildPhases = (
+			);
+			dependencies = (
+				D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */,
+				D32DE43221E68CDD005E5FE1 /* PBXTargetDependency */,
+			);
+			name = "KitBridge (Swift)";
+			productName = KitBridge;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		7506D6BD1F4CE245003392E3 /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7506D6BB1F4CE245003392E3 /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7506D6BE1F4CE245003392E3 /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7506D6BC1F4CE245003392E3 /* ILColor+KitBridge.m */; };
@@ -127,6 +154,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
 			remoteInfo = "KitBridge (macOS)";
+		};
+		D32DE41421E68C87005E5FE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75DCBEF11ED2C84B00538D87;
+			remoteInfo = "KitBridge (iOS)";
+		};
+		D32DE41821E68C87005E5FE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
+			remoteInfo = "KitBridge (macOS)";
+		};
+		D32DE42F21E68CDD005E5FE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75C6A3F921274CFA00367C24;
+			remoteInfo = "KitBridge (iOS, Swift)";
+		};
+		D32DE43321E68CDD005E5FE1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75C6A34D21268C5300367C24;
+			remoteInfo = "KitBridge (macOS, Swift)";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -501,7 +556,7 @@
 		75DCBED91ED2C81E00538D87 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "iStumbler Labs";
 				TargetAttributes = {
 					75A0CEDF20D997330091D26A = {
@@ -515,6 +570,13 @@
 					75DCBEF11ED2C84B00538D87 = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Manual;
+					};
+					D32DE41021E68C7B005E5FE1 = {
+						CreatedOnToolsVersion = 10.1;
+						ProvisioningStyle = Automatic;
+					};
+					D32DE42B21E68CDD005E5FE1 = {
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -535,6 +597,8 @@
 				75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */,
 				75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */,
 				75A0CEDF20D997330091D26A /* colorist */,
+				D32DE41021E68C7B005E5FE1 /* KitBridge */,
+				D32DE42B21E68CDD005E5FE1 /* KitBridge (Swift) */,
 			);
 		};
 /* End PBXProject section */
@@ -659,6 +723,26 @@
 			isa = PBXTargetDependency;
 			target = 75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */;
 			targetProxy = 75A0CEE820D99A660091D26A /* PBXContainerItemProxy */;
+		};
+		D32DE41521E68C87005E5FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75DCBEF11ED2C84B00538D87 /* KitBridge (iOS) */;
+			targetProxy = D32DE41421E68C87005E5FE1 /* PBXContainerItemProxy */;
+		};
+		D32DE41921E68C87005E5FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */;
+			targetProxy = D32DE41821E68C87005E5FE1 /* PBXContainerItemProxy */;
+		};
+		D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75C6A3F921274CFA00367C24 /* KitBridge (iOS, Swift) */;
+			targetProxy = D32DE42F21E68CDD005E5FE1 /* PBXContainerItemProxy */;
+		};
+		D32DE43221E68CDD005E5FE1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */;
+			targetProxy = D32DE43321E68CDD005E5FE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -845,7 +929,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-Wall";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -899,7 +983,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "-Wall";
-				SWIFT_VERSION = 4.0;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_VERSION = 4.2;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -998,6 +1083,38 @@
 			};
 			name = Release;
 		};
+		D32DE41221E68C7B005E5FE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D32DE41321E68C7B005E5FE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D32DE43721E68CDD005E5FE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D32DE43821E68CDD005E5FE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1051,6 +1168,24 @@
 			buildConfigurations = (
 				75DCBEF81ED2C84B00538D87 /* Debug */,
 				75DCBEF91ED2C84B00538D87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D32DE41121E68C7B005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D32DE41221E68C7B005E5FE1 /* Debug */,
+				D32DE41321E68C7B005E5FE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D32DE43621E68CDD005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge (Swift)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D32DE43721E68CDD005E5FE1 /* Debug */,
+				D32DE43821E68CDD005E5FE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
