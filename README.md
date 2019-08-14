@@ -17,6 +17,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 - <a href="#swift">Swift</a>
 - <a href="#mcmv">Model Controller Multiple Views</a>
 - <a href="#todo">To Do Items</a>
+- <a href="#versions">Version History</a>
 - <a href="#license">MIT License</a>
 
 
@@ -255,6 +256,13 @@ In no specific order these are things to keep an eye out for as you write and de
 - Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
 - colorist: Add command line optoions to parse and convert colors
+
+<a id="versions"></a>
+## Version History
+
+-  22 May 2017 — Initial Release
+- `KitBridge-1.0`: 19 January 2018 — 
+- `KitBridge-1.1`: 17 August 2018 —  
 
 
 <a id="license"></a>
