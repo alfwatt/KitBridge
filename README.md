@@ -198,8 +198,8 @@ Here is the outline of an example project using KitBridge:
             - LaunchScreen.storyboards
             - Example.xcassets
 
-Bridging NSViewController/UIViewController is desireable but unfortunatly Xcode will not recognize the
-subclasses in the Interface Builder. Instead the `ExampleController.h` needs to define the controller
+Bridging `NSViewController`/`UIViewController` is desireable but unfortunatly Xcode will not recognize the
+subclasses in the Interface Builder due to indexing issues. Instead the `ExampleController.h` needs to define the controller
 inside of `#if` blocks:
 
     #import <KitBridge/KitBridge.h>
@@ -208,7 +208,7 @@ inside of `#if` blocks:
     @interface ExampleController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
     @property(nonatomic,retain) IBOutlet NSTableView* tableView;
     #endif
-    /* Note the seperate #if blocks, #elif confuses the Interface Builder in Xcode
+    /* Note the seperate #if blocks, #elif confuses the Xcode indexer
        You may also have to swap the order of the blocks at design time, when setting up the xibs */
     #if IL_UI_KIT
     @interface ExampleController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -250,8 +250,7 @@ In no specific order these are things to keep an eye out for as you write and de
 <a id="todo"></a>
 ## To Do Items
 
-- cocoapods & c. package definitions
-- swift bridging header
+- package manager support
 - open source example app (besides the CardView and SparkKit)
 - Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
@@ -263,7 +262,7 @@ In no specific order these are things to keep an eye out for as you write and de
 
     The MIT License (MIT)
 
-    Copyright © 2017-2018 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2019 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
