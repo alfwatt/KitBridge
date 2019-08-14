@@ -9,6 +9,7 @@
 
 #pragma mark - Categories
 
+#import <KitBridge/ILApplication+KitBridge.h>
 #import <KitBridge/ILBezierPath+KitBridge.h>
 #import <KitBridge/ILButton+KitBridge.h>
 #import <KitBridge/ILColor+KitBridge.h>

@@ -115,6 +115,8 @@ Categories are defined on AppKit classes to provide adaption to various UIKit me
 Applications can then use the UIKit interface throughout, with only a small performance
 penalty on macOS for the bridge code.
 
+- <a id="ILApplication+KitBridge" href="./ILApplication+KitBridge.h">`ILApplication+KitBridge`</a>
+    - Adds `openURL:` method
 - <a id="ILBezierPath+KitBridge" href="./ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
     - Adds Path Description and Count functions and methods
     - Adds `enumeratePathWithBlock:` method
