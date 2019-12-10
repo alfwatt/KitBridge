@@ -19,3 +19,7 @@
 #import <KitBridge/ILScreen+KitBridge.h>
 #import <KitBridge/ILTextView+KitBridge.h>
 #import <KitBridge/NSBundle+KitBridge.h>
+
+#pragma mark - Classes
+
+#import <KitBridge/ILPDFImage.h>
