@@ -228,10 +228,9 @@
 		7539AC19285855D100073DFD /* ILScreen+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILScreen+KitBridge.m"; sourceTree = "<group>"; };
 		7539AC1B285855D100073DFD /* colorist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = colorist.m; sourceTree = "<group>"; };
 		7539AC1D285855D100073DFD /* KitBridgeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitBridgeAliases.swift; sourceTree = "<group>"; };
-		7552D93D21617E3A004FF8C8 /* config.yml */ = {isa = PBXFileReference; lastKnownFileType = text; name = config.yml; path = .circleci/config.yml; sourceTree = "<group>"; };
+		7539AC9328585BAF00073DFD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		75A0CEE020D997330091D26A /* colorist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = colorist; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B3E6601ED62ECC00E7798F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		75C2F3FD215C5E4200169C8F /* KitBridge.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = KitBridge.podspec; sourceTree = "<group>"; };
 		75C6A36E21268C5300367C24 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C6A41B21274CFA00367C24 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DCBEE21ED2C81E00538D87 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -342,8 +341,7 @@
 		75C2F3FC215C5DDF00169C8F /* Packaging */ = {
 			isa = PBXGroup;
 			children = (
-				75C2F3FD215C5E4200169C8F /* KitBridge.podspec */,
-				7552D93D21617E3A004FF8C8 /* config.yml */,
+				7539AC9328585BAF00073DFD /* Package.swift */,
 			);
 			name = Packaging;
 			sourceTree = "<group>";

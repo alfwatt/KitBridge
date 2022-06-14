@@ -4,11 +4,6 @@ import PackageDescription
 
 let package = Package(
 	name: "KitBridge",
-/*	platforms: [
-		.macOS(.v10_10),
-		.iOS(.v10),
-		.tvOS(.v10)
-	], */
 	products: [
 		.library(
 			name: "KitBridge",
