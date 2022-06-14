@@ -1,4 +1,8 @@
+#if SWIFT_PACKAGE
+#import "KitBridgeDefines.h"
+#else
 #import <KitBridge/KitBridgeDefines.h>
+#endif
 
 NS_ASSUME_NONNULL_BEGIN
 @class ILImage;

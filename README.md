@@ -26,7 +26,7 @@ KitBridge: Bringing UIKit and AppKit Closer Together
 
 KitBridge allows you to create views which can be used in both iOS and macOS applications.
 
-<img src="./kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
+<img src="Images/kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
 
 KitBridge supports <a href="https://gitlab.com/alfwatt/cardview">CardView</a> 
 <a href="https://github.com/alfwatt/CardView">[Github]</a>, 
@@ -35,14 +35,14 @@ KitBridge supports <a href="https://gitlab.com/alfwatt/cardview">CardView</a>
 which offer a nice looking text view subclass, and a simple fast graphing toolkit as well as
 other iStumbler Labs frameworks.
 
-<img src="./kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
+<img src="Images/kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
 
 Overall the goal of KitBridge is to provide *just enough* support to make writing apps which target
-multiple platforms and UI modes easier, but withouth trying to emulate the iOS/tvOS app runtime on
+multiple platforms and UI modes easier, but without trying to emulate the iOS/tvOS app runtime on
 macOS or vice versa.
 
 Apps will have a single set of source files and one plist for each platform they want to target, along with 
-storboards, xibs, xcassets and other platform specific resources. 
+storyboards, xibs, xcassets and other platform specific resources. 
 
 <a id="support"></a>
 ## Support KitBridge!
@@ -143,8 +143,8 @@ penalty on macOS for the bridge code.
 For applications that use Swift `KitBridgeAliases.swift` is provided along with a generated `module.map` 
 files in the Swift enabled products.
 
-Swift applications can't see the `#defines` used to bridge clases for OBjective-C code, so Swift `typealias` directeives 
-are used to allow the usage of the varoius `IL` type names. 
+Swift applications can't see the `#defines` used to bridge classes for Objective-C code, so Swift `typealias` directives 
+are used to allow the usage of the various `IL` type names. 
 
 Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be aliases so you'll need to include a
 `main.swift` file for the project:
@@ -167,9 +167,9 @@ Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be al
 Porting either an existing iOS or macOS app using KitBridge will be easier or harder depending
 on how well the original code complies to the Model View Controller (MVC) design pattern.
 
-In an MVC app with clean seperation adding supoprt for a new platform means adapting the
-existing contoroller to the UI Idiom in use by creating Multiple Views, hence MCMV. This requres 
-more code and UI design time than an emulation enviroment but allows for customization of the
+In an MVC app with clean separation adding support for a new platform means adapting the
+existing controller to the UI Idiom in use by creating Multiple Views, hence MCMV. This requires 
+more code and UI design time than an emulation environment but allows for customization of the
 model to each UI idiom as closely as possible.
 
 Here is the outline of an example project using KitBridge:
@@ -199,7 +199,7 @@ Here is the outline of an example project using KitBridge:
             - LaunchScreen.storyboards
             - Example.xcassets
 
-Bridging `NSViewController`/`UIViewController` is desireable but unfortunatly Xcode will not recognize the
+Bridging `NSViewController`/`UIViewController` is desirable but unfortunately Xcode will not recognize the
 subclasses in the Interface Builder due to indexing issues. Instead the `ExampleController.h` needs to define the controller
 inside of `#if` blocks:
 
@@ -209,7 +209,7 @@ inside of `#if` blocks:
     @interface ExampleController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
     @property(nonatomic,retain) IBOutlet NSTableView* tableView;
     #endif
-    /* Note the seperate #if blocks, #elif confuses the Xcode indexer
+    /* Note the separate #if blocks, #elif confuses the Xcode indexer
        You may also have to swap the order of the blocks at design time, when setting up the xibs */
     #if IL_UI_KIT
     @interface ExampleController : UIViewController <UITableViewDataSource, UITableViewDelegate>
@@ -221,7 +221,7 @@ inside of `#if` blocks:
     @end
 
 In the implementation file the various protocols are defined inside of `#if` blocks for each platform
- (alternatly, you could also have seperate `.m` files for each platform, or even use a base class with
+ (alternately, you could also have separate `.m` files for each platform, or even use a base class with
  platform specific subclasses):
 
     #import "ExampleController.h"
@@ -255,7 +255,7 @@ In no specific order these are things to keep an eye out for as you write and de
 - open source example app (besides the CardView and SparkKit)
 - Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
-- colorist: Add command line optoions to parse and convert colors
+- colorist: Add command line options to parse and convert colors
 
 <a id="versions"></a>
 ## Version History
@@ -263,6 +263,7 @@ In no specific order these are things to keep an eye out for as you write and de
 -  22 May 2017 — Initial Release
 - `KitBridge-1.0`: 19 January 2018 — 
 - `KitBridge-1.1`: 17 August 2018 —  
+- `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
 
 
 <a id="license"></a>
@@ -270,7 +271,7 @@ In no specific order these are things to keep an eye out for as you write and de
 
     The MIT License (MIT)
 
-    Copyright © 2017-2019 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2022 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

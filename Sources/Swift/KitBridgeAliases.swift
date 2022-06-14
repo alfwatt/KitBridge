@@ -3,6 +3,7 @@ import Foundation
 /* UIKit */
 #if os(iOS)
 import UIKit
+import WebKit
 public typealias ILApplication = UIApplication
 public typealias ILApplicationDelegate = UIApplicationDelegate
 public typealias ILBezierPath = UIBezierPath
@@ -27,7 +28,7 @@ public typealias ILTableViewCell = UITableViewCell
 public typealias ILTableViewController = UITableViewController
 public typealias ILView = UIView
 public typealias ILViewController = UIViewController
-public typealias ILWebView = UIWebView
+public typealias ILWebView = WKWebView
 public typealias ILWindow = UIWindow
 public typealias ILWindowController = NSObject
 

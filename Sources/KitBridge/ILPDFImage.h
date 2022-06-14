@@ -1,7 +1,15 @@
+#if SWIFT_PACKAGE
+#import "KitBridgeDefines.h"
+#else
 #import <KitBridge/KitBridgeDefines.h>
+#endif
 
 #if IL_UI_KIT && !TARGET_OS_TV
+#if SWIFT_PACKAGE
+#import "ILImage+KitBridge.h"
+#else
 #import <KitBridge/ILImage+KitBridge.h>
+#endif
 
 /*!
 

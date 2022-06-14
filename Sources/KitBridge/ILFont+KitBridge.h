@@ -1,4 +1,8 @@
+#if SWIFT_PACKAGE
+#import "KitBridgeDefines.h"
+#else
 #import <KitBridge/KitBridgeDefines.h>
+#endif
 
 /*! @brief Font face name in info.plist to replace system fonts with ILFontDescriptorTraitBold */
 extern NSString* const ILFontBoldFace;

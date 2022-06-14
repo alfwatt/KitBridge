@@ -1,4 +1,8 @@
+#if SWIFT_PACKAGE
+#import "KitBridgeDefines.h"
+#else
 #import <KitBridge/KitBridgeDefines.h>
+#endif
 
 /*! @header bridging header for UIBezierPath and NSBezierPath */
 

@@ -1,3 +1,3 @@
-KitBridge.xcodeproj/xcuserdata/**
-KitBridge.xcodeproj/project.xcworkspace/xcuserdata/**
-build/**
+**/xcuserdata/
+build
+.build
