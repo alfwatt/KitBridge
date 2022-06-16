@@ -1,0 +1,6 @@
+framework module KitBridge {
+    umbrella header "Sources/KitBridge/KitBridge.h"
+
+    export *
+    module * { export * }
+}
