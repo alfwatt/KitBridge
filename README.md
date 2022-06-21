@@ -264,6 +264,7 @@ In no specific order these are things to keep an eye out for as you write and de
 - `KitBridge-1.0`: 19 January 2018 — 
 - `KitBridge-1.1`: 17 August 2018 —  
 - `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
+    - `1.2.1` : Fix Packaging
 
 
 <a id="license"></a>
