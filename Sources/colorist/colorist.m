@@ -3,9 +3,6 @@
 
 int main(int argc, const char * argv[])
 {
-    // NSColor* color;
-    // UIColor* color;
-    
     @autoreleasepool {
         for (ILColor* color in @[
             [ILColor blackColor],        /* 0.0 white */
