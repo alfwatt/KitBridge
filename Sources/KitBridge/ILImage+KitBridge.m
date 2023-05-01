@@ -14,7 +14,7 @@
     [filter setDefaults];
     [filter setValue:ciImage forKey:@"inputImage"];
     CIImage* output = [filter valueForKey:@"outputImage"];
-    [output drawAtPoint:NSZeroPoint fromRect:NSRectFromCGRect([output extent]) operation:NSCompositeSourceOver fraction:1.0];
+    [output drawAtPoint:NSZeroPoint fromRect:NSRectFromCGRect([output extent]) operation:NSCompositingOperationSourceOver fraction:1.0];
 
     return [ILImage.alloc initWithCGImage:output.CGImage size:self.size];
 #else
@@ -33,7 +33,7 @@
     [tintedImage setTemplate:NO];
     [tintedImage lockFocus];
     [tint setFill];
-    NSRectFillUsingOperation(imageBounds, NSCompositeSourceAtop);
+    NSRectFillUsingOperation(imageBounds, NSCompositingOperationSourceAtop);
     [tintedImage unlockFocus];
 #elif IL_UI_KIT
     UIGraphicsBeginImageContext(size);

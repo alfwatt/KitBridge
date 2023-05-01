@@ -89,7 +89,7 @@ NSString* ILCGPathDescription(CGPathRef path)
 void ILCGPathElementCountCallback(void *info, const CGPathElement *element)
 {
     NSInteger elementCount = *(NSInteger*)info;
-    elementCount++;
+    elementCount = elementCount + 1; // ++ upset the static analyzer/compiler
 }
 
 NSInteger ILCGPathElementCount(CGPathRef path)
