@@ -10,7 +10,7 @@
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface ILImage (KitBridge)
 

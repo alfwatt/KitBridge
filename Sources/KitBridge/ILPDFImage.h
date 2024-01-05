@@ -19,7 +19,7 @@ can produce UIImages rendered at various sizes from the PDF source.
 */
 @interface ILPDFImage : ILImage <ILImageResizing>
 
-#pragma mark - UIImage Overrides
+// MARK: - UIImage Overrides
 
 - (instancetype)initWithContentsOfFile:(NSString *)path;
 - (instancetype)initWithData:(NSData *)data scale:(CGFloat)scale;

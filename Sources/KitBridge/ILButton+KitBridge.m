@@ -3,13 +3,11 @@
 @implementation ILButton (KitBridge)
 
 #if IL_UI_KIT
-- (NSString*) title
-{
+- (NSString*) title {
     return self.titleLabel.text;
 }
 
-- (void) setTitle:(NSString*) title
-{
+- (void) setTitle:(NSString*) title {
     self.titleLabel.text = title;
 }
 #endif

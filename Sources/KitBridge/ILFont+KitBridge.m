@@ -32,14 +32,12 @@ NSString* const ILFontSize = @"ILFontSize";
 
 @implementation ILFont (KitBridge)
 
-+ (ILFont*)applicationFontFace:(NSString*)fontFace
-{
++ (ILFont*)applicationFontFace:(NSString*)fontFace {
     NSString* fontName = NSBundle.mainBundle.infoDictionary[fontFace];
     return [ILFont fontWithName:fontName size:ILFont.applicationFontSize];
 }
 
-+ (ILFont*)applicationFontForSystemFont:(ILFont*)systemFont
-{
++ (ILFont*)applicationFontForSystemFont:(ILFont*)systemFont {
     NSString* fontName = systemFont.fontName;
     CGFloat fontWeight = [systemFont.fontDescriptor.fontAttributes[ILFontWeightTrait] doubleValue];
     
@@ -68,13 +66,11 @@ NSString* const ILFontSize = @"ILFontSize";
     return replacmentFont;
 }
 
-+ (CGFloat) defaultFontSize
-{
++ (CGFloat) defaultFontSize {
     return ILFont.applicationFontSize;
 }
 
-+ (CGFloat) applicationFontSize
-{
++ (CGFloat) applicationFontSize {
 #if !TARGET_OS_TV
     CGFloat applicationFontSize = ILFont.systemFontSize;
 #else
@@ -92,20 +88,18 @@ NSString* const ILFontSize = @"ILFontSize";
 }
 
 #if IL_UI_KIT
-+ (ILFont*) userFixedPitchFontOfSize:(CGFloat) fontSize
-{
++ (ILFont*) userFixedPitchFontOfSize:(CGFloat) fontSize {
     return [UIFont monospacedDigitSystemFontOfSize:fontSize weight:UIFontWeightRegular];
 }
 #endif
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @implementation ILView (KitBridge_ILFont)
 
-- (void)replaceSystemFonts
-{
+- (void)replaceSystemFonts {
     if ([self isKindOfClass:ILTextView.class]) {
         ILTextView* text = (ILTextView*)self;
         text.font = [ILFont applicationFontForSystemFont:text.font];

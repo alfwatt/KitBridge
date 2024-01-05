@@ -3,11 +3,11 @@
 #import <KitBridge/KitBridgeDefines.h>
 #import <KitBridge/KitBridgeFunctions.h>
 
-#pragma mark - Protocols
+// MARK: - Protocols
 
 #import <KitBridge/ILViews.h>
 
-#pragma mark - Categories
+// MARK: - Categories
 
 #import <KitBridge/ILApplication+KitBridge.h>
 #import <KitBridge/ILBezierPath+KitBridge.h>
@@ -20,6 +20,6 @@
 #import <KitBridge/ILTextView+KitBridge.h>
 #import <KitBridge/NSBundle+KitBridge.h>
 
-#pragma mark - Classes
+// MARK: - Classes
 
 #import <KitBridge/ILPDFImage.h>

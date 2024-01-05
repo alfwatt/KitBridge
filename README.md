@@ -160,6 +160,19 @@ Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be al
     UIApplicationMain(CommandLine.argc, argv, nil, "SwiftSettingsDelegate")
     #endif
 
+### Swift Controller Views
+
+To implement IL/NS/UIViewController 
+
+    #if os(iOS)
+    import UIKit
+    #elseif os(macOS)
+    import AppKit
+    #endif
+    import KitBridgeSwiftf
+
+    class ExampleView: ILViewController {
+    }
 
 <a id="mcmv"></a>
 ## Model Controller Multiple Views (MCMV)
@@ -221,8 +234,8 @@ inside of `#if` blocks:
     @end
 
 In the implementation file the various protocols are defined inside of `#if` blocks for each platform
- (alternately, you could also have separate `.m` files for each platform, or even use a base class with
- platform specific subclasses):
+(alternately, you could also have separate `.m` files for each platform, or even use a base class with
+platform specific subclasses):
 
     #import "ExampleController.h"
 
@@ -265,6 +278,10 @@ In no specific order these are things to keep an eye out for as you write and de
 - `KitBridge-1.1`: 17 August 2018 —  
 - `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
     - `1.2.1` : Fix Packaging
+- `KitBridge-1.3`: December 2023 - Modernize Build Settings with minimum 10.14 targets for most platforms
+    - Removed ILWebView and WebKit dependency
+    - Added IL/UI/NSStoryboard
+    - Added IL/UI/NSCollectionView/Item/Delegate
 
 
 <a id="license"></a>
@@ -272,7 +289,7 @@ In no specific order these are things to keep an eye out for as you write and de
 
     The MIT License (MIT)
 
-    Copyright © 2017-2022 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2023 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

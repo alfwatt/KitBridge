@@ -4,8 +4,7 @@
 @implementation NSBundle (KitBridge)
 
 #if IL_UI_KIT
-- (ILImage *)imageForResource:(NSString*)name
-{
+- (ILImage *)imageForResource:(NSString*)name {
     ILImage* resourceImage = nil;
 
 #if !TARGET_OS_TV

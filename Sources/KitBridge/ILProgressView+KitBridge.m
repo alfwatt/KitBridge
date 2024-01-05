@@ -3,13 +3,11 @@
 @implementation ILProgressView (KitBridge)
 
 #if IL_APP_KIT
-- (void)startAnimating
-{
+- (void)startAnimating {
     [self startAnimation:self];
 }
 
-- (void)stopAnimating
-{
+- (void)stopAnimating {
     [self stopAnimation:self];
 }
 #endif

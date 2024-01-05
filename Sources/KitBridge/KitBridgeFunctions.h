@@ -4,7 +4,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-#pragma mark - Math
+// MARK: - Math
 
 extern CGFloat const ILZeroAngleRadians; // 12 O'Clock position
 
@@ -17,7 +17,7 @@ CGFloat ILRadiansToDegrees(CGFloat angleRadians); // (angleRadians * 180.0 / M_P
 /*! @brief Convertes percentage to radians. */
 CGFloat ILPercentToRadians(CGFloat percent); // (percent * M_PI * 2)
 
-#pragma mark - Geometry
+// MARK: - Geometry
 
 /*! @return the length of the vector using the Pythagorean theorem */
 CGFloat ILVectorLength(CGVector delta);
@@ -46,7 +46,7 @@ CGPoint ILPointCenteredInRect(CGRect rect);
 /*! @brief project a point the provided distance along the vector provided */
 CGPoint ILPointOnLineToPointAtDistance(CGPoint from, CGPoint to, CGFloat distance);
 
-#pragma mark - Foundation
+// MARK: - Foundation
 
 /*! @brief NSString from rect in the style of NSStringFromCGRect in UIKit */
 NSString* ILStringFromCGRect(CGRect rect);

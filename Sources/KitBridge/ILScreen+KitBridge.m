@@ -3,8 +3,7 @@
 @implementation ILScreen (KitBridge)
 
 #if IL_APP_KIT
-- (CGFloat) scale
-{
+- (CGFloat) scale {
     return self.backingScaleFactor;
 }
 #endif

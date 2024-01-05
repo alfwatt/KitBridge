@@ -6,8 +6,7 @@
 
 @implementation ILImage (KitBridge)
 
-- (ILImage*) inverted
-{
+- (ILImage*) inverted {
 #if IL_APP_KIT
     CIImage* ciImage = [[CIImage alloc] initWithData:[self TIFFRepresentation]];
     CIFilter* filter = [CIFilter filterWithName:@"CIColorInvert"];
@@ -22,8 +21,7 @@
 #endif
 }
 
-- (ILImage*) templateTintedWithColor:(ILColor*) tint
-{
+- (ILImage*) templateTintedWithColor:(ILColor*) tint {
     CGSize size = [self size];
     CGRect imageBounds = CGRectMake(0, 0, size.width, size.height);
     ILImage *tintedImage = nil;
@@ -51,8 +49,7 @@
 }
 
 /*! https://github.com/mbcharbonneau/UIImage-Categories/blob/master/UIImage%2BResize.m */
-- (ILImage*) croppedImage:(CGRect)bounds
-{
+- (ILImage*) croppedImage:(CGRect)bounds {
     CGFloat scale = ILScreen.mainScreen.scale;
     CGRect scaledBounds = CGRectMake(bounds.origin.x * scale, bounds.origin.y * scale, bounds.size.width * scale, bounds.size.height * scale);
     CGImageRef imageRef = CGImageCreateWithImageInRect(self.CGImage, scaledBounds);
@@ -66,8 +63,7 @@
 }
 
 /*! https://github.com/mbcharbonneau/UIImage-Categories/blob/master/UIImage%2BResize.m */
-- (ILImage*) resizedImage:(CGSize)newSize interpolationQuality:(CGInterpolationQuality)quality
-{
+- (ILImage*) resizedImage:(CGSize)newSize interpolationQuality:(CGInterpolationQuality)quality {
     BOOL drawTransposed  = NO;
     
 #if IL_UI_KIT
@@ -88,8 +84,7 @@
     return [self resizedImage:newSize transform:transform drawTransposed:drawTransposed interpolationQuality:quality];
 }
 
-- (ILImage*) resizedImage:(CGSize)newSize
-{
+- (ILImage*) resizedImage:(CGSize)newSize {
     ILImage* resized = nil;
     
     if ([self respondsToSelector:@selector(resizedImage:withScale:)]) {
@@ -103,13 +98,11 @@
 }
 
 #if IL_APP_KIT
-+ (ILImage *)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle compatibleWithTraitCollection:(NSObject*)traitCollection
-{
++ (ILImage *)imageNamed:(NSString *)name inBundle:(NSBundle *)bundle compatibleWithTraitCollection:(NSObject*)traitCollection {
     return [bundle imageForResource:name];
 }
 
-- (CGImageRef) CGImage
-{
+- (CGImageRef) CGImage {
     NSRect imageRect = NSMakeRect(0, 0, self.size.width, self.size.height);
     return [self CGImageForProposedRect:&imageRect context:NULL hints:nil];
 }

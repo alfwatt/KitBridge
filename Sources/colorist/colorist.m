@@ -1,8 +1,7 @@
 #import <Foundation/Foundation.h>
 #import <KitBridge/KitBridge.h>
 
-int main(int argc, const char * argv[])
-{
+int main(int argc, const char * argv[]) {
     @autoreleasepool {
         for (ILColor* color in @[
             [ILColor blackColor],        /* 0.0 white */

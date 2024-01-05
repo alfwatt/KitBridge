@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-#pragma mark -
+// MARK: -
 
 #if IL_APP_KIT
 @interface NSTextField (KitBridge)

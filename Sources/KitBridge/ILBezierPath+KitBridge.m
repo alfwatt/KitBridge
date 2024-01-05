@@ -3,8 +3,7 @@
 
 #pragma mark Functions
 
-NSString* ILCGPathElementDescription(const CGPathElement *element)
-{
+NSString* ILCGPathElementDescription(const CGPathElement *element) {
     NSString* description = nil;
     
     switch (element->type) {
@@ -40,18 +39,15 @@ NSString* ILCGPathElementDescription(const CGPathElement *element)
     return description;
 }
 
-void ILCGPathDescriptionCallback(void* info, const CGPathElement* element)
-{
+void ILCGPathDescriptionCallback(void* info, const CGPathElement* element) {
     NSMutableString* pathDescription = (__bridge NSMutableString*) info;
     [pathDescription appendString:ILCGPathElementDescription(element)];
 
 }
 
-void ILCGPathCopyCallback(void* info, const CGPathElement* element)
-{
+void ILCGPathCopyCallback(void* info, const CGPathElement* element) {
     ILBezierPath* path = (__bridge ILBezierPath*) info;
     switch (element->type) {
-
         case kCGPathElementMoveToPoint: {
             [path moveToPoint:element->points[0]];
             break;
@@ -76,9 +72,8 @@ void ILCGPathCopyCallback(void* info, const CGPathElement* element)
 }
 
 
-NSString* ILCGPathDescription(CGPathRef path)
-{
-    NSMutableString* pathDescription = [NSMutableString new]; // create a new string
+NSString* ILCGPathDescription(CGPathRef path) {
+    NSMutableString* pathDescription = NSMutableString.new; // create a new string
     [pathDescription appendFormat:@"<CGPathRef: %p\n", path];
     [pathDescription appendFormat:@"  Bounds: %@\n", ILStringFromCGRect(CGPathGetPathBoundingBox(path))];
     [pathDescription appendFormat:@"  Control Point Bounds: %@\n", ILStringFromCGRect(CGPathGetBoundingBox(path))];
@@ -86,59 +81,52 @@ NSString* ILCGPathDescription(CGPathRef path)
     return pathDescription;
 }
 
-void ILCGPathElementCountCallback(void *info, const CGPathElement *element)
-{
+void ILCGPathElementCountCallback(void *info, const CGPathElement *element) {
     NSInteger elementCount = *(NSInteger*)info;
-    elementCount = elementCount + 1; // ++ upset the static analyzer/compiler
+    *(NSInteger*)info = elementCount + 1; // ++ upset the static analyzer/compiler
 }
 
-NSInteger ILCGPathElementCount(CGPathRef path)
-{
+NSInteger ILCGPathElementCount(CGPathRef path) {
     NSInteger elementCount = 0;
     CGPathApply(path, &elementCount, ILCGPathElementCountCallback);
     return elementCount;
 }
 
-void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
-{
+void ILCGPathElementBlockCallback(void *info, const CGPathElement *element) {
     ILBezierPathEnumerator block = (__bridge ILBezierPathEnumerator) info;
     block(element);
 }
 
-#pragma mark -
+// MARK: -
 
 @implementation ILBezierPath (KitBridge)
 
 #if IL_APP_KIT
-#pragma mark - UIBezierPath
-#pragma mark - Factory Methods
+// MARK: - UIBezierPath
+// MARK: - Factory Methods
 
-+ (instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius
-{
++ (instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius {
     return [NSBezierPath bezierPathWithRoundedRect:(NSRect)rect xRadius:cornerRadius yRadius:cornerRadius];
 }
 
-+ (instancetype)bezierPathWithRoundedRect:(CGRect)rect byRoundingCorners:(ILRectCorner)corners cornerRadii:(CGSize)cornerRadii
-{
++ (instancetype)bezierPathWithRoundedRect:(CGRect)rect byRoundingCorners:(ILRectCorner)corners cornerRadii:(CGSize)cornerRadii {
     // XXX Assumes ILRectCornerAllCorners
     return [NSBezierPath bezierPathWithRoundedRect:(NSRect)rect xRadius:cornerRadii.width yRadius:cornerRadii.height];
 }
 
-+ (instancetype)bezierPathWithArcCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
-{
-    NSBezierPath* path = [NSBezierPath new];
++ (instancetype)bezierPathWithArcCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise {
+    NSBezierPath* path = NSBezierPath.new;
     [path addArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:clockwise];
     return path;
 }
 
-+ (instancetype)bezierPathWithCGPath:(CGPathRef)CGPath
-{
-    NSBezierPath* path = [NSBezierPath new];
++ (instancetype)bezierPathWithCGPath:(CGPathRef)CGPath {
+    NSBezierPath* path = NSBezierPath.new;
     CGPathApply(CGPath, (__bridge void * _Nullable)path, ILCGPathCopyCallback);
     return path;
 }
 
-#pragma mark - Properties
+// MARK: - Properties
 
 /*
  
@@ -147,8 +135,7 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
  https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CocoaDrawingGuide/Paths/Paths.html#//apple_ref/doc/uid/TP40003290-CH206-SW2
 
 */
-- (CGPathRef) CGPath
-{
+- (CGPathRef) CGPath {
     CGPathRef immutablePath = NULL;
     NSUInteger numElements = [self elementCount];
     
@@ -161,23 +148,29 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
             NSBezierPathElement pathElement = [self elementAtIndex:index associatedPoints:points];
             
             switch (pathElement) {
-                case NSMoveToBezierPathElement:
+                case NSBezierPathElementMoveTo:
                     CGPathMoveToPoint(path, NULL, points[0].x, points[0].y);
                     break;
                     
-                case NSLineToBezierPathElement:
+                case NSBezierPathElementLineTo:
                     CGPathAddLineToPoint(path, NULL, points[0].x, points[0].y);
                     didClosePath = NO;
                     break;
                     
-                case NSCurveToBezierPathElement:
+                case NSBezierPathElementCubicCurveTo:
                     CGPathAddCurveToPoint(path, NULL, points[0].x, points[0].y,
                                           points[1].x, points[1].y,
                                           points[2].x, points[2].y);
                     didClosePath = NO;
                     break;
                     
-                case NSClosePathBezierPathElement:
+                case NSBezierPathElementQuadraticCurveTo:
+                    CGPathAddQuadCurveToPoint(path, NULL, points[0].x, points[0].y, 
+                                              points[1].x, points[1].y);
+                    didClosePath = NO;
+                    break;
+
+                case NSBezierPathElementClosePath:
                     CGPathCloseSubpath(path);
                     didClosePath = YES;
                     break;
@@ -200,26 +193,22 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
     return immutablePath;
 }
 
-#pragma mark - Path Construction
+// MARK: - Path Construction
 
-- (void) addLineToPoint:(CGPoint)point
-{
+- (void) addLineToPoint:(CGPoint)point {
     [self lineToPoint:point];
 }
 
-- (void)addCurveToPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1 controlPoint2:(CGPoint)controlPoint2
-{
+- (void)addCurveToPoint:(CGPoint)endPoint controlPoint1:(CGPoint)controlPoint1 controlPoint2:(CGPoint)controlPoint2 {
     [self curveToPoint:endPoint controlPoint1:controlPoint1 controlPoint2:controlPoint2];
 }
 
-- (void)addQuadCurveToPoint:(CGPoint)endPoint controlPoint:(CGPoint)controlPoint
-{
+- (void)addQuadCurveToPoint:(CGPoint)endPoint controlPoint:(CGPoint)controlPoint {
     [self curveToPoint:endPoint controlPoint1:controlPoint controlPoint2:controlPoint];
 }
 
 // everyting is backwards!
-- (void) addArcWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise
-{
+- (void) addArcWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise {
     [self appendBezierPathWithArcWithCenter:center
         radius:radius
         startAngle:ILRadiansToDegrees(startAngle)
@@ -227,29 +216,26 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element)
         clockwise:!clockwise];
 }
 
-#pragma mark - Appending Paths
+// MARK: - Appending Paths
 
-- (void)appendPath:(ILBezierPath *)bezierPath
-{
+- (void)appendPath:(ILBezierPath *)bezierPath {
     // TODO
 }
 
 #else // IL_UI_KIT
-#pragma mark - NSBezierPath
-#pragma mark - Properties
+// MARK: - NSBezierPath
+// MARK: - Properties
 
-- (NSInteger) elementCount
-{
+- (NSInteger) elementCount {
     return ILCGPathElementCount(self.CGPath);
 }
 
 #endif
-#pragma mark - ILBezierPath Additions
 
-#pragma mark - Enumerating Paths
+// MARK: - ILBezierPath Additions
+// MARK: - Enumerating Paths
 
-- (void)enumeratePathWithBlock:(ILBezierPathEnumerator) enumerator
-{
+- (void)enumeratePathWithBlock:(ILBezierPathEnumerator) enumerator {
     CGPathApply(self.CGPath, (__bridge void * _Nullable)(enumerator), ILCGPathElementBlockCallback);
 }
 

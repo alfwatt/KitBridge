@@ -22,7 +22,7 @@ extern NSString* const ILFontSerifFace;
 /*! @brief Font face size in info.plist and NSUserDefaults to use as the default */
 extern NSString* const ILFontSize;
 
-#pragma mark -
+// MARK: -
 
 @interface ILFont (KitBridge)
 
@@ -44,7 +44,7 @@ extern NSString* const ILFontSize;
 
 @end
 
-#pragma mark -
+// MARK: -
 
 @interface ILView (KitBridge_ILFont)
 

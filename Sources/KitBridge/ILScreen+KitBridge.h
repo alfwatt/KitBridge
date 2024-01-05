@@ -7,7 +7,7 @@
 @interface ILScreen (KitBridge)
 
 #if IL_APP_KIT
-#pragma mark - UIScreen methods
+// MARK: - UIScreen methods
 
 @property(nonatomic,readonly) CGFloat scale;
 
