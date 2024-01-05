@@ -97,7 +97,7 @@ needed, e.g. ILApplicationDelegates might use them to initialize the app for eac
 ## Bridged Functions
 
 A number of geometry and printing functions are included for conveniences, see 
-<a href="./KitBridgeFunctions.h">`KitBridgeFunctions.h`</a> for details.
+<a href="./Sources/KitBridge/KitBridgeFunctions.h">`KitBridgeFunctions.h`</a> for details.
 
 
 <a id="protocols"></a>
@@ -105,7 +105,7 @@ A number of geometry and printing functions are included for conveniences, see
 
 ### ILViews
 
-The <a href="./ILViews.h">`ILViews`</a> protocol defines the `-initView` and `-updateView` methods for ILView subclasses.
+The <a href="./Sources/KitBridge/ILViews.h">`ILViews`</a> protocol defines the `-initView` and `-updateView` methods for ILView subclasses.
 
 
 <a id="categories"></a>
@@ -116,25 +116,25 @@ Categories are defined on AppKit classes to provide adaption to various UIKit me
 Applications can then use the UIKit interface throughout, with only a small performance
 penalty on macOS for the bridge code.
 
-- <a id="ILApplication+KitBridge" href="./ILApplication+KitBridge.h">`ILApplication+KitBridge`</a>
+- <a id="ILApplication+KitBridge" href="./Sources/KitBridge/ILApplication+KitBridge.h">`ILApplication+KitBridge`</a>
     - Adds `openURL:` method
-- <a id="ILBezierPath+KitBridge" href="./ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
+- <a id="ILBezierPath+KitBridge" href="./Sources/KitBridge/ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
     - Adds Path Description and Count functions and methods
     - Adds `enumeratePathWithBlock:` method
-- <a id="ILButton+KitBridge" href="./ILButton+KitBridge.h">`ILButton+KitBridge`</a>
-- <a id="ILColor+KitBridge" href="./ILColor+KitBridge.h">`ILColor+KitBridge`</a>
+- <a id="ILButton+KitBridge" href="./Sources/KitBridge/ILButton+KitBridge.h">`ILButton+KitBridge`</a>
+- <a id="ILColor+KitBridge" href="./Sources/KitBridge/ILColor+KitBridge.h">`ILColor+KitBridge`</a>
     - Adds CSS color string properties
     - Adds complementary and contrasting color properties
     - Adds CIColor property to AppKit
     - Adds semantic colors from AppKit to UIKit
-- <a id="ILFont+KitBridge" href="./ILFont+KitBridge.h">`ILFont+KitBridge`</a>
+- <a id="ILFont+KitBridge" href="./Sources/KitBridge/ILFont+KitBridge.h">`ILFont+KitBridge`</a>
     - Adds `-applicationFontFace:` along with `info.plist` keys to define font faces for your application
     - Adds `-replaceSystemFonts` on `ILView` which replaces standard system fonts with the application font faces
-- <a id="ILImage+KitBridge" href="./ILImage+KitBridge.h">`ILImage+KitBridge`</a>
-- <a id="ILProgressView+KitBridge" href="./ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
-- <a id="ILScreen+KitBridge" href="./ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
-- <a id="ILTextView+KitBridge" href="./ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
-- <a id="NSBundle+KitBridge" href="./NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
+- <a id="ILImage+KitBridge" href="./Sources/KitBridge/ILImage+KitBridge.h">`ILImage+KitBridge`</a>
+- <a id="ILProgressView+KitBridge" href="./Sources/KitBridge/ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
+- <a id="ILScreen+KitBridge" href="./Sources/KitBridge/ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
+- <a id="ILTextView+KitBridge" href="./Sources/KitBridge/ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
+- <a id="NSBundle+KitBridge" href="./Sources/KitBridge/NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
 
 
 <a id="swift"></a>
