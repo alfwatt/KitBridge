@@ -134,63 +134,69 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element) {
  
  https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CocoaDrawingGuide/Paths/Paths.html#//apple_ref/doc/uid/TP40003290-CH206-SW2
 
+NSBezierPath.GCPath is Avaiable in macos 14 and later
+ 
 */
-- (CGPathRef) CGPath {
-    CGPathRef immutablePath = NULL;
-    NSUInteger numElements = [self elementCount];
-    
-    if (numElements > 0) {
-        CGMutablePathRef path = CGPathCreateMutable();
-        BOOL didClosePath = YES;
+- (CGPathRef) ILCGPath {
+    if (@available(macOS 14.0, *)) {
+        return self.CGPath;
+    } else {
+        CGPathRef immutablePath = NULL;
+        NSUInteger numElements = [self elementCount];
         
-        for (NSUInteger index = 0; index < numElements; index++) {
-            NSPoint points[3] = {NSZeroPoint, NSZeroPoint, NSZeroPoint};
-            NSBezierPathElement pathElement = [self elementAtIndex:index associatedPoints:points];
+        if (numElements > 0) {
+            CGMutablePathRef path = CGPathCreateMutable();
+            BOOL didClosePath = YES;
             
-            switch (pathElement) {
-                case NSBezierPathElementMoveTo:
-                    CGPathMoveToPoint(path, NULL, points[0].x, points[0].y);
-                    break;
-                    
-                case NSBezierPathElementLineTo:
-                    CGPathAddLineToPoint(path, NULL, points[0].x, points[0].y);
-                    didClosePath = NO;
-                    break;
-                    
-                case NSBezierPathElementCubicCurveTo:
-                    CGPathAddCurveToPoint(path, NULL, points[0].x, points[0].y,
-                                          points[1].x, points[1].y,
-                                          points[2].x, points[2].y);
-                    didClosePath = NO;
-                    break;
-                    
-                case NSBezierPathElementQuadraticCurveTo:
-                    CGPathAddQuadCurveToPoint(path, NULL, points[0].x, points[0].y, 
-                                              points[1].x, points[1].y);
-                    didClosePath = NO;
-                    break;
-
-                case NSBezierPathElementClosePath:
-                    CGPathCloseSubpath(path);
-                    didClosePath = YES;
-                    break;
+            for (NSUInteger index = 0; index < numElements; index++) {
+                NSPoint points[3] = {NSZeroPoint, NSZeroPoint, NSZeroPoint};
+                NSBezierPathElement pathElement = [self elementAtIndex:index associatedPoints:points];
+                
+                switch (pathElement) {
+                    case NSBezierPathElementMoveTo:
+                        CGPathMoveToPoint(path, NULL, points[0].x, points[0].y);
+                        break;
+                        
+                    case NSBezierPathElementLineTo:
+                        CGPathAddLineToPoint(path, NULL, points[0].x, points[0].y);
+                        didClosePath = NO;
+                        break;
+                        
+                    case NSBezierPathElementCubicCurveTo:
+                        CGPathAddCurveToPoint(path, NULL, points[0].x, points[0].y,
+                                              points[1].x, points[1].y,
+                                              points[2].x, points[2].y);
+                        didClosePath = NO;
+                        break;
+                        
+                    case NSBezierPathElementQuadraticCurveTo:
+                        CGPathAddQuadCurveToPoint(path, NULL, points[0].x, points[0].y,
+                                                  points[1].x, points[1].y);
+                        didClosePath = NO;
+                        break;
+                        
+                    case NSBezierPathElementClosePath:
+                        CGPathCloseSubpath(path);
+                        didClosePath = YES;
+                        break;
+                }
             }
+            
+            // Be sure the path is closed or Quartz may not do valid hit detection.
+            if (!didClosePath) {
+                CGPathCloseSubpath(path);
+            }
+            
+            immutablePath = CGPathCreateCopy(path);
+            CGPathRelease(path);
         }
         
-        // Be sure the path is closed or Quartz may not do valid hit detection.
-        if (!didClosePath) {
-            CGPathCloseSubpath(path);
+        if (immutablePath) {
+            CFAutorelease(immutablePath);
         }
         
-        immutablePath = CGPathCreateCopy(path);
-        CGPathRelease(path);
+        return immutablePath;
     }
-    
-    if (immutablePath) {
-        CFAutorelease(immutablePath);
-    }
-    
-    return immutablePath;
 }
 
 // MARK: - Path Construction
@@ -225,6 +231,10 @@ void ILCGPathElementBlockCallback(void *info, const CGPathElement *element) {
 #else // IL_UI_KIT
 // MARK: - NSBezierPath
 // MARK: - Properties
+
+- (CGPathRef) ILCGPath {
+    return self.CGPath;
+}
 
 - (NSInteger) elementCount {
     return ILCGPathElementCount(self.CGPath);

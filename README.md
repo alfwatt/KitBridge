@@ -242,13 +242,13 @@ platform specific subclasses):
     @implementation ExampleController
     
     #if IL_APP_KIT
-    #pragma mark - NSViewController Overrides . . .
-    #pragma mark - NSTableViewDataSource . . .
-    #pragma mark - NSTableViewDelegate . . .
+    // MARK: - NSViewController Overrides . . .
+    // MARK: - NSTableViewDataSource . . .
+    // MARK: - NSTableViewDelegate . . .
     #elif IL_UI_KIT
-    #pragma mark - UIViewController Overrides . . .
-    #pragma mark - UITableViewDataSource . . .
-    #pragma mark - UITableViewDelegate . . .    
+    // MARK: - UIViewController Overrides . . .
+    // MARK: - UITableViewDataSource . . .
+    // MARK: - UITableViewDelegate . . .    
     #endif
     
     @end
@@ -264,7 +264,6 @@ In no specific order these are things to keep an eye out for as you write and de
 <a id="todo"></a>
 ## To Do Items
 
-- package manager support
 - open source example app (besides the CardView and SparkKit)
 - Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
@@ -278,10 +277,11 @@ In no specific order these are things to keep an eye out for as you write and de
 - `KitBridge-1.1`: 17 August 2018 —  
 - `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
     - `1.2.1` : Fix Packaging
-- `KitBridge-1.3`: December 2023 - Modernize Build Settings with minimum 10.14 targets for most platforms
+- `KitBridge-1.3`: January 2023 - Modernize Build Settings with minimum 10.14 targets for most platforms
     - Removed ILWebView and WebKit dependency
     - Added IL/UI/NSStoryboard
     - Added IL/UI/NSCollectionView/Item/Delegate
+    - Addedl ILCGPath to ILBezierPath
 
 
 <a id="license"></a>
@@ -289,7 +289,7 @@ In no specific order these are things to keep an eye out for as you write and de
 
     The MIT License (MIT)
 
-    Copyright © 2017-2023 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2024 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal

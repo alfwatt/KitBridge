@@ -27,9 +27,9 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 
 @interface ILBezierPath (KitBridge)
 
+@property(nonatomic, readonly) CGPathRef ILCGPath CF_RETURNS_RETAINED;
+
 #if IL_APP_KIT
-#pragma mark - UIBezierPath methods
-@property(nonatomic, readonly) CGPathRef CGPath CF_RETURNS_RETAINED;
 
 + (instancetype)bezierPathWithRoundedRect:(CGRect)rect cornerRadius:(CGFloat)cornerRadius;
 
@@ -39,7 +39,7 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 
 + (instancetype)bezierPathWithCGPath:(CGPathRef)CGPath;
 
-#pragma mark - Path Construction
+// MARK: - Path Construction
 
 - (void)addLineToPoint:(CGPoint)point;
 
@@ -49,7 +49,7 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 
 - (void)addArcWithCenter:(CGPoint)center radius:(CGFloat)radius startAngle:(CGFloat)startAngle endAngle:(CGFloat)endAngle clockwise:(BOOL)clockwise;
 
-#pragma mark - Appending Paths
+// MARK: - Appending Paths
 
 /*! @brief append a path to this one */
 - (void)appendPath:(ILBezierPath*)bezierPath;
@@ -59,7 +59,7 @@ typedef void(^ILBezierPathEnumerator)(const CGPathElement* element);
 
 #endif
 
-#pragma mark - Enumerating Paths
+// MARK: - Enumerating Paths
 
 /*! @brief the provided enumerator block is executed once for each point on the path */
 - (void)enumeratePathWithBlock:(ILBezierPathEnumerator) enumerator;
