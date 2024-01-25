@@ -281,7 +281,7 @@ In no specific order these are things to keep an eye out for as you write and de
     - Removed ILWebView and WebKit dependency
     - Added IL/UI/NSStoryboard
     - Added IL/UI/NSCollectionView/Item/Delegate
-    - Addedl ILCGPath to ILBezierPath
+    - Added ILCGPath to ILBezierPath
 
 
 <a id="license"></a>
