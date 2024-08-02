@@ -1,7 +1,7 @@
 #import "ILBezierPath+KitBridge.h"
 #import "KitBridgeFunctions.h"
 
-#pragma mark Functions
+// MARK: Functions
 
 NSString* ILCGPathElementDescription(const CGPathElement *element) {
     NSString* description = nil;
