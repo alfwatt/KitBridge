@@ -272,16 +272,18 @@ In no specific order these are things to keep an eye out for as you write and de
 <a id="versions"></a>
 ## Version History
 
--  22 May 2017 — Initial Release
-- `KitBridge-1.0`: 19 January 2018 — 
-- `KitBridge-1.1`: 17 August 2018 —  
-- `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
-    - `1.2.1` : Fix Packaging
+
 - `KitBridge-1.3`: January 2023 - Modernize Build Settings with minimum 10.14 targets for most platforms
     - Removed ILWebView and WebKit dependency
     - Added IL/UI/NSStoryboard
     - Added IL/UI/NSCollectionView/Item/Delegate
     - Added ILCGPath to ILBezierPath
+- `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
+    - `1.2.1` : Fix Packaging
+- `KitBridge-1.1`: 17 August 2018 —  
+- `KitBridge-1.0`: 19 January 2018 — 
+-  22 May 2017 — Initial Release
+
 
 
 <a id="license"></a>
