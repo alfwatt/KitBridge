@@ -7,169 +7,81 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		D32DE41021E68C7B005E5FE1 /* KitBridge */ = {
+		D32DE42B21E68CDD005E5FE1 /* KitBridge (All) */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = D32DE41121E68C7B005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge" */;
-			buildPhases = (
-			);
-			dependencies = (
-				D32DE41521E68C87005E5FE1 /* PBXTargetDependency */,
-				D32DE41921E68C87005E5FE1 /* PBXTargetDependency */,
-			);
-			name = KitBridge;
-			productName = KitBridge;
-		};
-		D32DE42B21E68CDD005E5FE1 /* KitBridge (Swift) */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = D32DE43621E68CDD005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge (Swift)" */;
+			buildConfigurationList = D32DE43621E68CDD005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge (All)" */;
 			buildPhases = (
 			);
 			dependencies = (
 				D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */,
 				D32DE43221E68CDD005E5FE1 /* PBXTargetDependency */,
 			);
-			name = "KitBridge (Swift)";
+			name = "KitBridge (All)";
 			productName = KitBridge;
 		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		7539AC1E285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
 		7539AC1F285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
-		7539AC20285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
 		7539AC21285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
-		7539AC22285855D100073DFD /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC00285855D100073DFD /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC23285855D100073DFD /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC00285855D100073DFD /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC24285855D100073DFD /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC00285855D100073DFD /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC25285855D100073DFD /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC00285855D100073DFD /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC26285855D100073DFD /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC01285855D100073DFD /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC27285855D100073DFD /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC01285855D100073DFD /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC28285855D100073DFD /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC01285855D100073DFD /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC29285855D100073DFD /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC01285855D100073DFD /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC2A285855D100073DFD /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC2B285855D100073DFD /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC2C285855D100073DFD /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC2D285855D100073DFD /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC2E285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
 		7539AC2F285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
-		7539AC30285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
 		7539AC31285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
-		7539AC32285855D100073DFD /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC04285855D100073DFD /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC33285855D100073DFD /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC04285855D100073DFD /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC34285855D100073DFD /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC04285855D100073DFD /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC35285855D100073DFD /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC04285855D100073DFD /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC36285855D100073DFD /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
 		7539AC37285855D100073DFD /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
-		7539AC38285855D100073DFD /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
 		7539AC39285855D100073DFD /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
-		7539AC3A285855D100073DFD /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC06285855D100073DFD /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC3B285855D100073DFD /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC06285855D100073DFD /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC3C285855D100073DFD /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC06285855D100073DFD /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC3D285855D100073DFD /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC06285855D100073DFD /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC3E285855D100073DFD /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
 		7539AC3F285855D100073DFD /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
-		7539AC40285855D100073DFD /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
 		7539AC41285855D100073DFD /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
-		7539AC42285855D100073DFD /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC08285855D100073DFD /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC43285855D100073DFD /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC08285855D100073DFD /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC44285855D100073DFD /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC08285855D100073DFD /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC45285855D100073DFD /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC08285855D100073DFD /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC46285855D100073DFD /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC09285855D100073DFD /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC47285855D100073DFD /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC09285855D100073DFD /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC48285855D100073DFD /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC09285855D100073DFD /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC49285855D100073DFD /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC09285855D100073DFD /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC4A285855D100073DFD /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
 		7539AC4B285855D100073DFD /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
-		7539AC4C285855D100073DFD /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
 		7539AC4D285855D100073DFD /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
-		7539AC4E285855D100073DFD /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC4F285855D100073DFD /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC50285855D100073DFD /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC51285855D100073DFD /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC52285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
 		7539AC53285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
-		7539AC54285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
 		7539AC55285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
-		7539AC56285855D100073DFD /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0D285855D100073DFD /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC57285855D100073DFD /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0D285855D100073DFD /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC58285855D100073DFD /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0D285855D100073DFD /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC59285855D100073DFD /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0D285855D100073DFD /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC5A285855D100073DFD /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
 		7539AC5B285855D100073DFD /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
-		7539AC5C285855D100073DFD /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
 		7539AC5D285855D100073DFD /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
-		7539AC5E285855D100073DFD /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
 		7539AC5F285855D100073DFD /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
-		7539AC60285855D100073DFD /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
 		7539AC61285855D100073DFD /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
-		7539AC62285855D100073DFD /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC10285855D100073DFD /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC63285855D100073DFD /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC10285855D100073DFD /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC64285855D100073DFD /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC10285855D100073DFD /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC65285855D100073DFD /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC10285855D100073DFD /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC66285855D100073DFD /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC11285855D100073DFD /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC67285855D100073DFD /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC11285855D100073DFD /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC68285855D100073DFD /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC11285855D100073DFD /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC69285855D100073DFD /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC11285855D100073DFD /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC6A285855D100073DFD /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC12285855D100073DFD /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC6B285855D100073DFD /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC12285855D100073DFD /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC6C285855D100073DFD /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC12285855D100073DFD /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC6D285855D100073DFD /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC12285855D100073DFD /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC6E285855D100073DFD /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
 		7539AC6F285855D100073DFD /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
-		7539AC70285855D100073DFD /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
 		7539AC71285855D100073DFD /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
-		7539AC72285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC73285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC74285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC75285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC76285855D100073DFD /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
 		7539AC77285855D100073DFD /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
-		7539AC78285855D100073DFD /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
 		7539AC79285855D100073DFD /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
-		7539AC7A285855D100073DFD /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
 		7539AC7B285855D100073DFD /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
-		7539AC7C285855D100073DFD /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
 		7539AC7D285855D100073DFD /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
-		7539AC7E285855D100073DFD /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC17285855D100073DFD /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC7F285855D100073DFD /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC17285855D100073DFD /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC80285855D100073DFD /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC17285855D100073DFD /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC81285855D100073DFD /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC17285855D100073DFD /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC82285855D100073DFD /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC18285855D100073DFD /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC83285855D100073DFD /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC18285855D100073DFD /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC84285855D100073DFD /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC18285855D100073DFD /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC85285855D100073DFD /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC18285855D100073DFD /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC86285855D100073DFD /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
 		7539AC87285855D100073DFD /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
-		7539AC88285855D100073DFD /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
 		7539AC89285855D100073DFD /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
 		7539AC8F285855D100073DFD /* KitBridgeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1D285855D100073DFD /* KitBridgeAliases.swift */; };
 		7539AC91285855D100073DFD /* KitBridgeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1D285855D100073DFD /* KitBridgeAliases.swift */; };
 		7539AC922858561A00073DFD /* colorist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1B285855D100073DFD /* colorist.m */; };
-		75A0CEE720D99A5D0091D26A /* KitBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75DCBEE21ED2C81E00538D87 /* KitBridge.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		75A0CEE820D99A660091D26A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
-			remoteInfo = "KitBridge (macOS)";
-		};
-		D32DE41421E68C87005E5FE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75DCBEF11ED2C84B00538D87;
-			remoteInfo = "KitBridge (iOS)";
-		};
-		D32DE41821E68C87005E5FE1 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 75DCBEE11ED2C81E00538D87;
-			remoteInfo = "KitBridge (macOS)";
-		};
 		D32DE42F21E68CDD005E5FE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
@@ -233,9 +145,7 @@
 		75B3E6601ED62ECC00E7798F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75C6A36E21268C5300367C24 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C6A41B21274CFA00367C24 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75DCBEE21ED2C81E00538D87 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75DCBEE61ED2C81E00538D87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
-		75DCBEF21ED2C84B00538D87 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,7 +153,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75A0CEE720D99A5D0091D26A /* KitBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,20 +164,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		75C6A40621274CFA00367C24 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75DCBEDE1ED2C81E00538D87 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75DCBEEE1ED2C84B00538D87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -360,8 +255,6 @@
 		75DCBEE31ED2C81E00538D87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				75DCBEE21ED2C81E00538D87 /* KitBridge.framework */,
-				75DCBEF21ED2C84B00538D87 /* KitBridge.framework */,
 				75A0CEE020D997330091D26A /* colorist */,
 				75C6A36E21268C5300367C24 /* KitBridge.framework */,
 				75C6A41B21274CFA00367C24 /* KitBridge.framework */,
@@ -416,50 +309,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75DCBEDF1ED2C81E00538D87 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7539AC44285855D100073DFD /* KitBridge.h in Headers */,
-				7539AC58285855D100073DFD /* KitBridgeFunctions.h in Headers */,
-				7539AC34285855D100073DFD /* ILViews.h in Headers */,
-				7539AC50285855D100073DFD /* NSBundle+KitBridge.h in Headers */,
-				7539AC64285855D100073DFD /* ILColor+KitBridge.h in Headers */,
-				7539AC28285855D100073DFD /* ILPDFImage.h in Headers */,
-				7539AC48285855D100073DFD /* ILTextView+KitBridge.h in Headers */,
-				7539AC24285855D100073DFD /* ILImage+KitBridge.h in Headers */,
-				7539AC80285855D100073DFD /* ILButton+KitBridge.h in Headers */,
-				7539AC74285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */,
-				7539AC2C285855D100073DFD /* ILProgressView+KitBridge.h in Headers */,
-				7539AC84285855D100073DFD /* ILFont+KitBridge.h in Headers */,
-				7539AC68285855D100073DFD /* KitBridgeDefines.h in Headers */,
-				7539AC3C285855D100073DFD /* ILScreen+KitBridge.h in Headers */,
-				7539AC6C285855D100073DFD /* ILApplication+KitBridge.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75DCBEEF1ED2C84B00538D87 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7539AC42285855D100073DFD /* KitBridge.h in Headers */,
-				7539AC56285855D100073DFD /* KitBridgeFunctions.h in Headers */,
-				7539AC32285855D100073DFD /* ILViews.h in Headers */,
-				7539AC4E285855D100073DFD /* NSBundle+KitBridge.h in Headers */,
-				7539AC62285855D100073DFD /* ILColor+KitBridge.h in Headers */,
-				7539AC26285855D100073DFD /* ILPDFImage.h in Headers */,
-				7539AC46285855D100073DFD /* ILTextView+KitBridge.h in Headers */,
-				7539AC22285855D100073DFD /* ILImage+KitBridge.h in Headers */,
-				7539AC7E285855D100073DFD /* ILButton+KitBridge.h in Headers */,
-				7539AC72285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */,
-				7539AC2A285855D100073DFD /* ILProgressView+KitBridge.h in Headers */,
-				7539AC82285855D100073DFD /* ILFont+KitBridge.h in Headers */,
-				7539AC66285855D100073DFD /* KitBridgeDefines.h in Headers */,
-				7539AC3A285855D100073DFD /* ILScreen+KitBridge.h in Headers */,
-				7539AC6A285855D100073DFD /* ILApplication+KitBridge.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -474,16 +323,15 @@
 			buildRules = (
 			);
 			dependencies = (
-				75A0CEE920D99A660091D26A /* PBXTargetDependency */,
 			);
 			name = colorist;
 			productName = semantics;
 			productReference = 75A0CEE020D997330091D26A /* colorist */;
 			productType = "com.apple.product-type.tool";
 		};
-		75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */ = {
+		75C6A34D21268C5300367C24 /* KitBridge (macOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (macOS, Swift)" */;
+			buildConfigurationList = 75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (macOS)" */;
 			buildPhases = (
 				75C6A35C21268C5300367C24 /* Headers */,
 				75C6A34E21268C5300367C24 /* Sources */,
@@ -494,14 +342,14 @@
 			);
 			dependencies = (
 			);
-			name = "KitBridge (macOS, Swift)";
+			name = "KitBridge (macOS)";
 			productName = KitBridge;
 			productReference = 75C6A36E21268C5300367C24 /* KitBridge.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		75C6A3F921274CFA00367C24 /* KitBridge (iOS, Swift) */ = {
+		75C6A3F921274CFA00367C24 /* KitBridge (iOS) */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (iOS, Swift)" */;
+			buildConfigurationList = 75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (iOS)" */;
 			buildPhases = (
 				75C6A40921274CFA00367C24 /* Headers */,
 				75C6A3FA21274CFA00367C24 /* Sources */,
@@ -512,45 +360,9 @@
 			);
 			dependencies = (
 			);
-			name = "KitBridge (iOS, Swift)";
+			name = "KitBridge (iOS)";
 			productName = KitBridge;
 			productReference = 75C6A41B21274CFA00367C24 /* KitBridge.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 75DCBEEA1ED2C81E00538D87 /* Build configuration list for PBXNativeTarget "KitBridge (macOS)" */;
-			buildPhases = (
-				75DCBEDD1ED2C81E00538D87 /* Sources */,
-				75DCBEDE1ED2C81E00538D87 /* Frameworks */,
-				75DCBEDF1ED2C81E00538D87 /* Headers */,
-				75DCBEE01ED2C81E00538D87 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "KitBridge (macOS)";
-			productName = KitBridge;
-			productReference = 75DCBEE21ED2C81E00538D87 /* KitBridge.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		75DCBEF11ED2C84B00538D87 /* KitBridge (iOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 75DCBEF71ED2C84B00538D87 /* Build configuration list for PBXNativeTarget "KitBridge (iOS)" */;
-			buildPhases = (
-				75DCBEED1ED2C84B00538D87 /* Sources */,
-				75DCBEEE1ED2C84B00538D87 /* Frameworks */,
-				75DCBEEF1ED2C84B00538D87 /* Headers */,
-				75DCBEF01ED2C84B00538D87 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "KitBridge (iOS)";
-			productName = "KitBridge (iOS)";
-			productReference = 75DCBEF21ED2C84B00538D87 /* KitBridge.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -573,18 +385,6 @@
 					75C6A3F921274CFA00367C24 = {
 						LastSwiftMigration = 1340;
 					};
-					75DCBEE11ED2C81E00538D87 = {
-						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Manual;
-					};
-					75DCBEF11ED2C84B00538D87 = {
-						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Manual;
-					};
-					D32DE41021E68C7B005E5FE1 = {
-						CreatedOnToolsVersion = 10.1;
-						ProvisioningStyle = Automatic;
-					};
 					D32DE42B21E68CDD005E5FE1 = {
 						ProvisioningStyle = Automatic;
 					};
@@ -603,13 +403,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				75DCBEF11ED2C84B00538D87 /* KitBridge (iOS) */,
-				75C6A3F921274CFA00367C24 /* KitBridge (iOS, Swift) */,
-				75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */,
-				75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */,
+				75C6A3F921274CFA00367C24 /* KitBridge (iOS) */,
+				75C6A34D21268C5300367C24 /* KitBridge (macOS) */,
+				D32DE42B21E68CDD005E5FE1 /* KitBridge (All) */,
 				75A0CEDF20D997330091D26A /* colorist */,
-				D32DE41021E68C7B005E5FE1 /* KitBridge */,
-				D32DE42B21E68CDD005E5FE1 /* KitBridge (Swift) */,
 			);
 		};
 /* End PBXProject section */
@@ -623,20 +420,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		75C6A41721274CFA00367C24 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75DCBEE01ED2C81E00538D87 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75DCBEF01ED2C84B00538D87 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -694,70 +477,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		75DCBEDD1ED2C81E00538D87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7539AC5C285855D100073DFD /* ILPDFImage.m in Sources */,
-				7539AC7C285855D100073DFD /* ILTextView+KitBridge.m in Sources */,
-				7539AC60285855D100073DFD /* ILImage+KitBridge.m in Sources */,
-				7539AC20285855D100073DFD /* KitBridgeFunctions.m in Sources */,
-				7539AC78285855D100073DFD /* NSBundle+KitBridge.m in Sources */,
-				7539AC40285855D100073DFD /* ILFont+KitBridge.m in Sources */,
-				7539AC70285855D100073DFD /* ILProgressView+KitBridge.m in Sources */,
-				7539AC38285855D100073DFD /* ILColor+KitBridge.m in Sources */,
-				7539AC54285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */,
-				7539AC4C285855D100073DFD /* ILButton+KitBridge.m in Sources */,
-				7539AC88285855D100073DFD /* ILScreen+KitBridge.m in Sources */,
-				7539AC30285855D100073DFD /* ILApplication+KitBridge.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		75DCBEED1ED2C84B00538D87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7539AC4A285855D100073DFD /* ILButton+KitBridge.m in Sources */,
-				7539AC1E285855D100073DFD /* KitBridgeFunctions.m in Sources */,
-				7539AC5A285855D100073DFD /* ILPDFImage.m in Sources */,
-				7539AC36285855D100073DFD /* ILColor+KitBridge.m in Sources */,
-				7539AC7A285855D100073DFD /* ILTextView+KitBridge.m in Sources */,
-				7539AC2E285855D100073DFD /* ILApplication+KitBridge.m in Sources */,
-				7539AC5E285855D100073DFD /* ILImage+KitBridge.m in Sources */,
-				7539AC52285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */,
-				7539AC86285855D100073DFD /* ILScreen+KitBridge.m in Sources */,
-				7539AC76285855D100073DFD /* NSBundle+KitBridge.m in Sources */,
-				7539AC3E285855D100073DFD /* ILFont+KitBridge.m in Sources */,
-				7539AC6E285855D100073DFD /* ILProgressView+KitBridge.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		75A0CEE920D99A660091D26A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */;
-			targetProxy = 75A0CEE820D99A660091D26A /* PBXContainerItemProxy */;
-		};
-		D32DE41521E68C87005E5FE1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75DCBEF11ED2C84B00538D87 /* KitBridge (iOS) */;
-			targetProxy = D32DE41421E68C87005E5FE1 /* PBXContainerItemProxy */;
-		};
-		D32DE41921E68C87005E5FE1 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 75DCBEE11ED2C81E00538D87 /* KitBridge (macOS) */;
-			targetProxy = D32DE41821E68C87005E5FE1 /* PBXContainerItemProxy */;
-		};
 		D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 75C6A3F921274CFA00367C24 /* KitBridge (iOS, Swift) */;
+			target = 75C6A3F921274CFA00367C24 /* KitBridge (iOS) */;
 			targetProxy = D32DE42F21E68CDD005E5FE1 /* PBXContainerItemProxy */;
 		};
 		D32DE43221E68CDD005E5FE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 75C6A34D21268C5300367C24 /* KitBridge (macOS, Swift) */;
+			target = 75C6A34D21268C5300367C24 /* KitBridge (macOS) */;
 			targetProxy = D32DE43321E68CDD005E5FE1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1068,159 +798,6 @@
 			};
 			name = Release;
 		};
-		75DCBEEB1ED2C81E00538D87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
-				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
-				PRODUCT_NAME = KitBridge;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 14.0;
-			};
-			name = Debug;
-		};
-		75DCBEEC1ED2C81E00538D87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				CODE_SIGN_STYLE = Manual;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
-				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
-				PRODUCT_NAME = KitBridge;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SKIP_INSTALL = YES;
-				TVOS_DEPLOYMENT_TARGET = 14.0;
-			};
-			name = Release;
-		};
-		75DCBEF81ED2C84B00538D87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
-				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
-				PRODUCT_NAME = KitBridge;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
-				SUPPORTS_UIKITFORMAC = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 14.0;
-			};
-			name = Debug;
-		};
-		75DCBEF91ED2C84B00538D87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				CODE_SIGN_STYLE = Manual;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = "";
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_MODULE_VERIFIER = YES;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
-				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
-				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
-				PRODUCT_NAME = KitBridge;
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos appletvos appletvsimulator";
-				SUPPORTS_UIKITFORMAC = NO;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TVOS_DEPLOYMENT_TARGET = 14.0;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		D32DE41221E68C7B005E5FE1 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEAD_CODE_STRIPPING = YES;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		D32DE41321E68C7B005E5FE1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEAD_CODE_STRIPPING = YES;
-				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		D32DE43721E68CDD005E5FE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1253,7 +830,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (macOS, Swift)" */ = {
+		75C6A36B21268C5300367C24 /* Build configuration list for PBXNativeTarget "KitBridge (macOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C6A36C21268C5300367C24 /* Debug */,
@@ -1262,7 +839,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (iOS, Swift)" */ = {
+		75C6A41821274CFA00367C24 /* Build configuration list for PBXNativeTarget "KitBridge (iOS)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				75C6A41921274CFA00367C24 /* Debug */,
@@ -1280,34 +857,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		75DCBEEA1ED2C81E00538D87 /* Build configuration list for PBXNativeTarget "KitBridge (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				75DCBEEB1ED2C81E00538D87 /* Debug */,
-				75DCBEEC1ED2C81E00538D87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		75DCBEF71ED2C84B00538D87 /* Build configuration list for PBXNativeTarget "KitBridge (iOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				75DCBEF81ED2C84B00538D87 /* Debug */,
-				75DCBEF91ED2C84B00538D87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D32DE41121E68C7B005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D32DE41221E68C7B005E5FE1 /* Debug */,
-				D32DE41321E68C7B005E5FE1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D32DE43621E68CDD005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge (Swift)" */ = {
+		D32DE43621E68CDD005E5FE1 /* Build configuration list for PBXAggregateTarget "KitBridge (All)" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D32DE43721E68CDD005E5FE1 /* Debug */,
