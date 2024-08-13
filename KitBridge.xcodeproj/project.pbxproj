@@ -14,6 +14,7 @@
 			);
 			dependencies = (
 				D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */,
+				75207C842C6B47480057B0A9 /* PBXTargetDependency */,
 				D32DE43221E68CDD005E5FE1 /* PBXTargetDependency */,
 				75207BB02C6B26D60057B0A9 /* PBXTargetDependency */,
 			);
@@ -55,6 +56,34 @@
 		75207BAA2C6B266D0057B0A9 /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		75207BB62C6B3AA70057B0A9 /* KitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75207BB42C6B3AA70057B0A9 /* KitBridge.swift */; };
 		75207BB72C6B3AA70057B0A9 /* KitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75207BB42C6B3AA70057B0A9 /* KitBridge.swift */; };
+		75207C5F2C6B47190057B0A9 /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B872C6B266D0057B0A9 /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C602C6B47190057B0A9 /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B832C6B266D0057B0A9 /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C612C6B47190057B0A9 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B852C6B266D0057B0A9 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C622C6B47190057B0A9 /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B802C6B266D0057B0A9 /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C632C6B47190057B0A9 /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B812C6B266D0057B0A9 /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C642C6B47190057B0A9 /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7F2C6B266D0057B0A9 /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C652C6B47190057B0A9 /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7D2C6B266D0057B0A9 /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C662C6B47190057B0A9 /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B892C6B266D0057B0A9 /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C672C6B47190057B0A9 /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8A2C6B266D0057B0A9 /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C682C6B47190057B0A9 /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B842C6B266D0057B0A9 /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C692C6B47190057B0A9 /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B862C6B266D0057B0A9 /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C6A2C6B47190057B0A9 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7E2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C6B2C6B47190057B0A9 /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B882C6B266D0057B0A9 /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C6C2C6B47190057B0A9 /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B822C6B266D0057B0A9 /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C6D2C6B47190057B0A9 /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207C6F2C6B47190057B0A9 /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
+		75207C702C6B47190057B0A9 /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
+		75207C712C6B47190057B0A9 /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
+		75207C722C6B47190057B0A9 /* KitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75207BB42C6B3AA70057B0A9 /* KitBridge.swift */; };
+		75207C732C6B47190057B0A9 /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
+		75207C742C6B47190057B0A9 /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
+		75207C752C6B47190057B0A9 /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
+		75207C762C6B47190057B0A9 /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
+		75207C772C6B47190057B0A9 /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
+		75207C782C6B47190057B0A9 /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
+		75207C792C6B47190057B0A9 /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
+		75207C7A2C6B47190057B0A9 /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
+		75207C7B2C6B47190057B0A9 /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
 		7539AC1F285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
 		7539AC21285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
 		7539AC2F285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
@@ -89,6 +118,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 75A0CEDF20D997330091D26A;
 			remoteInfo = colorist;
+		};
+		75207C832C6B47480057B0A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75207C5D2C6B47190057B0A9;
+			remoteInfo = "KitBridge (tvOS)";
 		};
 		D32DE42F21E68CDD005E5FE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -135,6 +171,7 @@
 		75207B8A2C6B266D0057B0A9 /* KitBridgeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeFunctions.h; sourceTree = "<group>"; };
 		75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KitBridge.h"; sourceTree = "<group>"; };
 		75207BB42C6B3AA70057B0A9 /* KitBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitBridge.swift; sourceTree = "<group>"; };
+		75207C812C6B47190057B0A9 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7539ABFF285855D100073DFD /* KitBridgeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KitBridgeFunctions.m; sourceTree = "<group>"; };
 		7539AC03285855D100073DFD /* ILApplication+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILApplication+KitBridge.m"; sourceTree = "<group>"; };
 		7539AC05285855D100073DFD /* ILColor+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILColor+KitBridge.m"; sourceTree = "<group>"; };
@@ -157,6 +194,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		75207C7C2C6B47190057B0A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75A0CEDD20D997330091D26A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +326,7 @@
 				75A0CEE020D997330091D26A /* colorist */,
 				75C6A36E21268C5300367C24 /* KitBridge.framework */,
 				75C6A41B21274CFA00367C24 /* KitBridge.framework */,
+				75207C812C6B47190057B0A9 /* KitBridge.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -289,6 +334,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		75207C5E2C6B47190057B0A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75207C5F2C6B47190057B0A9 /* ILViews.h in Headers */,
+				75207C602C6B47190057B0A9 /* ILPDFImage.h in Headers */,
+				75207C612C6B47190057B0A9 /* ILScreen+KitBridge.h in Headers */,
+				75207C622C6B47190057B0A9 /* ILColor+KitBridge.h in Headers */,
+				75207C632C6B47190057B0A9 /* ILFont+KitBridge.h in Headers */,
+				75207C642C6B47190057B0A9 /* ILButton+KitBridge.h in Headers */,
+				75207C652C6B47190057B0A9 /* ILApplication+KitBridge.h in Headers */,
+				75207C662C6B47190057B0A9 /* KitBridgeDefines.h in Headers */,
+				75207C672C6B47190057B0A9 /* KitBridgeFunctions.h in Headers */,
+				75207C682C6B47190057B0A9 /* ILProgressView+KitBridge.h in Headers */,
+				75207C692C6B47190057B0A9 /* ILTextView+KitBridge.h in Headers */,
+				75207C6A2C6B47190057B0A9 /* ILBezierPath+KitBridge.h in Headers */,
+				75207C6B2C6B47190057B0A9 /* KitBridge.h in Headers */,
+				75207C6C2C6B47190057B0A9 /* ILImage+KitBridge.h in Headers */,
+				75207C6D2C6B47190057B0A9 /* NSBundle+KitBridge.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75C6A35C21268C5300367C24 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +403,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		75207C5D2C6B47190057B0A9 /* KitBridge (tvOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 75207C7E2C6B47190057B0A9 /* Build configuration list for PBXNativeTarget "KitBridge (tvOS)" */;
+			buildPhases = (
+				75207C5E2C6B47190057B0A9 /* Headers */,
+				75207C6E2C6B47190057B0A9 /* Sources */,
+				75207C7C2C6B47190057B0A9 /* Frameworks */,
+				75207C7D2C6B47190057B0A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KitBridge (tvOS)";
+			productName = KitBridge;
+			productReference = 75207C812C6B47190057B0A9 /* KitBridge.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		75A0CEDF20D997330091D26A /* colorist */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 75A0CEE620D997330091D26A /* Build configuration list for PBXNativeTarget "colorist" */;
@@ -428,6 +513,7 @@
 			targets = (
 				D32DE42B21E68CDD005E5FE1 /* KitBridge (All) */,
 				75C6A3F921274CFA00367C24 /* KitBridge (iOS) */,
+				75207C5D2C6B47190057B0A9 /* KitBridge (tvOS) */,
 				75C6A34D21268C5300367C24 /* KitBridge (macOS) */,
 				75A0CEDF20D997330091D26A /* colorist */,
 			);
@@ -435,6 +521,13 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		75207C7D2C6B47190057B0A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75C6A36A21268C5300367C24 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -452,6 +545,26 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		75207C6E2C6B47190057B0A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75207C6F2C6B47190057B0A9 /* ILColor+KitBridge.m in Sources */,
+				75207C702C6B47190057B0A9 /* ILFont+KitBridge.m in Sources */,
+				75207C712C6B47190057B0A9 /* ILPDFImage.m in Sources */,
+				75207C722C6B47190057B0A9 /* KitBridge.swift in Sources */,
+				75207C732C6B47190057B0A9 /* ILTextView+KitBridge.m in Sources */,
+				75207C742C6B47190057B0A9 /* ILScreen+KitBridge.m in Sources */,
+				75207C752C6B47190057B0A9 /* ILApplication+KitBridge.m in Sources */,
+				75207C762C6B47190057B0A9 /* ILProgressView+KitBridge.m in Sources */,
+				75207C772C6B47190057B0A9 /* ILBezierPath+KitBridge.m in Sources */,
+				75207C782C6B47190057B0A9 /* NSBundle+KitBridge.m in Sources */,
+				75207C792C6B47190057B0A9 /* ILImage+KitBridge.m in Sources */,
+				75207C7A2C6B47190057B0A9 /* ILButton+KitBridge.m in Sources */,
+				75207C7B2C6B47190057B0A9 /* KitBridgeFunctions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		75A0CEDC20D997330091D26A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +621,11 @@
 			target = 75A0CEDF20D997330091D26A /* colorist */;
 			targetProxy = 75207BAF2C6B26D60057B0A9 /* PBXContainerItemProxy */;
 		};
+		75207C842C6B47480057B0A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75207C5D2C6B47190057B0A9 /* KitBridge (tvOS) */;
+			targetProxy = 75207C832C6B47480057B0A9 /* PBXContainerItemProxy */;
+		};
 		D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 75C6A3F921274CFA00367C24 /* KitBridge (iOS) */;
@@ -521,6 +639,80 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		75207C7F2C6B47190057B0A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
+				INFOPLIST_FILE = Sources/KitBridge/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
+				PRODUCT_NAME = KitBridge;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_UIKITFORMAC = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+			};
+			name = Debug;
+		};
+		75207C802C6B47190057B0A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				FRAMEWORK_VERSION = A;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
+				INFOPLIST_FILE = Sources/KitBridge/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu99 gnu++11";
+				PRODUCT_BUNDLE_IDENTIFIER = net.istumbler.labs.KitBridge;
+				PRODUCT_NAME = KitBridge;
+				SDKROOT = appletvos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_UIKITFORMAC = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 14.0;
+			};
+			name = Release;
+		};
 		75A0CEE420D997330091D26A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -659,10 +851,11 @@
 				PRODUCT_NAME = KitBridge;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 14.0;
 			};
 			name = Debug;
@@ -694,10 +887,11 @@
 				PRODUCT_NAME = KitBridge;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_UIKITFORMAC = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
 				TVOS_DEPLOYMENT_TARGET = 14.0;
 			};
 			name = Release;
@@ -849,6 +1043,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		75207C7E2C6B47190057B0A9 /* Build configuration list for PBXNativeTarget "KitBridge (tvOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75207C7F2C6B47190057B0A9 /* Debug */,
+				75207C802C6B47190057B0A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		75A0CEE620D997330091D26A /* Build configuration list for PBXNativeTarget "colorist" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

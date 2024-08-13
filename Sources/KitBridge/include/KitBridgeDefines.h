@@ -39,7 +39,7 @@
 #define IL_UI_KIT 1
 
 /* AppKit */
-#elif TARGET_OS_MAC
+#elif TARGET_OS_OSX
 #import <AppKit/AppKit.h>
 #define ILApplication               NSApplication
 #define ILApplicationDelegate       NSApplicationDelegate
