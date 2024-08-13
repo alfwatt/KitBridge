@@ -173,12 +173,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7539ABFD285855D100073DFD /* Sources */ = {
+		75207B7B2C6AD9780057B0A9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
+		};
+		75207B7C2C6AD9870057B0A9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				7539AC1A285855D100073DFD /* colorist */,
 				7539ABFE285855D100073DFD /* KitBridge */,
-				7539AC1C285855D100073DFD /* Swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -186,6 +192,8 @@
 		7539ABFE285855D100073DFD /* KitBridge */ = {
 			isa = PBXGroup;
 			children = (
+				75207B7B2C6AD9780057B0A9 /* Sources */,
+				7539AC1D285855D100073DFD /* KitBridgeAliases.swift */,
 				7539AC12285855D100073DFD /* ILApplication+KitBridge.h */,
 				7539AC03285855D100073DFD /* ILApplication+KitBridge.m */,
 				7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */,
@@ -225,14 +233,6 @@
 			path = colorist;
 			sourceTree = "<group>";
 		};
-		7539AC1C285855D100073DFD /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				7539AC1D285855D100073DFD /* KitBridgeAliases.swift */,
-			);
-			path = Swift;
-			sourceTree = "<group>";
-		};
 		75C2F3FC215C5DDF00169C8F /* Packaging */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,9 +246,9 @@
 			children = (
 				75DCBEE61ED2C81E00538D87 /* Info.plist */,
 				75C2F3FC215C5DDF00169C8F /* Packaging */,
+				75207B7C2C6AD9870057B0A9 /* Sources */,
 				75DCBEE31ED2C81E00538D87 /* Products */,
 				75B3E6601ED62ECC00E7798F /* README.md */,
-				7539ABFD285855D100073DFD /* Sources */,
 			);
 			sourceTree = "<group>";
 		};

@@ -1,58 +1,53 @@
-<a id="kitbridge"></a>
-# KitBridge
+
+# KitBridge <a id="kitbridge"></a>
 
 KitBridge: Bringing UIKit and AppKit Closer Together
 
-<p style="font-size: 0.8em; color:dark-gray;">From <a href="https://istumbler.net/labs/">iStumbler Labs</a>.</p>
+From [iStumbler Labs](https://istumbler.net/labs/).
 
-<a id="contents"></a>
-## Contents
+## Contents <a id="contents"></a>
 
-- <a href="#goals">Goals</a>
-- <a href="#support">Support</a>
-- <a href="#classes">Classes</a>
-- <a href="#functions">Functions</a>
-- <a href="#protocols">Protocols</a>
-- <a href="#categories">Categories</a>
-- <a href="#swift">Swift</a>
-- <a href="#mcmv">Model Controller Multiple Views</a>
-- <a href="#todo">To Do Items</a>
-- <a href="#versions">Version History</a>
-- <a href="#license">MIT License</a>
+- [Goals](#goals)
+- [Support](#support)
+- [Classes](#classes)
+- [Functions](#functions)
+- [Protocols](#protocols)
+- [Categories](#categories)
+- [Swift](#swift)
+- [Model Controller Multiple Views](#mcmv)
+- [To Do Items](#todo)
+- [Version History](#versions)
+- [MIT License](#license)
 
-
-<a id="goals"></a>
-## Goals
+## Goals <a id="goals"></a>
 
 KitBridge allows you to create views which can be used in both iOS and macOS applications.
 
-<img src="Images/kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS">
+![OrangeCard on macOS, tvOS and iOS](Images/kit-bridge-orangecard.png)
 
-KitBridge supports <a href="https://gitlab.com/alfwatt/cardview">CardView</a> 
-<a href="https://github.com/alfwatt/CardView">[Github]</a>, 
-<a href="https://gitlab.com/alfwatt/SparkKit">SparkKit</a> 
-<a href="https://github.com/alfwatt/SparkKit">[Github]</a>,
+KitBridge supports [CardView](https://gitlab.com/alfwatt/cardview),
+[Github](https://github.com/alfwatt/CardView),
+[SparkKit](https://gitlab.com/alfwatt/SparkKit),
+[Github](https://github.com/alfwatt/SparkKit),
 which offer a nice looking text view subclass, and a simple fast graphing toolkit as well as
 other iStumbler Labs frameworks.
 
-<img src="Images/kit-bridge-stack.png" alt="Stack Diagram Showing CardView and SparkKit on the top layer">
+![Stack Diagram Showing CardView and SparkKit on the top layer](Images/kit-bridge-stack.png)
 
 Overall the goal of KitBridge is to provide *just enough* support to make writing apps which target
 multiple platforms and UI modes easier, but without trying to emulate the iOS/tvOS app runtime on
 macOS or vice versa.
 
-Apps will have a single set of source files and one plist for each platform they want to target, along with 
-storyboards, xibs, xcassets and other platform specific resources. 
+Apps will have a single set of source files and one plist for each platform they want to target, along with
+storyboards, xibs, xcassets and other platform specific resources.
 
-<a id="support"></a>
-## Support KitBridge!
+## Support KitBridge! <a id="support"></a>
 
 Are you using KitBridge in your apps? Would you like to help support the project and get a sponsor credit?
 
 Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us in exchange for great rewards!
 
-<a id="classes"></a>
-## Bridged Classes
+## Bridged Classes <a id="classes"></a>
 
 Bridged classes are `#define` directives which allow you to write a kit class name, e.g.: `ILColor`
 and when your app is complied, the appropriate `NS` or `UI` class from the `AppKit` or `UIKit` will
@@ -77,7 +72,7 @@ be substituted at compile time with no performance penalty.
     #define ILWindow UIWindow / NSWindow
 
 The `#defines`  `IL_UI_KIT` and `IL_APP_KIT` can be used to segregate implementations when
-needed, e.g. ILApplicationDelegates might use them to initialize the app for each platform in their 
+needed, e.g. ILApplicationDelegates might use them to initialize the app for each platform in their
 `main(...)` function:
 
     #include <KitBridge/KitBridge.h>
@@ -92,59 +87,51 @@ needed, e.g. ILApplicationDelegates might use them to initialize the app for eac
     #endif
     }
 
+## Bridged Functions <a id="functions"></a>
 
-<a id="functions"></a>
-## Bridged Functions
+A number of geometry and printing functions are included for conveniences, see
+[`KitBridgeFunctions.h`](./Sources/KitBridge/KitBridgeFunctions.h) for details.
 
-A number of geometry and printing functions are included for conveniences, see 
-<a href="./Sources/KitBridge/KitBridgeFunctions.h">`KitBridgeFunctions.h`</a> for details.
-
-
-<a id="protocols"></a>
-## Protocols
+## Protocols <a id="protocols"></a>
 
 ### ILViews
 
-The <a href="./Sources/KitBridge/ILViews.h">`ILViews`</a> protocol defines the `-initView` and `-updateView` methods for ILView subclasses.
+The [`ILViews`](./Sources/KitBridge/ILViews.h) protocol defines the `-initView` and `-updateView` methods for ILView subclasses.
 
-
-<a id="categories"></a>
-## Categories
+## Categories <a id="categories"></a>
 
 Categories are defined on AppKit classes to provide adaption to various UIKit methods.
 
 Applications can then use the UIKit interface throughout, with only a small performance
 penalty on macOS for the bridge code.
 
-- <a id="ILApplication+KitBridge" href="./Sources/KitBridge/ILApplication+KitBridge.h">`ILApplication+KitBridge`</a>
-    - Adds `openURL:` method
-- <a id="ILBezierPath+KitBridge" href="./Sources/KitBridge/ILBezierPath+KitBridge.h">`ILBezierPath+KitBridge`</a>
-    - Adds Path Description and Count functions and methods
-    - Adds `enumeratePathWithBlock:` method
-- <a id="ILButton+KitBridge" href="./Sources/KitBridge/ILButton+KitBridge.h">`ILButton+KitBridge`</a>
-- <a id="ILColor+KitBridge" href="./Sources/KitBridge/ILColor+KitBridge.h">`ILColor+KitBridge`</a>
-    - Adds CSS color string properties
-    - Adds complementary and contrasting color properties
-    - Adds CIColor property to AppKit
-    - Adds semantic colors from AppKit to UIKit
-- <a id="ILFont+KitBridge" href="./Sources/KitBridge/ILFont+KitBridge.h">`ILFont+KitBridge`</a>
-    - Adds `-applicationFontFace:` along with `info.plist` keys to define font faces for your application
-    - Adds `-replaceSystemFonts` on `ILView` which replaces standard system fonts with the application font faces
-- <a id="ILImage+KitBridge" href="./Sources/KitBridge/ILImage+KitBridge.h">`ILImage+KitBridge`</a>
-- <a id="ILProgressView+KitBridge" href="./Sources/KitBridge/ILProgressView+KitBridge.h">`ILProgressView+KitBridge`</a>
-- <a id="ILScreen+KitBridge" href="./Sources/KitBridge/ILScreen+KitBridge.h">`ILScreen+KitBridge`</a>
-- <a id="ILTextView+KitBridge" href="./Sources/KitBridge/ILTextView+KitBridge.h">`ILTextView+KitBridge`</a>
-- <a id="NSBundle+KitBridge" href="./Sources/KitBridge/NSBundle+KitBridge.h">`NSBundle+KitBridge`</a>
+- [`ILApplication+KitBridge`](./Sources/KitBridge/ILApplication+KitBridge.h)
+  - Adds `openURL:` method
+- [ILBezierPath+KitBridge](./Sources/KitBridge/ILBezierPath+KitBridge.h)
+  - Adds Path Description and Count functions and methods
+  - Adds `enumeratePathWithBlock:` method
+- [ILButton+KitBridge](./Sources/KitBridge/ILButton+KitBridge.h)
+- [ILColor+KitBridge](./Sources/KitBridge/ILColor+KitBridge.h)
+  - Adds CSS color string properties
+  - Adds complementary and contrasting color properties
+  - Adds CIColor property to AppKit
+  - Adds semantic colors from AppKit to UIKit
+- [`ILFont+KitBridge`](./Sources/KitBridge/ILFont+KitBridge.h)
+  - Adds `-applicationFontFace:` along with `info.plist` keys to define font faces for your application
+  - Adds `-replaceSystemFonts` on `ILView` which replaces standard system fonts with the application font faces
+- [`ILImage+KitBridge`](./Sources/KitBridge/ILImage+KitBridge.h)
+- [ILProgressView+KitBridge](./Sources/KitBridge/ILProgressView+KitBridge.h)
+- [`ILScreen+KitBridge`](./Sources/KitBridge/ILScreen+KitBridge.h)
+- [ILTextView+KitBridge](./Sources/KitBridge/ILTextView+KitBridge.h)
+- [`NSBundle+KitBridge`](./Sources/KitBridge/NSBundle+KitBridge.h)
 
+## Swift Support <a id="swift"></a>
 
-<a id="swift"></a>
-## Swift Support
-
-For applications that use Swift `KitBridgeAliases.swift` is provided along with a generated `module.map` 
+For applications that use Swift `KitBridgeAliases.swift` is provided along with a generated `module.map`
 files in the Swift enabled products.
 
-Swift applications can't see the `#defines` used to bridge classes for Objective-C code, so Swift `typealias` directives 
-are used to allow the usage of the various `IL` type names. 
+Swift applications can't see the `#defines` used to bridge classes for Objective-C code, so Swift `typealias` directives
+are used to allow the usage of the various `IL` type names.
 
 Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be aliases so you'll need to include a
 `main.swift` file for the project:
@@ -162,7 +149,7 @@ Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be al
 
 ### Swift Controller Views
 
-To implement IL/NS/UIViewController 
+To implement IL/NS/UIViewController
 
     #if os(iOS)
     import UIKit
@@ -174,14 +161,13 @@ To implement IL/NS/UIViewController
     class ExampleView: ILViewController {
     }
 
-<a id="mcmv"></a>
-## Model Controller Multiple Views (MCMV)
+## Model Controller Multiple Views (MCMV) <a id="mcmv"></a>
 
 Porting either an existing iOS or macOS app using KitBridge will be easier or harder depending
 on how well the original code complies to the Model View Controller (MVC) design pattern.
 
 In an MVC app with clean separation adding support for a new platform means adapting the
-existing controller to the UI Idiom in use by creating Multiple Views, hence MCMV. This requires 
+existing controller to the UI Idiom in use by creating Multiple Views, hence MCMV. This requires
 more code and UI design time than an emulation environment but allows for customization of the
 model to each UI idiom as closely as possible.
 
@@ -253,41 +239,34 @@ platform specific subclasses):
     
     @end
 
-<a id="gotchas"></a>
-## Gotchas
+## Gotchas <a id="gotchas"></a>
 
 In no specific order these are things to keep an eye out for as you write and deploy your app.
 
 - KitBridge will support apps which go at least as far back as macOS 10.10
-    - xcasset catalogs are not well supported on macOS 10.10 and 10.11
+  - xcasset catalogs are not well supported on macOS 10.10 and 10.11
 
-<a id="todo"></a>
-## To Do Items
+## To Do Items <a id="todo"></a>
 
 - open source example app (besides the CardView and SparkKit)
 - Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
 - colorist: Add command line options to parse and convert colors
 
-<a id="versions"></a>
-## Version History
-
+## Version History <a id="versions"></a>
 
 - `KitBridge-1.3`: January 2023 - Modernize Build Settings with minimum 10.14 targets for most platforms
-    - Removed ILWebView and WebKit dependency
-    - Added IL/UI/NSStoryboard
-    - Added IL/UI/NSCollectionView/Item/Delegate
-    - Added ILCGPath to ILBezierPath
+  - Removed ILWebView and WebKit dependency
+  - Added IL/UI/NSStoryboard
+  - Added IL/UI/NSCollectionView/Item/Delegate
+  - Added ILCGPath to ILBezierPath
 - `KitBridge-1.2`: June 2022 - Add Swift Package Manager Support
-    - `1.2.1` : Fix Packaging
+  - `1.2.1` : Fix Packaging
 - `KitBridge-1.1`: 17 August 2018 —  
-- `KitBridge-1.0`: 19 January 2018 — 
--  22 May 2017 — Initial Release
+- `KitBridge-1.0`: 19 January 2018 —
+- Initial Beta Release: 22 May 2017
 
-
-
-<a id="license"></a>
-## License
+## License <a id="license"></a>
 
     The MIT License (MIT)
 
