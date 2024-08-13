@@ -266,6 +266,10 @@ In no specific order these are things to keep an eye out for as you write and de
 - `KitBridge-1.0`: 19 January 2018 —
 - Initial Beta Release: 22 May 2017
 
+## Swift Package <a id="spm"></a>
+
+A Swift Package is defined in `Package.swift` 
+
 ## License <a id="license"></a>
 
     The MIT License (MIT)

@@ -1,4 +1,4 @@
-#if SWIFT_PACKAGE
+#ifdef SWIFT_PACKAGE
 #import "KitBridgeDefines.h"
 #else
 #import <KitBridge/KitBridgeDefines.h>

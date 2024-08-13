@@ -1,5 +1,9 @@
 #import <Foundation/Foundation.h>
+#ifdef SWIFT_PACKAGE
+#import "KitBridge.h"
+#else
 #import <KitBridge/KitBridge.h>
+#endif
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {

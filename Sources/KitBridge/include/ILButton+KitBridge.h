@@ -1,4 +1,4 @@
-#if SWIFT_PACKAGE
+#ifdef SWIFT_PACKAGE
 #import "KitBridgeDefines.h"
 #else
 #import <KitBridge/KitBridgeDefines.h>
@@ -6,10 +6,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ILApplication (KitBridge)
-
-#if IL_APP_KIT
-- (BOOL)openURL:(NSURL *)url;
+@interface ILButton (KitBridge)
+#if IL_UI_KIT
+@property(nonatomic, copy) NSString *title;
 #endif
 
 @end

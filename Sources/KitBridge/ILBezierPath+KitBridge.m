@@ -246,7 +246,7 @@ NSBezierPath.GCPath is Avaiable in macos 14 and later
 // MARK: - Enumerating Paths
 
 - (void)enumeratePathWithBlock:(ILBezierPathEnumerator) enumerator {
-    CGPathApply(self.CGPath, (__bridge void * _Nullable)(enumerator), ILCGPathElementBlockCallback);
+    CGPathApply(self.ILCGPath, (__bridge void * _Nullable)(enumerator), ILCGPathElementBlockCallback);
 }
 
 @end

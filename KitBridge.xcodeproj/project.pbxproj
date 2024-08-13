@@ -15,6 +15,7 @@
 			dependencies = (
 				D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */,
 				D32DE43221E68CDD005E5FE1 /* PBXTargetDependency */,
+				75207BB02C6B26D60057B0A9 /* PBXTargetDependency */,
 			);
 			name = "KitBridge (All)";
 			productName = KitBridge;
@@ -22,66 +23,73 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		75207B8D2C6B266D0057B0A9 /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7D2C6B266D0057B0A9 /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B8E2C6B266D0057B0A9 /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7D2C6B266D0057B0A9 /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B8F2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7E2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B902C6B266D0057B0A9 /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7E2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B912C6B266D0057B0A9 /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7F2C6B266D0057B0A9 /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B922C6B266D0057B0A9 /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B7F2C6B266D0057B0A9 /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B932C6B266D0057B0A9 /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B802C6B266D0057B0A9 /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B942C6B266D0057B0A9 /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B802C6B266D0057B0A9 /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B952C6B266D0057B0A9 /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B812C6B266D0057B0A9 /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B962C6B266D0057B0A9 /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B812C6B266D0057B0A9 /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B972C6B266D0057B0A9 /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B822C6B266D0057B0A9 /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B982C6B266D0057B0A9 /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B822C6B266D0057B0A9 /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B992C6B266D0057B0A9 /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B832C6B266D0057B0A9 /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B9A2C6B266D0057B0A9 /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B832C6B266D0057B0A9 /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B9B2C6B266D0057B0A9 /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B842C6B266D0057B0A9 /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B9C2C6B266D0057B0A9 /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B842C6B266D0057B0A9 /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B9D2C6B266D0057B0A9 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B852C6B266D0057B0A9 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B9E2C6B266D0057B0A9 /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B852C6B266D0057B0A9 /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207B9F2C6B266D0057B0A9 /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B862C6B266D0057B0A9 /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA02C6B266D0057B0A9 /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B862C6B266D0057B0A9 /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA12C6B266D0057B0A9 /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B872C6B266D0057B0A9 /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA22C6B266D0057B0A9 /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B872C6B266D0057B0A9 /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA32C6B266D0057B0A9 /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B882C6B266D0057B0A9 /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA42C6B266D0057B0A9 /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B882C6B266D0057B0A9 /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA52C6B266D0057B0A9 /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B892C6B266D0057B0A9 /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA62C6B266D0057B0A9 /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B892C6B266D0057B0A9 /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA72C6B266D0057B0A9 /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8A2C6B266D0057B0A9 /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA82C6B266D0057B0A9 /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8A2C6B266D0057B0A9 /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BA92C6B266D0057B0A9 /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BAA2C6B266D0057B0A9 /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		75207BB62C6B3AA70057B0A9 /* KitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75207BB42C6B3AA70057B0A9 /* KitBridge.swift */; };
+		75207BB72C6B3AA70057B0A9 /* KitBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75207BB42C6B3AA70057B0A9 /* KitBridge.swift */; };
 		7539AC1F285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
 		7539AC21285855D100073DFD /* KitBridgeFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539ABFF285855D100073DFD /* KitBridgeFunctions.m */; };
-		7539AC23285855D100073DFD /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC00285855D100073DFD /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC25285855D100073DFD /* ILImage+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC00285855D100073DFD /* ILImage+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC27285855D100073DFD /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC01285855D100073DFD /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC29285855D100073DFD /* ILPDFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC01285855D100073DFD /* ILPDFImage.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC2B285855D100073DFD /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC2D285855D100073DFD /* ILProgressView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC2F285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
 		7539AC31285855D100073DFD /* ILApplication+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC03285855D100073DFD /* ILApplication+KitBridge.m */; };
-		7539AC33285855D100073DFD /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC04285855D100073DFD /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC35285855D100073DFD /* ILViews.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC04285855D100073DFD /* ILViews.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC37285855D100073DFD /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
 		7539AC39285855D100073DFD /* ILColor+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC05285855D100073DFD /* ILColor+KitBridge.m */; };
-		7539AC3B285855D100073DFD /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC06285855D100073DFD /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC3D285855D100073DFD /* ILScreen+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC06285855D100073DFD /* ILScreen+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC3F285855D100073DFD /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
 		7539AC41285855D100073DFD /* ILFont+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC07285855D100073DFD /* ILFont+KitBridge.m */; };
-		7539AC43285855D100073DFD /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC08285855D100073DFD /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC45285855D100073DFD /* KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC08285855D100073DFD /* KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC47285855D100073DFD /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC09285855D100073DFD /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC49285855D100073DFD /* ILTextView+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC09285855D100073DFD /* ILTextView+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC4B285855D100073DFD /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
 		7539AC4D285855D100073DFD /* ILButton+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0A285855D100073DFD /* ILButton+KitBridge.m */; };
-		7539AC4F285855D100073DFD /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC51285855D100073DFD /* NSBundle+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC53285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
 		7539AC55285855D100073DFD /* ILBezierPath+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */; };
-		7539AC57285855D100073DFD /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0D285855D100073DFD /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC59285855D100073DFD /* KitBridgeFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC0D285855D100073DFD /* KitBridgeFunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC5B285855D100073DFD /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
 		7539AC5D285855D100073DFD /* ILPDFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0E285855D100073DFD /* ILPDFImage.m */; };
 		7539AC5F285855D100073DFD /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
 		7539AC61285855D100073DFD /* ILImage+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC0F285855D100073DFD /* ILImage+KitBridge.m */; };
-		7539AC63285855D100073DFD /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC10285855D100073DFD /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC65285855D100073DFD /* ILColor+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC10285855D100073DFD /* ILColor+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC67285855D100073DFD /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC11285855D100073DFD /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC69285855D100073DFD /* KitBridgeDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC11285855D100073DFD /* KitBridgeDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC6B285855D100073DFD /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC12285855D100073DFD /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC6D285855D100073DFD /* ILApplication+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC12285855D100073DFD /* ILApplication+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC6F285855D100073DFD /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
 		7539AC71285855D100073DFD /* ILProgressView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */; };
-		7539AC73285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC75285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC77285855D100073DFD /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
 		7539AC79285855D100073DFD /* NSBundle+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC15285855D100073DFD /* NSBundle+KitBridge.m */; };
 		7539AC7B285855D100073DFD /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
 		7539AC7D285855D100073DFD /* ILTextView+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC16285855D100073DFD /* ILTextView+KitBridge.m */; };
-		7539AC7F285855D100073DFD /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC17285855D100073DFD /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC81285855D100073DFD /* ILButton+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC17285855D100073DFD /* ILButton+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC83285855D100073DFD /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC18285855D100073DFD /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7539AC85285855D100073DFD /* ILFont+KitBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = 7539AC18285855D100073DFD /* ILFont+KitBridge.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7539AC87285855D100073DFD /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
 		7539AC89285855D100073DFD /* ILScreen+KitBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC19285855D100073DFD /* ILScreen+KitBridge.m */; };
-		7539AC8F285855D100073DFD /* KitBridgeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1D285855D100073DFD /* KitBridgeAliases.swift */; };
-		7539AC91285855D100073DFD /* KitBridgeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1D285855D100073DFD /* KitBridgeAliases.swift */; };
-		7539AC922858561A00073DFD /* colorist.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1B285855D100073DFD /* colorist.m */; };
+		7539AC922858561A00073DFD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7539AC1B285855D100073DFD /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		75207BAF2C6B26D60057B0A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 75A0CEDF20D997330091D26A;
+			remoteInfo = colorist;
+		};
 		D32DE42F21E68CDD005E5FE1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 75DCBED91ED2C81E00538D87 /* Project object */;
@@ -111,41 +119,41 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		75207B7D2C6B266D0057B0A9 /* ILApplication+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILApplication+KitBridge.h"; sourceTree = "<group>"; };
+		75207B7E2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILBezierPath+KitBridge.h"; sourceTree = "<group>"; };
+		75207B7F2C6B266D0057B0A9 /* ILButton+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILButton+KitBridge.h"; sourceTree = "<group>"; };
+		75207B802C6B266D0057B0A9 /* ILColor+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILColor+KitBridge.h"; sourceTree = "<group>"; };
+		75207B812C6B266D0057B0A9 /* ILFont+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILFont+KitBridge.h"; sourceTree = "<group>"; };
+		75207B822C6B266D0057B0A9 /* ILImage+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILImage+KitBridge.h"; sourceTree = "<group>"; };
+		75207B832C6B266D0057B0A9 /* ILPDFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPDFImage.h; sourceTree = "<group>"; };
+		75207B842C6B266D0057B0A9 /* ILProgressView+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILProgressView+KitBridge.h"; sourceTree = "<group>"; };
+		75207B852C6B266D0057B0A9 /* ILScreen+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILScreen+KitBridge.h"; sourceTree = "<group>"; };
+		75207B862C6B266D0057B0A9 /* ILTextView+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILTextView+KitBridge.h"; sourceTree = "<group>"; };
+		75207B872C6B266D0057B0A9 /* ILViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILViews.h; sourceTree = "<group>"; };
+		75207B882C6B266D0057B0A9 /* KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridge.h; sourceTree = "<group>"; };
+		75207B892C6B266D0057B0A9 /* KitBridgeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeDefines.h; sourceTree = "<group>"; };
+		75207B8A2C6B266D0057B0A9 /* KitBridgeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeFunctions.h; sourceTree = "<group>"; };
+		75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KitBridge.h"; sourceTree = "<group>"; };
+		75207BB42C6B3AA70057B0A9 /* KitBridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitBridge.swift; sourceTree = "<group>"; };
 		7539ABFF285855D100073DFD /* KitBridgeFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KitBridgeFunctions.m; sourceTree = "<group>"; };
-		7539AC00285855D100073DFD /* ILImage+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILImage+KitBridge.h"; sourceTree = "<group>"; };
-		7539AC01285855D100073DFD /* ILPDFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILPDFImage.h; sourceTree = "<group>"; };
-		7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILProgressView+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC03285855D100073DFD /* ILApplication+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILApplication+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC04285855D100073DFD /* ILViews.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILViews.h; sourceTree = "<group>"; };
 		7539AC05285855D100073DFD /* ILColor+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILColor+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC06285855D100073DFD /* ILScreen+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILScreen+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC07285855D100073DFD /* ILFont+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILFont+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC08285855D100073DFD /* KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridge.h; sourceTree = "<group>"; };
-		7539AC09285855D100073DFD /* ILTextView+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILTextView+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC0A285855D100073DFD /* ILButton+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILButton+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILBezierPath+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC0D285855D100073DFD /* KitBridgeFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeFunctions.h; sourceTree = "<group>"; };
 		7539AC0E285855D100073DFD /* ILPDFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILPDFImage.m; sourceTree = "<group>"; };
 		7539AC0F285855D100073DFD /* ILImage+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILImage+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC10285855D100073DFD /* ILColor+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILColor+KitBridge.h"; sourceTree = "<group>"; };
-		7539AC11285855D100073DFD /* KitBridgeDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KitBridgeDefines.h; sourceTree = "<group>"; };
-		7539AC12285855D100073DFD /* ILApplication+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILApplication+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILProgressView+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILBezierPath+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC15285855D100073DFD /* NSBundle+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+KitBridge.m"; sourceTree = "<group>"; };
 		7539AC16285855D100073DFD /* ILTextView+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILTextView+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC17285855D100073DFD /* ILButton+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILButton+KitBridge.h"; sourceTree = "<group>"; };
-		7539AC18285855D100073DFD /* ILFont+KitBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ILFont+KitBridge.h"; sourceTree = "<group>"; };
 		7539AC19285855D100073DFD /* ILScreen+KitBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ILScreen+KitBridge.m"; sourceTree = "<group>"; };
-		7539AC1B285855D100073DFD /* colorist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = colorist.m; sourceTree = "<group>"; };
-		7539AC1D285855D100073DFD /* KitBridgeAliases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KitBridgeAliases.swift; sourceTree = "<group>"; };
+		7539AC1B285855D100073DFD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7539AC9328585BAF00073DFD /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		75A0CEE020D997330091D26A /* colorist */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = colorist; sourceTree = BUILT_PRODUCTS_DIR; };
 		75B3E6601ED62ECC00E7798F /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		75C6A36E21268C5300367C24 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C6A41B21274CFA00367C24 /* KitBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KitBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		75DCBEE61ED2C81E00538D87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		75DCBEE61ED2C81E00538D87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Sources/KitBridge/Info.plist; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,53 +181,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		75207B7B2C6AD9780057B0A9 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Sources;
-			sourceTree = SOURCE_ROOT;
-		};
 		75207B7C2C6AD9870057B0A9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
 				7539AC1A285855D100073DFD /* colorist */,
 				7539ABFE285855D100073DFD /* KitBridge */,
+				75207BB52C6B3AA70057B0A9 /* KitBridgeSwift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		75207B8C2C6B266D0057B0A9 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				75207B7D2C6B266D0057B0A9 /* ILApplication+KitBridge.h */,
+				75207B7E2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h */,
+				75207B7F2C6B266D0057B0A9 /* ILButton+KitBridge.h */,
+				75207B802C6B266D0057B0A9 /* ILColor+KitBridge.h */,
+				75207B812C6B266D0057B0A9 /* ILFont+KitBridge.h */,
+				75207B822C6B266D0057B0A9 /* ILImage+KitBridge.h */,
+				75207B832C6B266D0057B0A9 /* ILPDFImage.h */,
+				75207B842C6B266D0057B0A9 /* ILProgressView+KitBridge.h */,
+				75207B852C6B266D0057B0A9 /* ILScreen+KitBridge.h */,
+				75207B862C6B266D0057B0A9 /* ILTextView+KitBridge.h */,
+				75207B872C6B266D0057B0A9 /* ILViews.h */,
+				75207B882C6B266D0057B0A9 /* KitBridge.h */,
+				75207B892C6B266D0057B0A9 /* KitBridgeDefines.h */,
+				75207B8A2C6B266D0057B0A9 /* KitBridgeFunctions.h */,
+				75207B8B2C6B266D0057B0A9 /* NSBundle+KitBridge.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		75207BAD2C6B26CA0057B0A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75207BB52C6B3AA70057B0A9 /* KitBridgeSwift */ = {
+			isa = PBXGroup;
+			children = (
+				75207BB42C6B3AA70057B0A9 /* KitBridge.swift */,
+			);
+			path = KitBridgeSwift;
 			sourceTree = "<group>";
 		};
 		7539ABFE285855D100073DFD /* KitBridge */ = {
 			isa = PBXGroup;
 			children = (
-				75207B7B2C6AD9780057B0A9 /* Sources */,
-				7539AC1D285855D100073DFD /* KitBridgeAliases.swift */,
-				7539AC12285855D100073DFD /* ILApplication+KitBridge.h */,
+				75DCBEE61ED2C81E00538D87 /* Info.plist */,
+				75207B8C2C6B266D0057B0A9 /* include */,
 				7539AC03285855D100073DFD /* ILApplication+KitBridge.m */,
-				7539AC14285855D100073DFD /* ILBezierPath+KitBridge.h */,
 				7539AC0C285855D100073DFD /* ILBezierPath+KitBridge.m */,
-				7539AC17285855D100073DFD /* ILButton+KitBridge.h */,
 				7539AC0A285855D100073DFD /* ILButton+KitBridge.m */,
-				7539AC10285855D100073DFD /* ILColor+KitBridge.h */,
 				7539AC05285855D100073DFD /* ILColor+KitBridge.m */,
-				7539AC18285855D100073DFD /* ILFont+KitBridge.h */,
 				7539AC07285855D100073DFD /* ILFont+KitBridge.m */,
-				7539AC00285855D100073DFD /* ILImage+KitBridge.h */,
 				7539AC0F285855D100073DFD /* ILImage+KitBridge.m */,
-				7539AC01285855D100073DFD /* ILPDFImage.h */,
 				7539AC0E285855D100073DFD /* ILPDFImage.m */,
-				7539AC02285855D100073DFD /* ILProgressView+KitBridge.h */,
 				7539AC13285855D100073DFD /* ILProgressView+KitBridge.m */,
-				7539AC06285855D100073DFD /* ILScreen+KitBridge.h */,
 				7539AC19285855D100073DFD /* ILScreen+KitBridge.m */,
-				7539AC09285855D100073DFD /* ILTextView+KitBridge.h */,
 				7539AC16285855D100073DFD /* ILTextView+KitBridge.m */,
-				7539AC04285855D100073DFD /* ILViews.h */,
-				7539AC08285855D100073DFD /* KitBridge.h */,
-				7539AC11285855D100073DFD /* KitBridgeDefines.h */,
-				7539AC0D285855D100073DFD /* KitBridgeFunctions.h */,
 				7539ABFF285855D100073DFD /* KitBridgeFunctions.m */,
-				7539AC0B285855D100073DFD /* NSBundle+KitBridge.h */,
 				7539AC15285855D100073DFD /* NSBundle+KitBridge.m */,
 			);
 			path = KitBridge;
@@ -228,7 +252,7 @@
 		7539AC1A285855D100073DFD /* colorist */ = {
 			isa = PBXGroup;
 			children = (
-				7539AC1B285855D100073DFD /* colorist.m */,
+				7539AC1B285855D100073DFD /* main.m */,
 			);
 			path = colorist;
 			sourceTree = "<group>";
@@ -244,11 +268,11 @@
 		75DCBED81ED2C81E00538D87 = {
 			isa = PBXGroup;
 			children = (
-				75DCBEE61ED2C81E00538D87 /* Info.plist */,
+				75B3E6601ED62ECC00E7798F /* README.md */,
 				75C2F3FC215C5DDF00169C8F /* Packaging */,
 				75207B7C2C6AD9870057B0A9 /* Sources */,
 				75DCBEE31ED2C81E00538D87 /* Products */,
-				75B3E6601ED62ECC00E7798F /* README.md */,
+				75207BAD2C6B26CA0057B0A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,21 +293,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7539AC45285855D100073DFD /* KitBridge.h in Headers */,
-				7539AC59285855D100073DFD /* KitBridgeFunctions.h in Headers */,
-				7539AC35285855D100073DFD /* ILViews.h in Headers */,
-				7539AC51285855D100073DFD /* NSBundle+KitBridge.h in Headers */,
-				7539AC65285855D100073DFD /* ILColor+KitBridge.h in Headers */,
-				7539AC29285855D100073DFD /* ILPDFImage.h in Headers */,
-				7539AC49285855D100073DFD /* ILTextView+KitBridge.h in Headers */,
-				7539AC25285855D100073DFD /* ILImage+KitBridge.h in Headers */,
-				7539AC81285855D100073DFD /* ILButton+KitBridge.h in Headers */,
-				7539AC75285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */,
-				7539AC2D285855D100073DFD /* ILProgressView+KitBridge.h in Headers */,
-				7539AC85285855D100073DFD /* ILFont+KitBridge.h in Headers */,
-				7539AC69285855D100073DFD /* KitBridgeDefines.h in Headers */,
-				7539AC3D285855D100073DFD /* ILScreen+KitBridge.h in Headers */,
-				7539AC6D285855D100073DFD /* ILApplication+KitBridge.h in Headers */,
+				75207BA22C6B266D0057B0A9 /* ILViews.h in Headers */,
+				75207B9A2C6B266D0057B0A9 /* ILPDFImage.h in Headers */,
+				75207B9E2C6B266D0057B0A9 /* ILScreen+KitBridge.h in Headers */,
+				75207B942C6B266D0057B0A9 /* ILColor+KitBridge.h in Headers */,
+				75207B962C6B266D0057B0A9 /* ILFont+KitBridge.h in Headers */,
+				75207B922C6B266D0057B0A9 /* ILButton+KitBridge.h in Headers */,
+				75207B8E2C6B266D0057B0A9 /* ILApplication+KitBridge.h in Headers */,
+				75207BA62C6B266D0057B0A9 /* KitBridgeDefines.h in Headers */,
+				75207BA82C6B266D0057B0A9 /* KitBridgeFunctions.h in Headers */,
+				75207B9C2C6B266D0057B0A9 /* ILProgressView+KitBridge.h in Headers */,
+				75207BA02C6B266D0057B0A9 /* ILTextView+KitBridge.h in Headers */,
+				75207B902C6B266D0057B0A9 /* ILBezierPath+KitBridge.h in Headers */,
+				75207BA42C6B266D0057B0A9 /* KitBridge.h in Headers */,
+				75207B982C6B266D0057B0A9 /* ILImage+KitBridge.h in Headers */,
+				75207BAA2C6B266D0057B0A9 /* NSBundle+KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,21 +315,21 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7539AC43285855D100073DFD /* KitBridge.h in Headers */,
-				7539AC57285855D100073DFD /* KitBridgeFunctions.h in Headers */,
-				7539AC33285855D100073DFD /* ILViews.h in Headers */,
-				7539AC4F285855D100073DFD /* NSBundle+KitBridge.h in Headers */,
-				7539AC63285855D100073DFD /* ILColor+KitBridge.h in Headers */,
-				7539AC27285855D100073DFD /* ILPDFImage.h in Headers */,
-				7539AC47285855D100073DFD /* ILTextView+KitBridge.h in Headers */,
-				7539AC23285855D100073DFD /* ILImage+KitBridge.h in Headers */,
-				7539AC7F285855D100073DFD /* ILButton+KitBridge.h in Headers */,
-				7539AC73285855D100073DFD /* ILBezierPath+KitBridge.h in Headers */,
-				7539AC2B285855D100073DFD /* ILProgressView+KitBridge.h in Headers */,
-				7539AC83285855D100073DFD /* ILFont+KitBridge.h in Headers */,
-				7539AC67285855D100073DFD /* KitBridgeDefines.h in Headers */,
-				7539AC3B285855D100073DFD /* ILScreen+KitBridge.h in Headers */,
-				7539AC6B285855D100073DFD /* ILApplication+KitBridge.h in Headers */,
+				75207BA12C6B266D0057B0A9 /* ILViews.h in Headers */,
+				75207B992C6B266D0057B0A9 /* ILPDFImage.h in Headers */,
+				75207B9D2C6B266D0057B0A9 /* ILScreen+KitBridge.h in Headers */,
+				75207B932C6B266D0057B0A9 /* ILColor+KitBridge.h in Headers */,
+				75207B952C6B266D0057B0A9 /* ILFont+KitBridge.h in Headers */,
+				75207B912C6B266D0057B0A9 /* ILButton+KitBridge.h in Headers */,
+				75207B8D2C6B266D0057B0A9 /* ILApplication+KitBridge.h in Headers */,
+				75207BA52C6B266D0057B0A9 /* KitBridgeDefines.h in Headers */,
+				75207BA72C6B266D0057B0A9 /* KitBridgeFunctions.h in Headers */,
+				75207B9B2C6B266D0057B0A9 /* ILProgressView+KitBridge.h in Headers */,
+				75207B9F2C6B266D0057B0A9 /* ILTextView+KitBridge.h in Headers */,
+				75207B8F2C6B266D0057B0A9 /* ILBezierPath+KitBridge.h in Headers */,
+				75207BA32C6B266D0057B0A9 /* KitBridge.h in Headers */,
+				75207B972C6B266D0057B0A9 /* ILImage+KitBridge.h in Headers */,
+				75207BA92C6B266D0057B0A9 /* NSBundle+KitBridge.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,12 +396,11 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1540;
 				ORGANIZATIONNAME = "iStumbler Labs";
 				TargetAttributes = {
 					75A0CEDF20D997330091D26A = {
 						CreatedOnToolsVersion = 10.0;
-						ProvisioningStyle = Manual;
 					};
 					75C6A34D21268C5300367C24 = {
 						LastSwiftMigration = 1340;
@@ -403,9 +426,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				D32DE42B21E68CDD005E5FE1 /* KitBridge (All) */,
 				75C6A3F921274CFA00367C24 /* KitBridge (iOS) */,
 				75C6A34D21268C5300367C24 /* KitBridge (macOS) */,
-				D32DE42B21E68CDD005E5FE1 /* KitBridge (All) */,
 				75A0CEDF20D997330091D26A /* colorist */,
 			);
 		};
@@ -433,7 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7539AC922858561A00073DFD /* colorist.m in Sources */,
+				7539AC922858561A00073DFD /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,8 +467,8 @@
 				7539AC39285855D100073DFD /* ILColor+KitBridge.m in Sources */,
 				7539AC41285855D100073DFD /* ILFont+KitBridge.m in Sources */,
 				7539AC5D285855D100073DFD /* ILPDFImage.m in Sources */,
+				75207BB72C6B3AA70057B0A9 /* KitBridge.swift in Sources */,
 				7539AC7D285855D100073DFD /* ILTextView+KitBridge.m in Sources */,
-				7539AC91285855D100073DFD /* KitBridgeAliases.swift in Sources */,
 				7539AC89285855D100073DFD /* ILScreen+KitBridge.m in Sources */,
 				7539AC31285855D100073DFD /* ILApplication+KitBridge.m in Sources */,
 				7539AC71285855D100073DFD /* ILProgressView+KitBridge.m in Sources */,
@@ -464,8 +487,8 @@
 				7539AC37285855D100073DFD /* ILColor+KitBridge.m in Sources */,
 				7539AC3F285855D100073DFD /* ILFont+KitBridge.m in Sources */,
 				7539AC5B285855D100073DFD /* ILPDFImage.m in Sources */,
+				75207BB62C6B3AA70057B0A9 /* KitBridge.swift in Sources */,
 				7539AC7B285855D100073DFD /* ILTextView+KitBridge.m in Sources */,
-				7539AC8F285855D100073DFD /* KitBridgeAliases.swift in Sources */,
 				7539AC87285855D100073DFD /* ILScreen+KitBridge.m in Sources */,
 				7539AC2F285855D100073DFD /* ILApplication+KitBridge.m in Sources */,
 				7539AC6F285855D100073DFD /* ILProgressView+KitBridge.m in Sources */,
@@ -480,6 +503,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		75207BB02C6B26D60057B0A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 75A0CEDF20D997330091D26A /* colorist */;
+			targetProxy = 75207BAF2C6B26D60057B0A9 /* PBXContainerItemProxy */;
+		};
 		D32DE42E21E68CDD005E5FE1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 75C6A3F921274CFA00367C24 /* KitBridge (iOS) */;
@@ -501,8 +529,9 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -525,8 +554,9 @@
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Automatic;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -544,7 +574,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -554,7 +583,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Sources/KitBridge/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -576,7 +605,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = "";
@@ -586,7 +614,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Sources/KitBridge/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -617,7 +645,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Sources/KitBridge/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -652,7 +680,7 @@
 				ENABLE_MODULE_VERIFIER = YES;
 				FRAMEWORK_VERSION = A;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Sources/KitBridge/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

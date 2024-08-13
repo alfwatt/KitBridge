@@ -1,16 +1,17 @@
-#if SWIFT_PACKAGE
+#ifdef SWIFT_PACKAGE
 #import "KitBridgeDefines.h"
 #else
 #import <KitBridge/KitBridgeDefines.h>
 #endif
 
 NS_ASSUME_NONNULL_BEGIN
-@class ILImage;
 
-@interface NSBundle (KitBridge)
+@interface ILProgressView (KitBridge)
 
-#if IL_UI_KIT
-- (ILImage*) imageForResource:(NSString*)name;
+#if IL_APP_KIT
+- (void)startAnimating;
+
+- (void)stopAnimating;
 #endif
 
 @end

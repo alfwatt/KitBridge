@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75DCBEE11ED2C81E00538D87"
+               BlueprintIdentifier = "75C6A34D21268C5300367C24"
                BuildableName = "KitBridge.framework"
                BlueprintName = "KitBridge (macOS)"
                ReferencedContainer = "container:KitBridge.xcodeproj">
@@ -43,7 +43,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75DCBEE11ED2C81E00538D87"
+            BlueprintIdentifier = "75C6A34D21268C5300367C24"
             BuildableName = "KitBridge.framework"
             BlueprintName = "KitBridge (macOS)"
             ReferencedContainer = "container:KitBridge.xcodeproj">
@@ -59,7 +59,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75DCBEE11ED2C81E00538D87"
+            BlueprintIdentifier = "75C6A34D21268C5300367C24"
             BuildableName = "KitBridge.framework"
             BlueprintName = "KitBridge (macOS)"
             ReferencedContainer = "container:KitBridge.xcodeproj">
