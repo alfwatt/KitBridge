@@ -71,7 +71,6 @@ void ILCGPathCopyCallback(void* info, const CGPathElement* element) {
     }
 }
 
-
 NSString* ILCGPathDescription(CGPathRef path) {
     NSMutableString* pathDescription = NSMutableString.new; // create a new string
     [pathDescription appendFormat:@"<CGPathRef: %p\n", path];
