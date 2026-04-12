@@ -270,28 +270,46 @@ font size, or set it as a `NSUserDefaults` key to be used when replacing fonts.
 
 ## Version History <a id="versions"></a>
 
-- KitBridge `2.1.1` : 28 April 2025
+- `2.2.0` : [29 Apr 2025]()
+  - `templateTintedWithColor:` → `imageWithTintColor:` on macOS
+  - Add `sendAction:to:from:` to `UIApplication`
+  - Fix `-rangesForAttribute:value:` to return correct ranges for attributes with
+  multiple values (e.g. `NSFontAttributeName` with multiple fonts in the same string)
+  
+- `2.1.1` : [28 Apr 2025]()
   - No pasteboard equality on iOS (really this time)
   - Fix `rangesForAttribute:`
-- KitBridge `2.1.0` : 20 April 2025
+  
+- `2.1.0` : [20 Apr 2025]()
   - Adds `-initWIthCGImage:` to `ILImage`
   - Adds `-rangesForAttribute:value:` to `NSAttributedString`
   - Adds `-replaceAttributes:value:newValue:` to `NSAttributedString`
   - Adds `-attributeRuns` to `NSTextStorage` on iOS 
   - The Struggle for Pasteboard Equality has failed on iOS
-- KitBridge `2.0.0`
-  - Remove Foundation categories to [ILFoundation](https://github.com/iStumblerLabs/ILFoundation.git)
-- KitBridge `1.3.1`
+  
+- `2.0.0`
+  - Remove Foundation categories to [ILFoundation](https://github.com/alfwatt/ILFoundation.git)
+  
+- `1.3.1`
   - Swift Package Manager Support
-- KitBridge `1.3`: January 2023 - Modernize Build Settings with minimum 10.14 targets for most platforms
+  
+- `1.3`: [25 Jan 2023](https://github.com/alfwatt/KitBridge/releases/tag/1.3) 
+  - Modernize Build Settings with minimum 10.14 targets for most platforms
   - Removed ILWebView and WebKit dependency
   - Adds IL/UI/NSStoryboard
   - Adds IL/UI/NSCollectionView/Item/Delegate
   - Adds ILCGPath to ILBezierPath
-- KitBridge `1.2.1` : Fix Packaging
-- KitBridge `1.2`: June 2022 - Add Swift Package Manager Support
-- KitBridge `1.1`: 17 August 2018 —  
-- KitBridge `1.0`: 19 January 2018 —
+  
+- KitBridge `1.2.1` : [21 Jun 2022](https://github.com/alfwatt/KitBridge/releases/tag/1.2.1) 
+  - Fix Packaging
+
+- KitBridge `1.2`: [13 Jun 2022](https://github.com/alfwatt/KitBridge/releases/tag/1.2)
+  - Add Swift Package Manager Support
+
+- KitBridge `1.1`: [17 Aug 2018](https://github.com/alfwatt/KitBridge/releases/tag/1.1)  
+
+- KitBridge `1.0`: 19 Jan 2018 —
+
 - KitBridge `beta`: 22 May 2017
 
 
