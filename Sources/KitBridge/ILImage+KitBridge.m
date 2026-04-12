@@ -135,7 +135,7 @@
     CGColorSpaceRef colorSpace = CGColorSpaceCreateWithName(kCGColorSpaceGenericRGB);
     CGContextRef cgContext = CGBitmapContextCreate(NULL,
         proposedRect.size.width, proposedRect.size.height,
-        bitsPerComponent, bytesPerRow, colorSpace, (alpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst));
+        bitsPerComponent, bytesPerRow, colorSpace, (enum CGBitmapInfo) (alpha ? kCGImageAlphaPremultipliedFirst : kCGImageAlphaNoneSkipFirst));
     NSGraphicsContext* context = [NSGraphicsContext graphicsContextWithCGContext:cgContext flipped:NO];
     NSDictionary* hints = @{(id)kCGImagePropertyHasAlpha: @(alpha)};
     CGImageRef cgImage = [scalingImage CGImageForProposedRect:&proposedRect context:context hints:hints];
@@ -216,7 +216,7 @@ exit:
         8, /* bits per channel */
         (newRect.size.width * 4), /* 4 channels per pixel * numPixels/row */
         colorSpace,
-        kCGImageAlphaPremultipliedLast
+        (enum CGBitmapInfo) kCGImageAlphaPremultipliedLast
     );
     CGColorSpaceRelease(colorSpace);
     // Rotate and/or flip the image if required by its orientation
