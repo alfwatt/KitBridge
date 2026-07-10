@@ -26,7 +26,7 @@
     UIImage *pdfImage = nil;
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGRect contextRect = CGRectMake(0, 0, (size.width * screenScale), (size.height * screenScale));
-    CGContextRef ctx = CGBitmapContextCreate(NULL, contextRect.size.width, contextRect.size.height, 8, 0, colorSpace, kCGBitmapByteOrderDefault | kCGImageAlphaPremultipliedFirst);
+    CGContextRef ctx = CGBitmapContextCreate(NULL, contextRect.size.width, contextRect.size.height, 8, 0, colorSpace, kCGBitmapByteOrderDefault | (enum CGBitmapInfo) kCGImageAlphaPremultipliedFirst);
     CGPDFPageRef renderPage = CGPDFDocumentGetPage(document, page);
     CGRect pageRect = CGPDFPageGetBoxRect(renderPage, kCGPDFCropBox);
     CGAffineTransform renderTransform = CGAffineTransformIdentity;

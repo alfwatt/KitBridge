@@ -2,4 +2,4 @@ xcuserdata
 build
 .build
 .swiftpm
-/.vscode
+.DS_Store
