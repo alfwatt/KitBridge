@@ -1,7 +1,7 @@
-#ifdef SWIFT_PACKAGE
-#import "KitBridgeDefines.h"
-#else
+#if __has_include(<KitBridge/KitBridgeDefines.h>)
 #import <KitBridge/KitBridgeDefines.h>
+#else
+#import "KitBridgeDefines.h"
 #endif
 
 /// Font face name in info.plist to replace system fonts with ILFontDescriptorTraitBold

@@ -1,16 +1,16 @@
-#ifdef SWIFT_PACKAGE
-#import "KitBridgeDefines.h"
-#else
+#if __has_include(<KitBridge/KitBridgeDefines.h>)
 #import <KitBridge/KitBridgeDefines.h>
+#else
+#import "KitBridgeDefines.h"
 #endif
 
 #if IL_UI_KIT && !TARGET_OS_TV
 
-#ifdef SWIFT_PACKAGE
-#import "ILImage+KitBridge.h"
-#else
+#if __has_include(<KitBridge/ILImage+KitBridge.h>)
 #import <KitBridge/ILImage+KitBridge.h>
-#endif // SWIFT_PACKAGE
+#else
+#import "ILImage+KitBridge.h"
+#endif
 
 /// ILImage subclass which can be initilized with a PDF image and can produce UIImages rendered at various sizes from the PDF source.
 @interface ILPDFImage : ILImage <ILImageResizing>

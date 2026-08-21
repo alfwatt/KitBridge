@@ -1,10 +1,10 @@
 #import "include/NSAttributedString+KitBridge.h"
-#ifdef SWIFT_PACKAGE
-#import "include/ILFont+KitBridge.h"
-#import "include/ILColor+KitBridge.h"
-#else
+#if __has_include(<KitBridge/ILFont+KitBridge.h>)
 #import <KitBridge/ILFont+KitBridge.h>
 #import <KitBridge/ILColor+KitBridge.h>
+#else
+#import "include/ILFont+KitBridge.h"
+#import "include/ILColor+KitBridge.h"
 #endif
 
 @implementation NSAttributedString (KitBridge)

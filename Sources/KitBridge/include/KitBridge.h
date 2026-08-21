@@ -1,29 +1,4 @@
-#ifdef SWIFT_PACKAGE
-
-#import "KitBridgeDefines.h"
-#import "KitBridgeFunctions.h"
-
-// MARK: - Categories
-#import "ILApplication+KitBridge.h"
-#import "ILBezierPath+KitBridge.h"
-#import "ILButton+KitBridge.h"
-#import "ILColor+KitBridge.h"
-#import "ILFont+KitBridge.h"
-#import "ILImage+KitBridge.h"
-#import "ILPasteboard+KitBridge.h"
-#import "ILProgressView+KitBridge.h"
-#import "ILScreen+KitBridge.h"
-#import "ILStoryboard+KitBridge.h"
-#import "ILTextView+KitBridge.h"
-#import "ILView+KitBridge.h"
-#import "NSAttributedString+KitBridge.h"
-#import "NSBundle+KitBridge.h"
-
-// MARK: - Classes
-#import "ILPDFImage.h"
-
-#else // Framework
-
+#if __has_include(<KitBridge/KitBridgeDefines.h>)
 #import <KitBridge/KitBridgeDefines.h>
 #import <KitBridge/KitBridgeFunctions.h>
 
@@ -45,5 +20,26 @@
 
 // MARK: - Classes
 #import <KitBridge/ILPDFImage.h>
+#else
+#import "KitBridgeDefines.h"
+#import "KitBridgeFunctions.h"
 
+// MARK: - Categories
+#import "ILApplication+KitBridge.h"
+#import "ILBezierPath+KitBridge.h"
+#import "ILButton+KitBridge.h"
+#import "ILColor+KitBridge.h"
+#import "ILFont+KitBridge.h"
+#import "ILImage+KitBridge.h"
+#import "ILPasteboard+KitBridge.h"
+#import "ILProgressView+KitBridge.h"
+#import "ILScreen+KitBridge.h"
+#import "ILStoryboard+KitBridge.h"
+#import "ILTextView+KitBridge.h"
+#import "ILView+KitBridge.h"
+#import "NSAttributedString+KitBridge.h"
+#import "NSBundle+KitBridge.h"
+
+// MARK: - Classes
+#import "ILPDFImage.h"
 #endif
