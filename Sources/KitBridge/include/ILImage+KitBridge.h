@@ -25,7 +25,7 @@
 // TODO: + (UIImage*) systemImageNamed:(NSString*)name withConfiguration:(UIImageConfiguration*) configuration;
 // TODO: + (UIImage*) systemImageNamed:(NSString*)name variableValue:(double)value withConfiguration:(UIImageConfiguration*) configuration;
 // TODO: + (UIImage*) systemImageNamed:(NSString*)name compatibleWithTraitCollection:(UITraitCollection*) traitCollection;
-+ (instancetype) systemImageNamed:(NSString*) name;
++ (instancetype) systemImageNamed:(NSString*) name NS_SWIFT_NAME(init(systemName:));
 
 // MARK: -
 
