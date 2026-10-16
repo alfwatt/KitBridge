@@ -267,19 +267,15 @@
 // MARK: - Text Colors
 
 + (ILColor*) textColor {
-    static ILColor* color = nil;
-    if (!color) {
-        color = [ILColor colorWithCSSColor:@"rgba(0, 0, 0, 1.000)"];
-    }
-    return color;
+    return UIColor.labelColor; // follows the appearance, like AppKit's, white in dark mode and on the TV
 }
 
 + (ILColor*) textBackgroundColor {
-    static ILColor* color = nil;
-    if (!color) {
-        color = [ILColor colorWithCSSColor:@"rgba(255, 254, 254, 1.000)"];
-    }
-    return color;
+#if TARGET_OS_TV
+    return UIColor.clearColor; // tvOS draws its own backgrounds
+#else
+    return UIColor.systemBackgroundColor;
+#endif
 }
 
 + (ILColor*) textInsertionPointColor {
