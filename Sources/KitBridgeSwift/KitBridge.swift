@@ -1,7 +1,7 @@
 import Foundation
 
 /* UIKit */
-#if os(iOS)
+#if os(iOS) || os(tvOS)
 import UIKit
 public typealias ILApplication = UIApplication
 public typealias ILApplicationDelegate = UIApplicationDelegate
@@ -17,13 +17,10 @@ public typealias ILGradient = NSObject
 public typealias ILImage = UIImage
 public typealias ILImageView = UIImageView
 public typealias ILLabel = UILabel
-public typealias ILPasteboard = UIPasteboard
 public typealias ILProgressView = UIActivityIndicatorView
 public typealias ILResponder = UIResponder
 public typealias ILScreen = UIScreen
-public typealias ILSlider = UISlider
 public typealias ILStoryboard = UIStoryboard
-public typealias ILSwitch = UISwitch
 public typealias ILTextView = UITextView
 public typealias ILTextField = UITextField
 public typealias ILTableView = UITableView
@@ -33,6 +30,11 @@ public typealias ILView = UIView
 public typealias ILViewController = UIViewController
 public typealias ILWindow = UIWindow
 public typealias ILWindowController = NSObject
+#if os(iOS) // tvOS has no pasteboard, sliders or switches
+public typealias ILPasteboard = UIPasteboard
+public typealias ILSlider = UISlider
+public typealias ILSwitch = UISwitch
+#endif
 
 /* AppKit */
 #elseif os(macOS)
