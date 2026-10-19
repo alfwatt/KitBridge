@@ -7,17 +7,17 @@
     ILColor* color = nil;
     
     if ([cssColor rangeOfString:@"#"].location == 0) {
-        unsigned red, blue, green;
-        if (cssColor.length == 4) { // #123
+        unsigned red, green, blue;
+        if (cssColor.length == 4) { // #123, each digit doubled: #112233
             [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(1, 1)]] scanHexInt:&red];
-            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(2, 1)]] scanHexInt:&blue];
-            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(3, 1)]] scanHexInt:&green];
-            color = [ILColor colorWithRed:((CGFloat) red / 255.0f) green:((CGFloat) green / 255.0f) blue:((CGFloat) blue / 255.0f) alpha:1.0];
+            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(2, 1)]] scanHexInt:&green];
+            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(3, 1)]] scanHexInt:&blue];
+            color = [ILColor colorWithRed:((CGFloat) red / 15.0f) green:((CGFloat) green / 15.0f) blue:((CGFloat) blue / 15.0f) alpha:1.0];
         }
         else if (cssColor.length == 7) { // #123456
             [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(1, 2)]] scanHexInt:&red];
-            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(3, 2)]] scanHexInt:&blue];
-            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(5, 2)]] scanHexInt:&green];
+            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(3, 2)]] scanHexInt:&green];
+            [[NSScanner scannerWithString:[cssColor substringWithRange:NSMakeRange(5, 2)]] scanHexInt:&blue];
             color = [ILColor colorWithRed:((CGFloat) red / 255.0f) green:((CGFloat) green / 255.0f) blue:((CGFloat) blue / 255.0f) alpha:1.0];
         }
         else {
