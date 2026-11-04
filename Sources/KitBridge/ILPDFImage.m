@@ -71,7 +71,7 @@
     }
     
     CGPDFDocumentRef fileDocument = CGPDFDocumentCreateWithURL((__bridge CFURLRef)[NSURL fileURLWithPath:path]);
-    return [self initWithPDFDocument:fileDocument pageIndex:1 scale:UIScreen.mainScreen.scale];
+    return [self initWithPDFDocument:fileDocument pageIndex:1 scale:ILScreen.mainScreen.scale];
 }
 
 - (instancetype)initWithData:(NSData *)data scale:(CGFloat)scale {
@@ -82,7 +82,7 @@
 }
 
 - (instancetype)initWithData:(NSData *)data {
-    return [self initWithData:data scale:UIScreen.mainScreen.scale];
+    return [self initWithData:data scale:ILScreen.mainScreen.scale];
 }
 
 // MARK: - ILImage Overrides

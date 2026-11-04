@@ -1,7 +1,7 @@
 import Foundation
 
 /* UIKit */
-#if os(iOS) || os(tvOS)
+#if os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 public typealias ILApplication = UIApplication
 public typealias ILApplicationDelegate = UIApplicationDelegate
@@ -19,7 +19,9 @@ public typealias ILImageView = UIImageView
 public typealias ILLabel = UILabel
 public typealias ILProgressView = UIActivityIndicatorView
 public typealias ILResponder = UIResponder
+#if !os(visionOS) // visionOS has no UIScreen, KitBridge's ILScreen class stands in
 public typealias ILScreen = UIScreen
+#endif
 public typealias ILStoryboard = UIStoryboard
 public typealias ILTextView = UITextView
 public typealias ILTextField = UITextField
@@ -30,7 +32,7 @@ public typealias ILView = UIView
 public typealias ILViewController = UIViewController
 public typealias ILWindow = UIWindow
 public typealias ILWindowController = NSObject
-#if os(iOS) // tvOS has no pasteboard, sliders or switches
+#if os(iOS) || os(visionOS) // tvOS has no pasteboard, sliders or switches
 public typealias ILPasteboard = UIPasteboard
 public typealias ILSlider = UISlider
 public typealias ILSwitch = UISwitch

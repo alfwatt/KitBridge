@@ -24,7 +24,15 @@
 #define ILPasteBoardItem            NSDictionary<NSString*,id>
 #define ILProgressView              UIActivityIndicatorView
 #define ILResponder                 UIResponder
+#if TARGET_OS_VISION
+// visionOS has no UIScreen, so ILScreen is a minimal stand-in with a scale
+@interface ILScreen : NSObject
+@property(class, nonatomic, readonly, nonnull) ILScreen *mainScreen NS_SWIFT_NAME(main);
+@property(nonatomic, readonly) CGFloat scale;
+@end
+#else
 #define ILScreen                    UIScreen
+#endif
 #define ILStoryboard                UIStoryboard
 #define ILSlider                    UISlider
 #define ILSwitch                    UISwitch
