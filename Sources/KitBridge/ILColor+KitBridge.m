@@ -1,5 +1,183 @@
 #import "ILColor+KitBridge.h"
 
+#if IL_WATCH_KIT
+@implementation UIColor (KitBridgeWatch)
+
++ (UIColor*) labelColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:255/255.0 green:255/255.0 blue:255/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) secondaryLabelColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:245/255.0 alpha:0.6];
+    }
+    return color;
+}
+
++ (UIColor*) tertiaryLabelColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:245/255.0 alpha:0.3];
+    }
+    return color;
+}
+
++ (UIColor*) quaternaryLabelColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:245/255.0 alpha:0.18];
+    }
+    return color;
+}
+
++ (UIColor*) placeholderTextColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:235/255.0 green:235/255.0 blue:245/255.0 alpha:0.3];
+    }
+    return color;
+}
+
++ (UIColor*) linkColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:9/255.0 green:132/255.0 blue:255/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) separatorColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:84/255.0 green:84/255.0 blue:88/255.0 alpha:0.6];
+    }
+    return color;
+}
+
++ (UIColor*) opaqueSeparatorColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:56/255.0 green:56/255.0 blue:58/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemRedColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:255/255.0 green:69/255.0 blue:58/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemOrangeColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:255/255.0 green:159/255.0 blue:10/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemYellowColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:255/255.0 green:214/255.0 blue:10/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemGreenColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:48/255.0 green:209/255.0 blue:88/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemMintColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:99/255.0 green:230/255.0 blue:226/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemTealColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:64/255.0 green:200/255.0 blue:224/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemCyanColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:100/255.0 green:210/255.0 blue:255/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemBlueColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:10/255.0 green:132/255.0 blue:255/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemIndigoColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:94/255.0 green:92/255.0 blue:230/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemPurpleColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:191/255.0 green:90/255.0 blue:242/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemPinkColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:255/255.0 green:55/255.0 blue:95/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemBrownColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:172/255.0 green:142/255.0 blue:104/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) systemGrayColor {
+    static UIColor* color = nil;
+    if (!color) {
+        color = [UIColor colorWithRed:142/255.0 green:142/255.0 blue:147/255.0 alpha:1.0];
+    }
+    return color;
+}
+
++ (UIColor*) tintColor {
+    return UIColor.systemBlueColor;
+}
+
+@end
+#endif
+
 @implementation ILColor (KitBridge)
 
 // TODO: use https://github.com/markiv/NSObject-AssociatedDictionary to add the cssColor string to the resuting color object
@@ -263,7 +441,7 @@
 
 // MARK: - Semantic Colors
 
-#if IL_UI_KIT && !IL_WATCH_KIT
+#if IL_UI_KIT
 // MARK: - Text Colors
 
 + (ILColor*) textColor {
@@ -619,18 +797,6 @@
     return [NSColor colorWithDeviceWhite:0.25 alpha:1.0];
 }
 
-#endif
-
-#if IL_WATCH_KIT
-// MARK: - Watch Colors
-
-+ (ILColor*) textColor {
-    return UIColor.whiteColor;
-}
-
-+ (ILColor*) controlTextColor {
-    return UIColor.whiteColor;
-}
 #endif
 
 @end

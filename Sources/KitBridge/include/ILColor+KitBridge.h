@@ -9,6 +9,41 @@
 #import "KitBridgeDefines.h"
 #endif
 
+#if IL_WATCH_KIT
+/// The semantic and system colors of iOS's UIColor that the watch's lacks, with their dark appearance values: the watch is always dark
+@interface UIColor (KitBridgeWatch)
+
+// MARK: - Label Colors
+@property (class, nonatomic, readonly) UIColor* labelColor;
+@property (class, nonatomic, readonly) UIColor* secondaryLabelColor;
+@property (class, nonatomic, readonly) UIColor* tertiaryLabelColor;
+@property (class, nonatomic, readonly) UIColor* quaternaryLabelColor;
+@property (class, nonatomic, readonly) UIColor* placeholderTextColor;
+
+// MARK: - Link, Separator and Tint Colors
+@property (class, nonatomic, readonly) UIColor* linkColor;
+@property (class, nonatomic, readonly) UIColor* separatorColor;
+@property (class, nonatomic, readonly) UIColor* opaqueSeparatorColor;
+@property (class, nonatomic, readonly) UIColor* tintColor;
+
+// MARK: - System Colors
+@property (class, nonatomic, readonly) UIColor* systemRedColor;
+@property (class, nonatomic, readonly) UIColor* systemOrangeColor;
+@property (class, nonatomic, readonly) UIColor* systemYellowColor;
+@property (class, nonatomic, readonly) UIColor* systemGreenColor;
+@property (class, nonatomic, readonly) UIColor* systemMintColor;
+@property (class, nonatomic, readonly) UIColor* systemTealColor;
+@property (class, nonatomic, readonly) UIColor* systemCyanColor;
+@property (class, nonatomic, readonly) UIColor* systemBlueColor;
+@property (class, nonatomic, readonly) UIColor* systemIndigoColor;
+@property (class, nonatomic, readonly) UIColor* systemPurpleColor;
+@property (class, nonatomic, readonly) UIColor* systemPinkColor;
+@property (class, nonatomic, readonly) UIColor* systemBrownColor;
+@property (class, nonatomic, readonly) UIColor* systemGrayColor;
+
+@end
+#endif
+
 @interface ILColor (KitBridge)
 /// If this is color is from a catalog, the name or a css hex string describing the color
 @property(nonatomic, readonly) NSString* colorName;
@@ -45,7 +80,7 @@
 /// TODO: NSError in-paramter for parsing feedback to the calling app
 + (ILColor*) colorWithCSSColor:(NSString*) cssColor;
 
-#if IL_UI_KIT && !IL_WATCH_KIT
+#if IL_UI_KIT
 
 // MARK: - Text Colors
 @property (class, strong, readonly) ILColor* textColor;
@@ -120,13 +155,6 @@
 @property (class, strong, readonly) ILColor* systemGray4Color;
 @property (class, strong, readonly) ILColor* systemGray5Color;
 @property (class, strong, readonly) ILColor* systemGray6Color;
-#endif
-
-#if IL_WATCH_KIT
-// MARK: - Watch Colors
-/// the watch draws white text on its black
-@property (class, strong, readonly) ILColor* textColor;
-@property (class, strong, readonly) ILColor* controlTextColor;
 #endif
 
 @end
