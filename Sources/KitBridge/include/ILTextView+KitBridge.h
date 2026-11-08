@@ -4,6 +4,8 @@
 #import "KitBridgeDefines.h"
 #endif
 
+#if !TARGET_OS_WATCH
+
 NS_ASSUME_NONNULL_BEGIN
 
 #if IL_APP_KIT
@@ -34,3 +36,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+#endif // !TARGET_OS_WATCH

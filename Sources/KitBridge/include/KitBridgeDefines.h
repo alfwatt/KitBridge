@@ -3,8 +3,23 @@
 
 #include <TargetConditionals.h>
 
+// WatchKit: UIKit's drawing types only, no views, controls, screens or application
+#if TARGET_OS_WATCH
+#import <UIKit/UIKit.h>
+#define ILBezierPath                UIBezierPath
+#define ILColor                     UIColor
+#define ILFont                      UIFont
+#define ILImage                     UIImage
+/// watchOS has no UIScreen, so ILScreen is a minimal stand-in with the device's scale
+@interface ILScreen : NSObject
+@property(class, nonatomic, readonly, nonnull) ILScreen *mainScreen NS_SWIFT_NAME(main);
+@property(nonatomic, readonly) CGFloat scale;
+@end
+#define IL_UI_KIT 1    // the UIKit branches of the drawing categories apply on the watch
+#define IL_WATCH_KIT 1 // except where they use the UIKit the watch doesn't have
+
 // UIKit
-#if TARGET_OS_IPHONE || TARGET_OS_TV
+#elif TARGET_OS_IPHONE || TARGET_OS_TV
 #import <UIKit/UIKit.h>
 #define ILApplication               UIApplication
 #define ILApplicationDelegate       UIApplicationDelegate

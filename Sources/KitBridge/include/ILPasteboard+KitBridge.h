@@ -4,6 +4,8 @@
 #import "KitBridgeDefines.h"
 #endif
 
+#if !TARGET_OS_WATCH
+
 /// The pasteboard you use to perform ordinary cut, copy, and paste operations
 #if IL_UI_KIT
 #define ILPasteboardNameGeneral UIPasteboardNameGeneral
@@ -87,3 +89,4 @@ NS_ASSUME_NONNULL_BEGIN
 // TODO: Implement ILPasteboard for tvOS
 
 NS_ASSUME_NONNULL_END
+#endif // !TARGET_OS_WATCH

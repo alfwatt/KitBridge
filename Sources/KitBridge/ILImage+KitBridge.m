@@ -1,4 +1,6 @@
+#if !TARGET_OS_WATCH
 #import <CoreImage/CoreImage.h>
+#endif
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 #import "KitBridgeDefines.h"

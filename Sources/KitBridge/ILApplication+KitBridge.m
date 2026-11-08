@@ -1,3 +1,5 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import "ILApplication+KitBridge.h"
 
 @implementation ILApplication (KitBridge)
@@ -49,3 +51,4 @@
 #endif
 
 @end
+#endif // !TARGET_OS_WATCH

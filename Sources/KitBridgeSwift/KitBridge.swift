@@ -1,7 +1,15 @@
 import Foundation
 
+/* WatchKit: UIKit's drawing types only */
+#if os(watchOS)
+import UIKit
+public typealias ILBezierPath = UIBezierPath
+public typealias ILColor = UIColor
+public typealias ILFont = UIFont
+public typealias ILImage = UIImage
+
 /* UIKit */
-#if os(iOS) || os(tvOS) || os(visionOS)
+#elseif os(iOS) || os(tvOS) || os(visionOS)
 import UIKit
 public typealias ILApplication = UIApplication
 public typealias ILApplicationDelegate = UIApplicationDelegate

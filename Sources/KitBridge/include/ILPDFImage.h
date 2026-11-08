@@ -4,7 +4,7 @@
 #import "KitBridgeDefines.h"
 #endif
 
-#if IL_UI_KIT && !TARGET_OS_TV
+#if IL_UI_KIT && !TARGET_OS_TV && !TARGET_OS_WATCH
 
 #if __has_include(<KitBridge/ILImage+KitBridge.h>)
 #import <KitBridge/ILImage+KitBridge.h>

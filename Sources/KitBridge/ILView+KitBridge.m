@@ -1,3 +1,5 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import "ILView+KitBridge.h"
 #import "ILFont+KitBridge.h"
 
@@ -39,3 +41,4 @@
 }
 
 @end
+#endif // !TARGET_OS_WATCH

@@ -1,4 +1,7 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import <CoreImage/CoreImage.h>
+#endif
 
 #if __has_include(<KitBridge/KitBridgeDefines.h>)
 #import <KitBridge/KitBridgeDefines.h>
@@ -42,7 +45,7 @@
 /// TODO: NSError in-paramter for parsing feedback to the calling app
 + (ILColor*) colorWithCSSColor:(NSString*) cssColor;
 
-#if IL_UI_KIT
+#if IL_UI_KIT && !IL_WATCH_KIT
 
 // MARK: - Text Colors
 @property (class, strong, readonly) ILColor* textColor;
@@ -89,7 +92,7 @@
 @property (class, strong, readonly) ILColor* highlightColor;
 @property (class, strong, readonly) ILColor* shadowColor;
 
-#else // IL_APP_KIT
+#elif IL_APP_KIT
 
 // MARK: - Tint Color
 @property(class, nonatomic, readonly) ILColor* tintColor; // NSColor.currentControlTint
@@ -117,6 +120,12 @@
 @property (class, strong, readonly) ILColor* systemGray4Color;
 @property (class, strong, readonly) ILColor* systemGray5Color;
 @property (class, strong, readonly) ILColor* systemGray6Color;
+#endif
+
+#if IL_WATCH_KIT
+// MARK: - Watch Colors
+/// the watch draws white text on its black
+@property (class, strong, readonly) ILColor* textColor;
 #endif
 
 @end

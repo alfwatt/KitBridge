@@ -1,3 +1,5 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import "ILButton+KitBridge.h"
 
 @implementation ILButton (KitBridge)
@@ -13,3 +15,4 @@
 #endif
 
 @end
+#endif // !TARGET_OS_WATCH

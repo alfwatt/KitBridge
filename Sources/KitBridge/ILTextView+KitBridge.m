@@ -1,3 +1,5 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import "ILTextView+KitBridge.h"
 
 #if IL_APP_KIT
@@ -55,3 +57,4 @@
 #endif
 
 @end
+#endif // !TARGET_OS_WATCH

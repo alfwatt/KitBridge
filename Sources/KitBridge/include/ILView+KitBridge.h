@@ -4,6 +4,8 @@
 #import "KitBridgeDefines.h"
 #endif
 
+#if !TARGET_OS_WATCH
+
 NS_ASSUME_NONNULL_BEGIN
 
 /// adds common init and update methods to all views in the SparkKit
@@ -30,3 +32,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+#endif // !TARGET_OS_WATCH

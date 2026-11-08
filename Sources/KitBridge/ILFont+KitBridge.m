@@ -71,10 +71,12 @@ NSString* const ILFontSize = @"ILFontSize";
 }
 
 + (CGFloat) applicationFontSize {
-#if !TARGET_OS_TV
-    CGFloat applicationFontSize = ILFont.systemFontSize;
-#else
+#if TARGET_OS_TV
     CGFloat applicationFontSize = 36;
+#elif TARGET_OS_WATCH
+    CGFloat applicationFontSize = [UIFont preferredFontForTextStyle:UIFontTextStyleBody].pointSize; // no systemFontSize on the watch
+#else
+    CGFloat applicationFontSize = ILFont.systemFontSize;
 #endif
 
     if (NSUserDefaults.standardUserDefaults.dictionaryRepresentation[ILFontSize]) {

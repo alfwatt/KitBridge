@@ -1,3 +1,5 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import "ILStoryboard+KitBridge.h"
 
 @implementation ILStoryboard (KitBridge)
@@ -13,3 +15,4 @@
 #endif
 
 @end
+#endif // !TARGET_OS_WATCH

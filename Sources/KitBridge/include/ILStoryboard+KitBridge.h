@@ -4,6 +4,8 @@
 #import "KitBridgeDefines.h"
 #endif
 
+#if !TARGET_OS_WATCH
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ILStoryboard (KitBridge)
@@ -18,3 +20,4 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 NS_ASSUME_NONNULL_END
+#endif // !TARGET_OS_WATCH

@@ -1,3 +1,5 @@
+#include <TargetConditionals.h>
+#if !TARGET_OS_WATCH
 #import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 #import "ILPasteboard+KitBridge.h"
@@ -403,3 +405,4 @@
 }
 
 @end
+#endif // !TARGET_OS_WATCH

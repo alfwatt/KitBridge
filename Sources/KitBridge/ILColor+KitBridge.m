@@ -263,7 +263,7 @@
 
 // MARK: - Semantic Colors
 
-#if IL_UI_KIT
+#if IL_UI_KIT && !IL_WATCH_KIT
 // MARK: - Text Colors
 
 + (ILColor*) textColor {
@@ -521,7 +521,7 @@
     }
     return color;
 }
-#else // UI_APP_KIT
+#elif IL_APP_KIT
 
 // MARK: - Tint Color
 
@@ -619,6 +619,14 @@
     return [NSColor colorWithDeviceWhite:0.25 alpha:1.0];
 }
 
+#endif
+
+#if IL_WATCH_KIT
+// MARK: - Watch Colors
+
++ (ILColor*) textColor {
+    return UIColor.whiteColor;
+}
 #endif
 
 @end
