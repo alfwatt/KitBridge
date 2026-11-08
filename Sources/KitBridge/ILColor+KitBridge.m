@@ -627,6 +627,10 @@
 + (ILColor*) textColor {
     return UIColor.whiteColor;
 }
+
++ (ILColor*) controlTextColor {
+    return UIColor.whiteColor;
+}
 #endif
 
 @end

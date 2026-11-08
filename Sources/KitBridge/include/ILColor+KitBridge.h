@@ -126,6 +126,7 @@
 // MARK: - Watch Colors
 /// the watch draws white text on its black
 @property (class, strong, readonly) ILColor* textColor;
+@property (class, strong, readonly) ILColor* controlTextColor;
 #endif
 
 @end
