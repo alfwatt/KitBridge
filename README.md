@@ -1,7 +1,6 @@
-
 # KitBridge <a id="kitbridge"></a>
 
-KitBridge: Bringing UIKit and AppKit Closer Together
+KitBridge: Bringing UIKit and AppKit Closer Together, in Swift
 
 From [iStumbler Labs](https://istumbler.net/labs/).
 
@@ -10,12 +9,10 @@ From [iStumbler Labs](https://istumbler.net/labs/).
 
 - [Goals](#goals)
 - [Support](#support)
-- [Classes](#classes)
-- [Functions](#functions)
-- [Protocols](#protocols)
-- [Categories](#categories)
-- [Swift](#swift)
+- [Bridged Types](#types)
+- [Extensions](#extensions)
 - [Model Controller Multiple Views](#mcmv)
+- [Custom Fonts](#fonts)
 - [To Do Items](#todo)
 - [Version History](#versions)
 - [MIT License](#license)
@@ -49,111 +46,61 @@ Are you using KitBridge in your apps? Would you like to help support the project
 Visit our [Patreon Page](https://www.patreon.com/istumblerlabs) and patronize us in exchange for great rewards!
 
 
-## Bridged Classes <a id="classes"></a>
+## Bridged Types <a id="types"></a>
 
-Bridged classes are `#define` directives in [`KitBridgeDefines.h`](./Sources/KitBridge/include/KitBridgeDefines.h)
-which allow you to write a kit class name, e.g.: `ILColor` and when your app is complied, the appropriate 
-`NS` or `UI` class from the `AppKit` or `UIKit` will be substituted at compile time with no performance penalty.
+[`Platform.swift`](./Sources/KitBridge/Platform.swift) defines `typealias`es which let you write a kit class name,
+e.g. `ILColor`, which is `NSColor` on the Mac and `UIColor` on the iPhone, iPad, TV, Vision Pro and watch.
+Use `#if os(macOS)` or `#if canImport(AppKit)` to separate implementations when needed.
 
-The `#if IL_UI_KIT` and `#if IL_APP_KIT` can be used to segregate implementations when needed, e.g. 
-`ILApplicationDelegates` might use them to initialize the app for each platform in their `main(...)` function:
-
-    #include <KitBridge/KitBridge.h>
-
-    int main(int argc, char* _Nonnull argv[]) {
-    #if IL_APP_KIT
-        return NSApplicationMain(argc, (const char* _Nonnull*) argv);
-    #elif IL_UI_KIT
-        @autoreleasepool {
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([SparkyDelegate class]));
-        }
-    #endif
-    }
+On the watch and visionOS, which have no `UIScreen`, `ILScreen` stands in with the scale images are drawn at,
+and `ILScreen.mainScale` is the main screen's scale on every platform, from any thread.
 
 
-## Bridged Functions <a id="functions"></a>
+## Extensions <a id="extensions"></a>
 
-A number of geometry and printing functions are included for conveniences, see
-[`KitBridgeFunctions.h`](./Sources/KitBridge/include/KitBridgeFunctions.h) for details.
+Extensions on AppKit's classes adapt them to UIKit's API, and the semantic colors of each are available on both,
+so an app can use one spelling throughout.
 
+- [`ILColor+KitBridge`](./Sources/KitBridge/ILColor+KitBridge.swift)
+  - `ILColor(css:)` reads CSS colors: `#FFF`, `#FFFFFF`, `#FFFFFF80`, `rgb()`, `rgba()`, `hsl()` and `hsla()`
+  - `cssHex`, `cssRGB`, `cssRGBA`, `cssHSL`, `cssHSLA` and `colorName` write them
+  - `complementary` and `contrasting` colors, `ciColor` on AppKit
+  - The semantic colors of AppKit and UIKit on both, named as UIKit names its colors in Swift, without "Color":
+    `ILColor.label`, `.text`, `.textBackground`, `.controlText`, `.disabledControlText`, `.controlAccent`,
+    `.windowBackground`, `.systemBackground`, `.systemGray2`…
+  - The semantic and system colors UIKit lacks on the watch
+- [`ILFont+KitBridge`](./Sources/KitBridge/ILFont+KitBridge.swift)
+  - `ApplicationFontFace`, `ILFont.applicationFont(_:)`, `applicationFont(replacing:)` and `applicationFontSize`
+  - `userFixedPitchFont(ofSize:)` on UIKit
+- [`ILImage+KitBridge`](./Sources/KitBridge/ILImage+KitBridge.swift)
+  - `resized(to:quality:)`, `resized(scale:)`, `resized(toWidth:)`, `cropped(to:)`, `inverted()`
+  - `hasSamePixels(as:)` and `writePNG(to:alpha:)`
+  - `ILImage.named(_:in:)`, and on AppKit `init(cgImage:)`, `init(systemName:)`, `cgImage` and `withTintColor(_:)`
+  - `ImageResizing` and `ILPDFImage`, which renders a PDF again when it's resized, and `Bundle.image(forResource:)` on UIKit
+- [`ILBezierPath+KitBridge`](./Sources/KitBridge/ILBezierPath+KitBridge.swift)
+  - UIBezierPath's `init(roundedRect:cornerRadius:)`, `init(arcCenter:…)`, `addLine(to:)`, `addCurve(to:…)`,
+    `addQuadCurve(to:controlPoint:)` and `addArc(withCenter:…)` on NSBezierPath, `elementCount` on UIBezierPath
+  - `forEachElement(_:)`
+- [`ILPasteboard+KitBridge`](./Sources/KitBridge/ILPasteboard+KitBridge.swift)
+  - UIPasteboard's API on NSPasteboard: `items` as dictionaries, `addItems(_:)`, `string(s)`, `image(s)`, `url(s)`,
+    `color(s)`, `hasStrings`… `data(forPasteboardType:)` and `value(forPasteboardType:)`
+  - `isClear`, `hasItems`, `snapshot()` and `hasSameItems(as:)` on both
+- [`ILView+KitBridge`](./Sources/KitBridge/ILView+KitBridge.swift)
+  - `ILViewLifecycle` with `initView()` and `updateView()`
+  - `renderedImage` and `replaceSystemFonts()`
+  - `text` on NSTextView and NSTextField, `attributeRuns` on UIKit's NSTextStorage
+  - `open(_:)` on NSApplication, `sendAction(_:to:from:)` on UIApplication, `instantiateInitialViewController()` and
+    `instantiateViewController(withIdentifier:)` on NSStoryboard, `startAnimating()` and `stopAnimating()` on
+    NSProgressIndicator and `title` on UIButton
+- [`NSAttributedString+KitBridge`](./Sources/KitBridge/NSAttributedString+KitBridge.swift)
+  - `init(string:font:)`, `init(string:link:attributes:)`, `ranges(of:value:)` and `replaceAttribute(_:value:with:)`
+- [`Geometry`](./Sources/KitBridge/Geometry.swift)
+  - `CGFloat.radians(fromDegrees:)`, `.degrees(fromRadians:)`, `.radians(fromPercent:)` and `.twelveOClock`
+  - `CGVector(from:to:)`, `length` and `radians`, `CGPoint.moved(toward:distance:)`
+  - `CGRect.center` and `largestCenteredSquare`, `isNormal` on points, sizes and rects
+  - `CGPath.elementCount` and `pathDescription`
 
-## Protocols <a id="protocols"></a>
-
-### ILViewLifecycle
-
-The [`ILViewLifecycle`](./Sources/KitBridge/include/ILView+KitBridge.h) protocol defines the `-initView` and `-updateView` methods for `ILView` subclasses.
-
-
-## Categories <a id="categories"></a>
-
-Categories are defined on AppKit classes to provide adaption to various UIKit methods.
-
-Applications can then use the UIKit interface throughout, with only a small performance
-penalty on macOS for the bridge code.
-
-- [`ILApplication+KitBridge`](./Sources/KitBridge/include/ILApplication+KitBridge.h)
-  - Adds `openURL:` method
-- [`ILBezierPath+KitBridge`](./Sources/KitBridge/include/ILBezierPath+KitBridge.h)
-  - Adds Path Description and Count functions and methods
-  - Adds `enumeratePathWithBlock:` method
-- [`ILButton+KitBridge`](./Sources/KitBridge/include/ILButton+KitBridge.h)
-- [`ILColor+KitBridge`](./Sources/KitBridge/include/ILColor+KitBridge.h)
-  - Adds CSS color string properties
-  - Adds complementary and contrasting color properties
-  - Adds CIColor property to AppKit
-  - Adds semantic colors from AppKit to UIKit
-- [`ILFont+KitBridge`](./Sources/KitBridge/include/ILFont+KitBridge.h)
-  - Adds `-applicationFontFace:` along with `Info.plist` keys to define font faces for your application
-- [`ILImage+KitBridge`](./Sources/KitBridge/include/ILImage+KitBridge.h)
-  - Adds `@protocol ILImageResizing`
-  - Adds `+imageForResource:` and `+imageForName:` to load images from the application bundle
-- [`ILPDFImage`](./Sources/KitBridge/include/ILPDFImage.h)
-- [`ILPaseboard+KitBridge`](./Sources/KitBridge/include/ILPaseboard+KitBridge.h)
-- [`ILProgressView+KitBridge`](./Sources/KitBridge/include/ILProgressView+KitBridge.h)
-- [`ILScreen+KitBridge`](./Sources/KitBridge/include/ILScreen+KitBridge.h)
-- [`ILTextView+KitBridge`](./Sources/KitBridge/include/ILTextView+KitBridge.h)
-- [`ILView+KitBridge`](./Sources/KitBridge/include/ILView+KitBridge.h)
-  - Adds: `@protocol ILViewLifecycle` with `-initView` and `-updateView` methods
-  - Adds: `-renderedImage` to provide a rendered 
-  - Adds: `-replaceSystemFonts` on `ILView` which replaces standard system fonts with the application font faces
-- [`NSBundle+KitBridge`](./Sources/KitBridge/include/NSBundle+KitBridge.h)
-  - Adds: `-imageForResource:` and `-imageForName:` to load images from the application bundle
-
-## Swift Support <a id="swift"></a>
-
-For applications that use Swift [`KitBridge.swift`](./Source/KitBridgeSwift/KitBridge.swift) 
-is provided along with a generated `module.map` files in the Swift enabled products.
-
-Swift applications can't see the `#defines` used to bridge classes for Objective-C code, 
-so Swift `typealias` directives are used to allow the usage of the various `IL` type names.
-
-Swift annotations like `@UIApplicationMain` and `@NSApplicationMain` can't be aliases so 
-you'll need to include a `main.swift` file for the project:
-
-    import Foundation
-    import KitBridge
-
-    #if os(macOS)
-    NSApplicationMain(CommandLine.argc, CommandLine.unsafeArgv)
-    #elseif os(iOS)
-    let argv = UnsafeMutableRawPointer(CommandLine.unsafeArgv)
-        .bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc))
-    UIApplicationMain(CommandLine.argc, argv, nil, "SwiftSettingsDelegate")
-    #endif
-
-### Swift Controller Views
-
-To implement IL/NS/UIViewController
-
-    #if os(iOS)
-    import UIKit
-    #elseif os(macOS)
-    import AppKit
-    #endif
-    import KitBridgeSwiftf
-
-    class ExampleView: ILViewController {
-    }
+`colorist` prints KitBridge's colors in CSS formats: `swift run colorist`
 
 
 ## Model Controller Multiple Views (MCMV) <a id="mcmv"></a>
@@ -169,77 +116,41 @@ model to each UI idiom as closely as possible.
 Here is the outline of an example project using KitBridge:
 
     - Example.xcodeproj
-        - ExampleDelegate.h
-        - ExampleDelegate.m
-        - ExampleViewController.h
-        - ExampleViewController.m
+        - ExampleDelegate.swift
+        - ExampleViewController.swift
         - Resources
             - Localizable.strings
         - macOS
             - Info.plist
             - MainMenu.xib
             - ExampleView.xib
-            - Example.xcassets
         - iOS
             - Info.plist
-            - ExampleView.xib
             - Main.storyboard
             - LaunchScreen.storyboard
-            - Example.xcassets
         - tvOS
             - Info.plist
-            - ExampleView.xib
             - Main.storyboard
-            - LaunchScreen.storyboards
-            - Example.xcassets
 
-Bridging `NSViewController`/`UIViewController` is desirable but unfortunately Xcode will not recognize the
-subclasses in the Interface Builder due to indexing issues. Instead the `ExampleController.h` needs to define the controller
-inside of `#if` blocks:
+A controller conforms to each platform's protocols in its own extension:
 
-    #import <KitBridge/KitBridge.h>
+    import KitBridge
 
-    #if IL_APP_KIT
-    @interface ExampleController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
-    @property(nonatomic,retain) IBOutlet NSTableView* tableView;
+    class ExampleController: ILViewController {
+        @IBOutlet var tableView: ILTableView!
+    }
+
+    #if os(macOS)
+    extension ExampleController: NSTableViewDataSource, NSTableViewDelegate { … }
+    #else
+    extension ExampleController: UITableViewDataSource, UITableViewDelegate { … }
     #endif
-    /* Note the separate #if blocks, #elif confuses the Xcode indexer
-       You may also have to swap the order of the blocks at design time, when setting up the xibs */
-    #if IL_UI_KIT
-    @interface ExampleController : UIViewController <UITableViewDataSource, UITableViewDelegate>
-    @property(nonatomic,retain) IBOutlet UITableView* tableView;
-    #endif
-    
-    . . .
-    
-    @end
-
-In the implementation file the various protocols are defined inside of `#if` blocks for each platform
-(alternately, you could also have separate `.m` files for each platform, or even use a base class with
-platform specific subclasses):
-
-    #import "ExampleController.h"
-
-    @implementation ExampleController
-    
-    #if IL_APP_KIT
-    // MARK: - NSViewController Overrides . . .
-    // MARK: - NSTableViewDataSource . . .
-    // MARK: - NSTableViewDelegate . . .
-    #elif IL_UI_KIT
-    // MARK: - UIViewController Overrides . . .
-    // MARK: - UITableViewDataSource . . .
-    // MARK: - UITableViewDelegate . . .    
-    #endif
-    
-    @end
 
 
 ## Custom Fonts <a id="fonts"></a>
 
-[`ILFont+KitBridge`](./Sources/KitBridge/include/ILFont+KitBridge.h) implements `-ILFont applicationFontFace:` 
-and `-ILView replaceSystemFonts` which can replaces standard system fonts with custom fonts defined in
-your apps `Info.plist`:
+`ILFont.applicationFont(_:)` and `ILView.replaceSystemFonts()` replace the system fonts with the fonts
+defined in your app's `Info.plist`:
 
     <plist>
         <dict>
@@ -248,16 +159,13 @@ your apps `Info.plist`:
             <key>ILFontBoldFace</key><string>Helvetica-Bold</string>
             <key>ILFontLightFace</key><string>Helvetica-Light</string>
             <key>ILFontFixedFace</key><string>Monaco</string>
-            <key>ILFontSerifFace</key><string>Georga</string>
+            <key>ILFontSerifFace</key><string>Georgia</string>
         </dict>
     </plist>
 
-Once configured you can call `-ILView replaceSystemFonts` on any view and KitBridge will recursively
-descend the view hierarcy and replace all instances of the designated system fonts with the font
-specified in the `Info.plist`
-
-Additionally you can set `ILFontApplicationSize` with a `Number` in `Info.plist` to set the default
-font size, or set it as a `NSUserDefaults` key to be used when replacing fonts. 
+`replaceSystemFonts()` descends the view hierarchy and replaces the system fonts with the fonts in the
+`Info.plist`. Set `ILFontSize` to a number in the `Info.plist`, or the user's defaults, to set the
+application's font size.
 
 
 ## To Do Items <a id="todo"></a>
@@ -269,6 +177,40 @@ font size, or set it as a `NSUserDefaults` key to be used when replacing fonts.
 
 
 ## Version History <a id="versions"></a>
+
+- `3.0.0` : Breaking API changes, KitBridge is written in Swift
+  - Requires macOS 14, iOS 17, tvOS 17, watchOS 10 or visionOS 26
+  - Swift only: the Objective-C `#define`s, `IL_APP_KIT` and `IL_UI_KIT` are gone, Objective-C apps can use KitBridge 2.x
+  - `KitBridgeSwift` is merged into `KitBridge`, which no longer re-exports AppKit and UIKit, import them where you use them
+  - The semantic colors of both kits on both, with one spelling: `ILColor.controlText`, `.textBackground`, `.label`…
+  - CSS `hsl()` colors are hue, saturation and lightness, as CSS has them, they were hue, saturation and brightness
+  - NSPasteboard's `items` writes one pasteboard item for each dictionary, `strings`, `images` and `colors` read the
+    pasteboard's objects, `snapshot()` replaces `copy` and `deepCopy`
+  - `largestCenteredSquare` is centered, `ILRectSquareInRect` offset the square twice the margin
+  - Tests run with `swift test`
+
+| 2.x | 3.0 |
+| --- | --- |
+| `ILColor.controlTextColor` (AppKit), `ILColor.controlText` (UIKit) | `ILColor.controlText` everywhere |
+| `+colorWithCSSColor:` | `ILColor(css:)` |
+| `hexColor`, `rgbColor`, `rgbaColor`, `hslColor`, `hslaColor` | `cssHex`, `cssRGB`, `cssRGBA`, `cssHSL`, `cssHSLA` |
+| `complementaryColor`, `contrastingColor`, `CIColor` | `complementary`, `contrasting`, `ciColor` |
+| `+applicationFontFace:`, `+applicationFontForSystemFont:` | `ILFont.applicationFont(_:)`, `applicationFont(replacing:)` |
+| `+defaultFontSize`, `+applicationFontSize` | `ILFont.applicationFontSize` |
+| `ILFontBoldFace`… | `ApplicationFontFace.bold`… |
+| `-resizedImageToWidth:`, `-resizedImageToScale:`, `-resizedImage:` | `resized(toWidth:)`, `resized(scale:)`, `resized(to:)` |
+| `-croppedImage:`, `-isEqualToImage:`, `-writePNGToURL:…` | `cropped(to:)`, `hasSamePixels(as:)`, `writePNG(to:alpha:)` |
+| `+imageNamed:inBundle:compatibleWithTraitCollection:` | `ILImage.named(_:in:)` |
+| `ILImageResizing` | `ImageResizing` |
+| `ILCGPath`, `-enumeratePathWithBlock:`, `ILCGPathElementCount()`, `ILCGPathDescription()` | `cgPath`, `forEachElement(_:)`, `CGPath.elementCount`, `pathDescription` |
+| `-isEqualToPasteboard:`, `-deepCopy`, `-copy` | `hasSameItems(as:)`, `snapshot()` |
+| `+attributedString:withFont:`, `+attributedString:withLink:…` | `NSAttributedString(string:font:)`, `(string:link:attributes:)` |
+| `-rangesForAttribute:value:`, `-replaceAttribute:value:newValue:` | `ranges(of:value:)`, `replaceAttribute(_:value:with:)` |
+| `-openURL:` on NSApplication | `open(_:)` |
+| `ILZeroAngleRadians`, `ILDegreesToRadians()`, `ILRadiansToDegrees()`, `ILPercentToRadians()` | `CGFloat.twelveOClock`, `.radians(fromDegrees:)`, `.degrees(fromRadians:)`, `.radians(fromPercent:)` |
+| `ILVectorFromPointToPoint()`, `ILVectorLength()`, `ILVectorRadians()` | `CGVector(from:to:)`, `length`, `radians` |
+| `ILRectSquareInRect()`, `ILPointCenteredInRect()`, `ILPointOnLineToPointAtDistance()` | `largestCenteredSquare`, `center`, `moved(toward:distance:)` |
+| `ILIsNormalPoint()`, `ILIsNormalSize()`, `ILIsNormalRect()` | `isNormal` |
 
 - `2.2.0` : [29 Apr 2025]()
   - `templateTintedWithColor:` → `imageWithTintColor:` on macOS
@@ -334,7 +276,7 @@ you can include the following URL in your project to use it:
 
     The MIT License (MIT)
 
-    Copyright © 2017-2025 Alf Watt <alf@istumbler.net>
+    Copyright © 2017-2026 Alf Watt <alf@istumbler.net>
 
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
