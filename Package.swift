@@ -4,7 +4,7 @@ import PackageDescription
 
 let package = Package(
     name: "KitBridge",
-    platforms: [.macOS(.v12), .iOS(.v15), .tvOS(.v14), .watchOS(.v10), .visionOS(.v26)],
+    platforms: [.macOS(.v12), .iOS(.v15), .tvOS(.v14), .watchOS(.v10), .visionOS("26.0")],
     products: [
         .executable( name: "colorist", targets: ["colorist"]),
         .library( name: "KitBridge", type: .dynamic, targets: ["KitBridge", "KitBridgeSwift"])
