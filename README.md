@@ -26,8 +26,8 @@ KitBridge allows you to create views which can be used in both iOS and macOS app
 
 <img src="Images/kit-bridge-orangecard.png" alt="OrangeCard on macOS, tvOS and iOS" style="width:420px">
 
-KitBridge supports [CardView](https://github.com/iStumblerLabs/CardView), 
-[SparkKit](https://github.com/iStumblerLabs/SparkKit),
+KitBridge supports [CardView](https://github.com/alfwatt/CardView), 
+[SparkKit](https://github.com/alfwatt/SparkKit),
 which offer a nice looking text view subclass, and a simple fast graphing toolkit as well as
 other iStumbler Labs frameworks.
 
@@ -330,7 +330,7 @@ application's font size.
 
 ## Using KitBridge in your App
 
-- Clone the latest sources: `git clone https://github.com/iStumblerLabs/KitBridge.git`
+- Clone the latest sources: `git clone https://github.com/alfwatt/KitBridge.git`
   near or inside your application's source
 - Drag `KitBridge.xcodproj` into your project
 - include the `KitBridge.framework` in your applications `Resources/Frameworks` directory
@@ -342,7 +342,7 @@ application's font size.
 A Swift Package is defined in `Package.swift` for projects using Swift Package Manager, 
 you can include the following URL in your project to use it:
 
-    https://github.com/iStumblerLabs/KitBridge.git
+    https://github.com/alfwatt/KitBridge.git
 
 
 ## License <a id="license"></a>
