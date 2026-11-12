@@ -206,13 +206,18 @@ open class ILDrawingView: ILView, ILViewLifecycle {
 /// A cell which draws its object value, or its represented object, when it's an ILDrawing, e.g. in a cell based NSTableView,
 /// the quickest way to draw many rows on the Mac: the table draws each row's value with one cell, without a view or layer for each
 @objc(ILDrawingCell)
-open class ILDrawingCell: NSCell {
+open class ILDrawingCell: NSActionCell {
+
+    /// the drawing of the cell's value: its object value or represented object, when it's an ILDrawing,
+    /// subclasses return the drawing of the values they draw
+    open var drawing: (any ILDrawing)? {
+        (objectValue as? any ILDrawing) ?? (representedObject as? any ILDrawing)
+    }
 
     // MARK: - NSCell
 
     open override func draw(withFrame cellFrame: NSRect, in controlView: NSView) {
-        guard let drawing = (objectValue as? any ILDrawing) ?? (representedObject as? any ILDrawing),
-              let context = ILGraphicsContext.current else {
+        guard let drawing, let context = ILGraphicsContext.current else {
             return
         }
         context.saveGState()

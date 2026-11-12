@@ -146,7 +146,7 @@ Tables draw many small views and scroll them often, so the drawing should only h
   resized, scrolling composites the layers it has already drawn. Set `drawsOpaque` when the drawing fills the view,
   and `drawsAsynchronously` when it has many fills or images.
 - `ILDrawingCell` is the quickest way to draw many rows on the Mac: a cell based table draws every row's value with
-  one cell, without a view or a layer for each row.
+  one cell, without a view or a layer for each row. Subclasses override `drawing` to draw their own values.
 - `ILImage.rendered` doesn't need the main thread, draw rows which don't change ahead of time and show the images.
 - Don't add layers in `draw(withFrame:in:)` or `draw(_:)`, they're called every time the table draws the row.
 
