@@ -11,6 +11,8 @@ From [iStumbler Labs](https://istumbler.net/labs/).
 - [Support](#support)
 - [Bridged Types](#types)
 - [Extensions](#extensions)
+- [Drawing](#drawing)
+- [SwiftUI](#swiftui)
 - [Model Controller Multiple Views](#mcmv)
 - [Custom Fonts](#fonts)
 - [To Do Items](#todo)
@@ -55,6 +57,9 @@ Use `#if os(macOS)` or `#if canImport(AppKit)` to separate implementations when 
 On the watch and visionOS, which have no `UIScreen`, `ILScreen` stands in with the scale images are drawn at,
 and `ILScreen.mainScale` is the main screen's scale on every platform, from any thread.
 
+UIKit has no gradient class, `ILGradient` is `NSGradient` on the Mac and a class with NSGradient's API, drawn with a
+`CGGradient`, everywhere else.
+
 
 ## Extensions <a id="extensions"></a>
 
@@ -81,13 +86,21 @@ so an app can use one spelling throughout.
   - UIBezierPath's `init(roundedRect:cornerRadius:)`, `init(arcCenter:…)`, `addLine(to:)`, `addCurve(to:…)`,
     `addQuadCurve(to:controlPoint:)` and `addArc(withCenter:…)` on NSBezierPath, `elementCount` on UIBezierPath
   - `forEachElement(_:)`
+- [`ILGradient+KitBridge`](./Sources/KitBridge/ILGradient+KitBridge.swift)
+  - NSGradient's `init(starting:ending:)`, `init(colors:)`, `numberOfColorStops`, `interpolatedColor(atLocation:)`,
+    `draw(in:angle:)` for rects and paths, `draw(from:to:options:)` and `draw(fromCenter:radius:toCenter:radius:options:)` on UIKit
+  - `init(colors:locations:)`, `colors`, `locations` and `cgGradient` on both
+- [`ILDrawing`](./Sources/KitBridge/ILDrawing.swift)
+  - `ILGraphicsContext.current` and `ILGraphicsContext.drawing(in:_:)`, which makes a CGContext current for the kit's drawing
+  - `ILImage.rendered(size:scale:opaque:_:)`, a bitmap drawn with its origin top left, off the main thread if you like
+  - `ILDrawing`, `ILDrawingBlock`, `ILDrawingView` and `ILDrawingCell`, see [Drawing](#drawing)
 - [`ILPasteboard+KitBridge`](./Sources/KitBridge/ILPasteboard+KitBridge.swift)
   - UIPasteboard's API on NSPasteboard: `items` as dictionaries, `addItems(_:)`, `string(s)`, `image(s)`, `url(s)`,
     `color(s)`, `hasStrings`… `data(forPasteboardType:)` and `value(forPasteboardType:)`
   - `isClear`, `hasItems`, `snapshot()` and `hasSameItems(as:)` on both
 - [`ILView+KitBridge`](./Sources/KitBridge/ILView+KitBridge.swift)
   - `ILViewLifecycle` with `initView()` and `updateView()`
-  - `renderedImage` and `replaceSystemFonts()`
+  - `renderedImage` and `replaceSystemFonts()`, `setNeedsDisplay()` on NSView
   - `text` on NSTextView and NSTextField, `attributeRuns` on UIKit's NSTextStorage
   - `open(_:)` on NSApplication, `sendAction(_:to:from:)` on UIApplication, `instantiateInitialViewController()` and
     `instantiateViewController(withIdentifier:)` on NSStoryboard, `startAnimating()` and `stopAnimating()` on
@@ -101,6 +114,60 @@ so an app can use one spelling throughout.
   - `CGPath.elementCount` and `pathDescription`
 
 `colorist` prints KitBridge's colors in CSS formats: `swift run colorist`
+
+
+## Drawing <a id="drawing"></a>
+
+An `ILDrawing` draws into a rect of a CGContext, with its origin top left as UIKit has it, and the context current for
+`ILBezierPath`, `ILColor.set()`, `ILImage.draw` and string drawing. The same drawing goes anywhere:
+
+| Where | How | Platforms |
+| --- | --- | --- |
+| A view | `ILDrawingView(drawing:)` | all but the watch |
+| A row of a cell based `NSTableView` | `ILDrawingCell`, with the drawing as its `objectValue` | macOS |
+| An image | `drawing.image(size:scale:opaque:)` | all |
+| SwiftUI | `ILDrawingCanvas(drawing)` | all |
+
+    struct SignalBar: ILDrawing {
+        let percent: CGFloat
+
+        func draw(in rect: CGRect, context: CGContext) {
+            ILColor.controlAccent.setFill()
+            ILBezierPath(roundedRect: CGRect(x: rect.minX, y: rect.minY, width: rect.width * percent, height: rect.height),
+                         cornerRadius: 2).fill()
+        }
+    }
+
+### Drawing in Tables
+
+Tables draw many small views and scroll them often, so the drawing should only happen when a row's value changes:
+
+- `ILDrawingView` is layer backed and flipped on the Mac, and draws again only when its drawing is set or it's
+  resized, scrolling composites the layers it has already drawn. Set `drawsOpaque` when the drawing fills the view,
+  and `drawsAsynchronously` when it has many fills or images.
+- `ILDrawingCell` is the quickest way to draw many rows on the Mac: a cell based table draws every row's value with
+  one cell, without a view or a layer for each row.
+- `ILImage.rendered` doesn't need the main thread, draw rows which don't change ahead of time and show the images.
+- Don't add layers in `draw(withFrame:in:)` or `draw(_:)`, they're called every time the table draws the row.
+
+
+## SwiftUI <a id="swiftui"></a>
+
+`ILViewRepresentable` is NSViewRepresentable and UIViewRepresentable with one spelling, so a SwiftUI view can host
+the kit's views with the same code on every platform which has them. Swift can't infer the `ILViewType`, declare it:
+
+    struct SparkLine: ILViewRepresentable {
+        typealias ILViewType = ILSparkLine
+        let data: ILSparkLineDataSource
+
+        func makeView(context: Context) -> ILSparkLine { ILSparkLine() }
+        func updateView(_ view: ILSparkLine, context: Context) { view.dataSource = data }
+    }
+
+Or make and update the view with blocks: `ILViewBridge { ILSparkLine() } update: { $0.dataSource = data }`
+
+`Color(ilColor:)`, `Image(ilImage:)`, `Font(ilFont:)`, `Path(_: ILBezierPath)` and `ILBezierPath(_: Path)` convert
+the kit's drawing types to SwiftUI's and back, SwiftUI has `ILColor(_: Color)`.
 
 
 ## Model Controller Multiple Views (MCMV) <a id="mcmv"></a>
@@ -171,12 +238,18 @@ application's font size.
 ## To Do Items <a id="todo"></a>
 
 - open source example app (besides the CardView and SparkKit)
-- Implement ILGradient on top of CGGradient on UIKit
 - ILSparkMeterTextStyle on ILSparkStack needs to offset values in the view
 - colorist: Add command line options to parse and convert colors
 
 
 ## Version History <a id="versions"></a>
+
+- `3.1.0` : Drawing and SwiftUI
+  - `ILDrawing`, drawn by `ILDrawingView`, `ILDrawingCell` in Mac tables, into images, and in SwiftUI with `ILDrawingCanvas`
+  - `ILGradient` on UIKit and the watch, NSGradient's API drawn with a CGGradient, it was `NSObject`
+  - `ILGraphicsContext` and `ILImage.rendered(size:scale:opaque:_:)`
+  - `ILViewRepresentable` and `ILViewBridge` host the kit's views in SwiftUI with one spelling
+  - SwiftUI's `Color`, `Image`, `Font` and `Path` from the kit's drawing types, `ILBezierPath` from `Path`
 
 - `3.0.0` : Breaking API changes, KitBridge is written in Swift
   - Requires macOS 14, iOS 17, tvOS 17, watchOS 10 or visionOS 26

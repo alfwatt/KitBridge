@@ -22,7 +22,6 @@ public typealias ILCollectionViewCell = UICollectionViewCell
 public typealias ILCollectionViewDelegate = UICollectionViewDelegate
 public typealias ILColor = UIColor
 public typealias ILFont = UIFont
-public typealias ILGradient = NSObject
 public typealias ILImage = UIImage
 public typealias ILImageView = UIImageView
 public typealias ILLabel = UILabel

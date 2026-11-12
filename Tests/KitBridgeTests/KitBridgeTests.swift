@@ -1,5 +1,6 @@
 import XCTest
 import KitBridge
+import SwiftUI
 #if canImport(AppKit)
 import AppKit
 #else
@@ -151,6 +152,158 @@ final class KitBridgeTests: XCTestCase {
         defer { try? FileManager.default.removeItem(at: url) }
         try image(size: CGSize(width: 4, height: 4), color: .green).writePNG(to: url)
         XCTAssertTrue(try Data(contentsOf: url).starts(with: [0x89, 0x50, 0x4E, 0x47]))
+    }
+
+    // MARK: - Drawing
+
+    private let red = ILColor(red: 1, green: 0, blue: 0, alpha: 1)
+    private let blue = ILColor(red: 0, green: 0, blue: 1, alpha: 1)
+
+    /// a drawing with its top half red and its bottom half blue
+    private var halves: ILDrawingBlock {
+        ILDrawingBlock { [red, blue] rect, context in
+            let top = CGRect(x: rect.minX, y: rect.minY, width: rect.width, height: rect.height / 2)
+            red.setFill()
+            ILBezierPath(rect: top).fill() // the kit's drawing, in the current context
+            context.setFillColor(blue.cgColor) // CoreGraphics, in the context provided
+            context.fill(CGRect(x: rect.minX, y: top.maxY, width: rect.width, height: rect.height / 2))
+        }
+    }
+
+    /// the red, green, blue and alpha of the pixel at the
+    /// @param point provided, from the top left of the
+    /// @param image provided
+    private func pixel(at point: CGPoint, of image: CGImage, scale: CGFloat = 1) throws -> [UInt8] {
+        var bytes = [UInt8](repeating: 0, count: 4)
+        let space = try XCTUnwrap(CGColorSpace(name: CGColorSpace.sRGB))
+        try bytes.withUnsafeMutableBytes { buffer in
+            let context = try XCTUnwrap(CGContext(data: buffer.baseAddress, width: 1, height: 1, bitsPerComponent: 8, bytesPerRow: 4,
+                                                  space: space, bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+            // put the pixel on the context's only pixel, the context's origin is bottom left
+            let x = (point.x * scale).rounded(.down), y = (point.y * scale).rounded(.down)
+            context.draw(image, in: CGRect(x: -x, y: y + 1 - CGFloat(image.height), width: CGFloat(image.width), height: CGFloat(image.height)))
+        }
+        return bytes
+    }
+
+    /// is the pixel mostly red, allowing for the color matching of views drawn for the display?
+    private func assertMostlyRed(_ pixel: [UInt8], file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertTrue(pixel[0] > 200 && pixel[1] < 64 && pixel[2] < 64, "not red: \(pixel)", file: file, line: line)
+    }
+
+    /// is the pixel mostly blue, allowing for the color matching of views drawn for the display?
+    private func assertMostlyBlue(_ pixel: [UInt8], file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertTrue(pixel[0] < 64 && pixel[1] < 64 && pixel[2] > 200, "not blue: \(pixel)", file: file, line: line)
+    }
+
+    private func assertRed(_ pixel: [UInt8], file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertEqual(pixel, [255, 0, 0, 255], "not red", file: file, line: line)
+    }
+
+    private func assertBlue(_ pixel: [UInt8], file: StaticString = #filePath, line: UInt = #line) {
+        XCTAssertEqual(pixel, [0, 0, 255, 255], "not blue", file: file, line: line)
+    }
+
+    func testRenderedImageOriginIsTopLeft() throws {
+        let image = try XCTUnwrap(ILImage.rendered(size: CGSize(width: 10, height: 10), scale: 2) { context in
+            halves.draw(in: CGRect(x: 0, y: 0, width: 10, height: 10), context: context)
+        })
+        XCTAssertEqual(image.size, CGSize(width: 10, height: 10))
+        let cgImage = try XCTUnwrap(image.cgImage)
+        XCTAssertEqual(cgImage.width, 20)
+        assertRed(try pixel(at: CGPoint(x: 5, y: 2), of: cgImage, scale: 2))
+        assertBlue(try pixel(at: CGPoint(x: 5, y: 8), of: cgImage, scale: 2))
+    }
+
+    func testDrawingImage() throws {
+        let image = try XCTUnwrap(halves.image(size: CGSize(width: 8, height: 8), scale: 1, opaque: true))
+        let cgImage = try XCTUnwrap(image.cgImage)
+        assertRed(try pixel(at: CGPoint(x: 0, y: 0), of: cgImage))
+        assertBlue(try pixel(at: CGPoint(x: 7, y: 7), of: cgImage))
+    }
+
+    func testGradients() throws {
+        let gradient = try XCTUnwrap(ILGradient(colors: [red, blue], locations: [0, 1]))
+        XCTAssertEqual(gradient.numberOfColorStops, 2)
+        XCTAssertEqual(gradient.locations, [0, 1])
+        XCTAssertNotNil(gradient.cgGradient)
+        XCTAssertEqual(gradient.interpolatedColor(atLocation: 0).cssHex, "#FF0000")
+        XCTAssertEqual(gradient.interpolatedColor(atLocation: 1).cssHex, "#0000FF")
+        XCTAssertNil(ILGradient(colors: [red, blue], locations: [0]))
+
+        let image = try XCTUnwrap(ILImage.rendered(size: CGSize(width: 100, height: 10), scale: 1) { _ in
+            gradient.draw(in: CGRect(x: 0, y: 0, width: 100, height: 10), angle: 0) // left to right
+        })
+        let cgImage = try XCTUnwrap(image.cgImage)
+        let left = try pixel(at: CGPoint(x: 0, y: 5), of: cgImage), right = try pixel(at: CGPoint(x: 99, y: 5), of: cgImage)
+        XCTAssertGreaterThan(left[0], 240)
+        XCTAssertLessThan(left[2], 15)
+        XCTAssertLessThan(right[0], 15)
+        XCTAssertGreaterThan(right[2], 240)
+    }
+
+    @MainActor
+    func testDrawingView() throws {
+        let view = ILDrawingView(drawing: halves, frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+        view.drawsOpaque = true
+        XCTAssertTrue(view.isOpaque)
+        let image = try XCTUnwrap(view.renderedImage)
+        let cgImage = try XCTUnwrap(image.cgImage)
+        let scale = CGFloat(cgImage.width) / image.size.width
+        assertMostlyRed(try pixel(at: CGPoint(x: 5, y: 2), of: cgImage, scale: scale))
+        assertMostlyBlue(try pixel(at: CGPoint(x: 5, y: 8), of: cgImage, scale: scale))
+    }
+
+#if canImport(AppKit)
+    /// a view with its origin bottom left, as AppKit's views have it
+    private final class UnflippedView: NSView {}
+
+    @MainActor
+    func testDrawingCellInFlippedAndUnflippedViews() throws {
+        let cell = ILDrawingCell()
+        cell.objectValue = halves
+        let frame = CGRect(x: 0, y: 0, width: 10, height: 10)
+        for controlView in [ILDrawingView(frame: frame), UnflippedView(frame: frame)] {
+            let space = try XCTUnwrap(CGColorSpace(name: CGColorSpace.sRGB))
+            let context = try XCTUnwrap(CGContext(data: nil, width: 10, height: 10, bitsPerComponent: 8, bytesPerRow: 0, space: space,
+                                                  bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue))
+            if controlView.isFlipped { // the context of a flipped view has its origin top left
+                context.translateBy(x: 0, y: 10)
+                context.scaleBy(x: 1, y: -1)
+            }
+            NSGraphicsContext.saveGraphicsState()
+            NSGraphicsContext.current = NSGraphicsContext(cgContext: context, flipped: controlView.isFlipped)
+            cell.draw(withFrame: frame, in: controlView)
+            NSGraphicsContext.restoreGraphicsState()
+            let cgImage = try XCTUnwrap(context.makeImage())
+            assertRed(try pixel(at: CGPoint(x: 5, y: 2), of: cgImage))
+            assertBlue(try pixel(at: CGPoint(x: 5, y: 8), of: cgImage))
+        }
+    }
+#endif
+
+    // MARK: - SwiftUI
+
+    /// a representable with one spelling on every platform
+    private struct SparkRepresentable: ILViewRepresentable {
+        typealias ILViewType = ILDrawingView
+
+        func makeView(context: Context) -> ILDrawingView {
+            ILDrawingView()
+        }
+
+        func updateView(_ view: ILDrawingView, context: Context) {}
+    }
+
+    @MainActor
+    func testSwiftUIBridges() {
+        _ = SparkRepresentable()
+        _ = ILViewBridge { ILDrawingView() } update: { $0.drawsOpaque = true }
+        _ = ILDrawingCanvas(halves)
+        _ = Color(ilColor: red)
+        _ = Font(ilFont: ILFont.systemFont(ofSize: 12))
+        let rect = CGRect(x: 1, y: 2, width: 3, height: 4)
+        XCTAssertEqual(ILBezierPath(Path(ILBezierPath(rect: rect))).bounds, rect)
     }
 
     // MARK: - Attributed Strings

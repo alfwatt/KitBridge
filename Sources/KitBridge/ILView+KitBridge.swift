@@ -50,6 +50,18 @@ public extension ILView {
     }
 }
 
+// MARK: - Drawing
+
+#if canImport(AppKit)
+@MainActor
+public extension NSView {
+    /// mark the whole view as needing to be drawn, as UIView does
+    func setNeedsDisplay() {
+        needsDisplay = true
+    }
+}
+#endif
+
 // MARK: - Text
 
 #if canImport(AppKit)
